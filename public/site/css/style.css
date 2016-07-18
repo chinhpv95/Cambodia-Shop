@@ -158,7 +158,7 @@ z-index: 999;}
 [9. Block slider]
 ---------------------------*/
 .block-slider{
-	border:none;
+	border: 1px green;
 	width: 100%;
 }
 .block-slider ul li{
