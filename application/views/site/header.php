@@ -52,7 +52,21 @@
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li><a href="#">Trang chủ</a></li>
-                        <li><a href="#">Sản phẩm</a></li>
+                        <li>
+                            <div class="dropdown">
+                                <a href="">Sản phẩm</a>
+                                <div class="dropdown-content">
+                                    <ul>
+                                        <li><a href="">Sách</a></li>
+                                        <li><a href="">Quần áo</a></li>
+                                        <li><a href="">Đồ ăn</a></li>
+                                        <li><a href="">Tranh vẽ</a></li>
+                                        <li><a href="">Đồ lưu niệm</a></li>
+                                    </ul>
+
+                                </div>
+                            </div>
+                        </li>
                         <li><a href="#">Giỏ hàng</a></li>
                         <li><a href="#">Thanh toán</a></li>
                         <li><a href="#">Liên hệ</a></li>
@@ -61,6 +75,9 @@
             </div>
         </div>
     </div> <!-- End mainmenu area -->
+
+
+
     
 
 <!-- Latest jQuery form server -->

@@ -15,6 +15,7 @@
 <link rel="stylesheet" href="public/site/css/style.css">
 <link rel="stylesheet" href="public/site/css/responsive.css">
 
+<br><br><br>
 
 <div class="footer-top-area">
         <div class="zigzag-bottom"></div>
@@ -23,9 +24,9 @@
                 <div class="col-md-3 col-sm-6">
                     <div class="footer-about-us">
                         <h2>Su<span>Cam</span></h2>
-                        <p>Giới thiệu về cửa hàng</p>
+                        <p>Chuyên bán đồ có xuất xứ Campuchia. Nhanh chóng, uy tín, tin cậy.</p>
                         <div class="footer-social">
-                            <a href="#" target="_blank"><i class="fa fa-facebook"></i></a>
+                            <a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a>
                             <a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
                             <a href="#" target="_blank"><i class="fa fa-youtube"></i></a>
                             <a href="#" target="_blank"><i class="fa fa-linkedin"></i></a>
@@ -33,6 +34,8 @@
                     </div>
                 </div>
                 
+                <div class="col-md-1 col-sm-2"></div>
+
                 <div class="col-md-3 col-sm-6">
                     <div class="footer-menu">
                         <h2> Tài khoản </h2>
@@ -54,35 +57,18 @@
                         </ul>                        
                     </div>
                 </div>
-                
-                <div class="col-md-3 col-sm-6">
-                    <div class="footer-newsletter">
-                        <h2>Liên hệ</h2>
-                        <p>Để lại email của bạn</p>
-                        <div class="newsletter-form">
-                            <form action="#">
-                                <input type="email" placeholder="Nhập email của bạn">
-                                <input type="submit" value="Xác nhận">
-                            </form>
-                        </div>
+                <div class="col-md-2 col-sm-2"></div>
+            </div>
+            <br><br><br>
+            <div class="col-md-12" style="border-top: 1px dashed #555;">
+                    <div class="copyright">
+                        <p>  Group 3 - IS06 </p>
                     </div>
                 </div>
-            </div>
+
         </div>
     </div> <!-- End footer top area -->
     
-    <div class="footer-bottom-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8">
-                    <div class="copyright">
-                        <p>&copy; 2015 uCommerce. All Rights Reserved. <a href="http://www.freshdesignweb.com" target="_blank">freshDesignweb.com</a></p>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-    </div> <!-- End footer bottom area -->
 
 
 <!-- Latest jQuery form server -->

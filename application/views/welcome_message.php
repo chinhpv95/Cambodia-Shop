@@ -17,18 +17,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	</style>
 </head>
 <body>
-
 <?php
 	$this->load->view('site/header.php');
 ?>
 
 <?php
-	$this->load->view('site/body.php');
+	$this->load->view('site/checkout.php');
 ?>
 
-<?php
-	$this->load->view('site/cart.php');
-?>
 
 <?php
 	$this->load->view('site/footer.php');

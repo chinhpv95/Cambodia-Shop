@@ -20,7 +20,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="product-bit-title text-center">
-                    <h2>Check Out</h2>
+                    <h2>Thanh toán</h2>
                 </div>
             </div>
         </div>
@@ -40,7 +40,7 @@
                                 <div id="customer_details" class="col2-set">
                                     <div class="col-1">
                                         <div class="woocommerce-billing-fields">
-                                            <center><h3 style="color:green;">Thông tin khách hàng</h3></center>
+                                            <center><h2 style="color:green;">Thông tin khách hàng</h2></center>
 
                                             <p id="billing_first_name_field" class="form-row form-row-first validate-required">
                                                 <label class="" for="billing_name">Họ tên <abbr title="required" class="required">*</abbr>
@@ -99,7 +99,7 @@
   		<div class="modal-dialog">
     		<div class="modal-content">
       			<div class="modal-header">
-        			<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        			<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">x</span><span class="sr-only">Close</span></button>
         			<h3 class="modal-title" id="myModalLabel">Thông tin đơn hàng</h3>
       			</div>
       			<div class="modal-body">

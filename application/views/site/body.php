@@ -60,6 +60,166 @@
     </div> <!-- End slider area -->
 
 
+    <!-- Popular product -->
+    <div class="container">
+    	<br><br>
+      	<center><h1>Sản phẩm nổi bật</h1></center>
+      	<br><br>
+      	<div class="row">
+      		<div class="col-md-3">
+				<div class="single-product">
+                	<div class="product-f-image">
+                    	<div class="thumbnail">
+                        	<img src="upload/product/product-1.jpg" alt="">
+                        	<div class="product-hover">
+                           		<a href="#" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</a>
+                            	<a href="single-product.html" class="view-details-link"><i class="fa fa-link"></i> Thông tin</a>
+                            </div>
+                        </div>
+                    </div>
+                	<h2><a href="single-product.html">Alive</a></h2>
+                                
+                	<div class="product-carousel-price">
+                    	<ins>150000đ</ins>
+                	</div>             
+            	</div>
+       		</div>
+        	<div class="col-md-3">
+				<div class="single-product">
+                	<div class="product-f-image">
+                    	<div class="thumbnail">
+                        	<img src="upload/product/product-2.jpg" alt="">
+                        	<div class="product-hover">
+                            	<a href="#" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</a>
+                            	<a href="single-product.html" class="view-details-link"><i class="fa fa-link"></i> Thông tin</a>
+                            </div>
+                        </div>
+                    </div>
+                    <h2><a href="single-product.html">Alive</a></h2>
+                                
+                    <div class="product-carousel-price">
+                        <ins>150000đ</ins>
+                    </div>                   
+            	</div>
+        	</div>
+        	<div class="col-md-3">
+				<div class="single-product">
+                	<div class="product-f-image">
+                    	<div class="thumbnail">
+                        	<img src="upload/product/product-1.jpg" alt="">
+                        	<div class="product-hover">
+                           		<a href="#" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</a>
+                            	<a href="single-product.html" class="view-details-link"><i class="fa fa-link"></i> Thông tin</a>
+                            </div>
+                        </div>
+                    </div>
+                	<h2><a href="single-product.html">Alive</a></h2>
+                                
+                	<div class="product-carousel-price">
+                    	<ins>150000đ</ins>
+                	</div>             
+            	</div>
+       		</div>
+        	<div class="col-md-3">
+				<div class="single-product">
+                	<div class="product-f-image">
+                    	<div class="thumbnail">
+                        	<img src="upload/product/product-2.jpg" alt="">
+                        	<div class="product-hover">
+                            	<a href="#" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</a>
+                            	<a href="single-product.html" class="view-details-link"><i class="fa fa-link"></i> Thông tin</a>
+                            </div>
+                        </div>
+                    </div>
+                    <h2><a href="single-product.html">Alive</a></h2>
+                                
+                    <div class="product-carousel-price">
+                        <ins>150000đ</ins>
+                    </div>                   
+            	</div>
+        	</div>
+      	</div>
+
+      	<br><br>
+      	<div class="row">
+      		<div class="col-md-3">
+				<div class="single-product">
+                	<div class="product-f-image">
+                    	<div class="thumbnail">
+                        	<img src="upload/product/product-1.jpg" alt="">
+                        	<div class="product-hover">
+                           		<a href="#" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</a>
+                            	<a href="single-product.html" class="view-details-link"><i class="fa fa-link"></i> Thông tin</a>
+                            </div>
+                        </div>
+                    </div>
+                	<h2><a href="single-product.html">Alive</a></h2>
+                                
+                	<div class="product-carousel-price">
+                    	<ins>150000đ</ins>
+                	</div>             
+            	</div>
+       		</div>
+        	<div class="col-md-3">
+				<div class="single-product">
+                	<div class="product-f-image">
+                    	<div class="thumbnail">
+                        	<img src="upload/product/product-2.jpg" alt="">
+                        	<div class="product-hover">
+                            	<a href="#" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</a>
+                            	<a href="single-product.html" class="view-details-link"><i class="fa fa-link"></i> Thông tin</a>
+                            </div>
+                        </div>
+                    </div>
+                    <h2><a href="single-product.html">Alive</a></h2>
+                                
+                    <div class="product-carousel-price">
+                        <ins>150000đ</ins>
+                    </div>                   
+            	</div>
+        	</div>
+        	<div class="col-md-3">
+				<div class="single-product">
+                	<div class="product-f-image">
+                    	<div class="thumbnail">
+                        	<img src="upload/product/product-1.jpg" alt="">
+                        	<div class="product-hover">
+                           		<a href="#" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</a>
+                            	<a href="single-product.html" class="view-details-link"><i class="fa fa-link"></i> Thông tin</a>
+                            </div>
+                        </div>
+                    </div>
+                	<h2><a href="single-product.html">Alive</a></h2>
+                                
+                	<div class="product-carousel-price">
+                    	<ins>150000đ</ins>
+                	</div>             
+            	</div>
+       		</div>
+        	<div class="col-md-3">
+				<div class="single-product">
+                	<div class="product-f-image">
+                    	<div class="thumbnail">
+                        	<img src="upload/product/product-2.jpg" alt="">
+                        	<div class="product-hover">
+                            	<a href="#" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</a>
+                            	<a href="single-product.html" class="view-details-link"><i class="fa fa-link"></i> Thông tin</a>
+                            </div>
+                        </div>
+                    </div>
+                    <h2><a href="single-product.html">Alive</a></h2>
+                                
+                    <div class="product-carousel-price">
+                        <ins>150000đ</ins>
+                    </div>                   
+            	</div>
+        	</div>
+      	</div>
+                           
+  
+    </div> <!-- End main content area -->
+
+
      
 
 <!-- Latest jQuery form server -->

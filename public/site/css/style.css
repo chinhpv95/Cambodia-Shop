@@ -73,7 +73,7 @@ body { font-family:Arial, Helvetica, sans-serif; }
     text-align: center;
 }
 
-.mainmenu-area {background: none repeat scroll 0 0 #fbfbfb;
+.mainmenu-area {background: none repeat scroll 0 0 #f3f8fb;
 font-family: "Roboto Condensed",sans-serif;
 text-transform: uppercase;
 width: 100%;
@@ -148,8 +148,23 @@ z-index: 999;}
 
 .mainmenu-area ul.navbar-nav li:hover a, .mainmenu-area ul.navbar-nav li.active a {
     background: green; 
-    color:#FFF;
+    color:white;
   }
+
+.mainmenu-area ul.navbar-nav li:hover .dropdown .dropdown-content ul li{
+    height: auto;
+    margin-left: -40px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    list-style: none;
+}
+
+
+
+.mainmenu-area ul.navbar-nav li:hover .dropdown .dropdown-content a{
+    background: transparent;
+    color: black;
+}
 
 .mainmenu-area .nav > li > a:focus {color: #FFF;}
 
@@ -551,9 +566,9 @@ z-index: 999;}
 }
 .product-widget-area .zigzag-bottom{background: #f4f4f4;}
 .footer-top-area .zigzag-bottom{background: #f4f4f4}
-.footer-top-area {background: none repeat scroll 0 0 #333;
-color: #999;
-padding: 35px 0 180px;}
+.footer-top-area {background: none repeat scroll 0 0 #f3f8fb;
+color: #333;
+padding: 35px 0 50px;}
 
 
 .footer-bottom-area {background: #000;color: #fff}
@@ -608,6 +623,7 @@ padding: 35px 0 180px;}
     margin-bottom: 10px;
     padding: 10px;
     width: 100%;
+    border: 1px #555;
 }
 .newsletter-form input[type="submit"] {
     background: none repeat scroll 0 0 green;
@@ -625,8 +641,8 @@ padding: 35px 0 180px;}
 a {color: green}
 a:hover, a:focus {color: #17a78b}
 .footer-bottom-area {
-  background: none repeat scroll 0 0 #000;
-  color: #fff;
+  background: none repeat scroll 0 0 #b8baba;
+  color: #333;
   padding-bottom: 40px;
 }
 
@@ -680,7 +696,7 @@ width: 10px;
 }
 
 .copyright > p {
-  margin: 10px 0 0;
+  margin: 5px 0 0;
 }
 
 .product-big-title-area {
@@ -1134,4 +1150,35 @@ div.cart-collaterals ul.products li.product:hover .add_to_cart_button{background
 
 .btn-primary:hover {
   background: #009c12;
+}
+
+.dropdown a{
+    text-decoration: none;
+}
+
+.dropdown {
+    padding-top: 20px;
+    position: relative;
+    display: block;
+}
+
+.dropdown-content {
+    margin-top: 20px;
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    height: auto;
+    display: block;
+    background: #f3f8fb;
+}
+
+.dropdown-content a {
+    background: transparent;
 }
