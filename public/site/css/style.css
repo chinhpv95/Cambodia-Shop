@@ -26,7 +26,12 @@ h5,
 h6 {
     margin: 0 0 15px;
 }
-body { font-family:Arial, Helvetica, sans-serif; }
+body { 
+  font-family:Arial, 
+  Helvetica, 
+  sans-serif; 
+  background: #f6f6f6;
+}
 
 
 
@@ -74,7 +79,7 @@ body { font-family:Arial, Helvetica, sans-serif; }
 }
 
 .mainmenu-area {
-  background: none repeat scroll 0 0 #f3f8fb;
+  background: none repeat scroll 0 0 white;
   font-family: "Roboto Condensed",sans-serif;
   text-transform: uppercase;
   width: 100%;
@@ -182,10 +187,12 @@ body { font-family:Arial, Helvetica, sans-serif; }
   margin:0 auto; 
   padding-bottom:105px;
   border-bottom: 1px solid #333;
-  }
+}
+
 /*-------------------------
 [9. Block slider]
 ---------------------------*/
+
 .block-slider{
   border: 1px green;
   width: 100%;
@@ -587,7 +594,7 @@ body { font-family:Arial, Helvetica, sans-serif; }
 .product-widget-area .zigzag-bottom{background: #f4f4f4;}
 .footer-top-area .zigzag-bottom{background: #f4f4f4}
 .footer-top-area {
-  background: none repeat scroll 0 0 #f3f8fb;
+  background: none repeat scroll 0 0 white;
   color: #333;
   padding: 35px 0 50px;
   border-top: 1px solid #555;
@@ -739,9 +746,6 @@ width: 10px;
 .single-product-area {
   padding: 80px 0 130px;
 }
-
-
-
 
 
 .sidebar-title {
@@ -1200,7 +1204,7 @@ div.cart-collaterals ul.products li.product:hover .add_to_cart_button{background
 .dropdown:hover .dropdown-content {
     height: auto;
     display: block;
-    background: #f3f8fb;
+    background: white;
 }
 
 .dropdown-content a {
@@ -1219,7 +1223,19 @@ div.cart-collaterals ul.products li.product:hover .add_to_cart_button{background
 
 .thumbnail {
   margin-bottom: 35px;
-  background: transparent;
+  background: white;
   border: 1px solid green;
   border-radius: 0px;
+}
+
+.product-title {
+    display: block;
+    color: #333;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    position: relative;
+    text-align: left;
+    margin: 8px auto 0;
+    height: 36px;
+    line-height: 18px;
 }

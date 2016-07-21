@@ -1,15 +1,5 @@
-<style type="text/css">
-    @font-face {
-        font-family: myFirstFont;
-        src: url('public/site/fonts/custom.ttf');
-    }
 
-    div {
-        font-family: myFirstFont;
-    }
-</style>
-
-
+<body>
 <div class="slider-area">
     <!-- Slider -->
     <div class="block-slider block-slider4">
@@ -72,10 +62,12 @@
                     <img src="<?php echo base_url('upload/product/'.$row->image_link) ?>" alt="">
                 </div>
             </div>
+                <br>
+                <div class="product-title">
+                    <h4><?php echo $row->productName ;  ?></h4>
+                </div>
 
-                <h3><a href="single-product.html"><?php limit_display($row->productName);  ?></a></h3>
-
-
+                <br>
                 <div class="product-carousel-price">
                     <ins><?php echo $row->price?>đ</ins>
                 </div>
@@ -98,17 +90,4 @@
         </tr>
     </table>
 
-
-    <?php
-    function limit_display($string) {
-        $string = strip_tags($string);
-
-        if (strlen($string) > 25) {
-
-            $stringCut = substr($string, 0, 25);
-
-            $string = substr($stringCut, 0, strrpos($stringCut, ' ')).'...'; 
-        }
-        echo $string;
-    }
-?>
+</body>

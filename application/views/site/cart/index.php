@@ -11,6 +11,8 @@
 </style>
 
 
+<body>
+
 <div class="product-big-title-area" style="
             background: url(public/site/content/crossword.png) none repeat scroll 0 0 green;">
     <div class="container">
@@ -143,5 +145,4 @@
 </div>
 </div>
 
-
-<!-- Latest jQuery form server -->
+</body>

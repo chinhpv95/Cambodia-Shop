@@ -25,6 +25,8 @@
     }
 </style>
 
+
+<body>
 <div class="product-big-title-area">
         <div class="container">
             <div class="row">
@@ -283,3 +285,5 @@
 <!-- Slider -->
 <script type="text/javascript" src="public/site/js/bxslider.min.js"></script>
 <script type="text/javascript" src="public/site/js/script.slider.js"></script>
+
+</body>

@@ -26,6 +26,7 @@
     }
 </style>
 
+<body>
 
 <div class="product-big-title-area" style="background: url('public/site/content/crossword.png') repeat scroll 0 0 green;">
     <div class="container">
@@ -148,3 +149,5 @@
 <!-- Slider -->
 <script type="text/javascript" src="public/site/js/bxslider.min.js"></script>
 <script type="text/javascript" src="public/site/js/script.slider.js"></script>
+
+</body>

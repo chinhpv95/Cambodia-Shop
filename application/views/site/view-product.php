@@ -15,6 +15,8 @@
 <link rel="stylesheet" href="public/site/css/style.css">
 <link rel="stylesheet" href="public/site/css/responsive.css">
 
+
+<body>
 <div class="product-big-title-area" style="background: url('upload/content/crossword.png') repeat scroll 0 0 green;">
         <div class="container">
             <div class="row">
@@ -128,3 +130,5 @@
 <!-- Slider -->
 <script type="text/javascript" src="public/site/js/bxslider.min.js"></script>
 <script type="text/javascript" src="public/site/js/script.slider.js"></script>
+
+</body>

@@ -1,3 +1,6 @@
+
+<body>
+
 <br><br><br>
 <div class="footer-top-area">
     <div class="zigzag-bottom"></div>
@@ -52,3 +55,5 @@
 </div> <!-- End footer top area -->
 
 <script type="text/javascript" src="<?php echo public_url('/site')?>/js/script.slider.js"></script>
+
+</body>
