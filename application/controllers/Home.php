@@ -13,16 +13,41 @@ Class Home extends MY_Controller
     {
         $total_rows = $this->product_model->get_total();
         $this->data['total_rows'] = $total_rows;
-        //load ra thu vien phan trang
+    //load ra thu vien phan trang
         $this->load->library('pagination');
         $config = array();
         $config['total_rows'] = $total_rows;//tong tat ca cac san pham tren website
         $config['base_url']   = 'http://localhost:8088/Project/home/index/'; //link hien thi ra danh sach san pham
         $config['per_page']   = 16;//so luong san pham hien thi tren 1 trang
-        $config['uri_segment'] = 4;//phan doan hien thi ra so trang tren url
-        $config['next_link']   = 'Trang kế tiếp';
+        $config['uri_segment'] = 3;//phan doan hien thi ra so trang tren url
+
+    //bootstrap
+        $config['full_tag_open'] = '<ul class="pagination">';
+        $config['full_tag_close'] = '</ul>';
+
+        $config['first_link'] = false;
+        $config['first_tag_open'] = '<li>';
+        $config['first_tag_close'] = '</li>';
+
         $config['prev_link']   = 'Trang trước';
-        //khoi tao cac cau hinh phan trang
+        $config['prev_tag_open'] = '<li class="prev page">';
+        $config['prev_tag_close'] = '</li>';
+
+        $config['next_link']   = 'Trang kế tiếp';
+        $config['next_tag_open'] = '<li class="next page">';
+        $config['next_tag_close'] = '</li>';
+
+        $config['last_link'] = false;
+        $config['last_tag_open'] = '<li>';
+        $config['last_tag_close'] = '</li>';
+
+        $config['cur_tag_open'] = '<li class="active"><a href="#">';
+        $config['cur_tag_close'] = '</a></li>';
+
+        $config['num_tag_open'] = '<li>';
+        $config['num_tag_close'] = '</li>';
+
+            //khoi tao cac cau hinh phan trang
         $this->pagination->initialize($config);
         $segment = $this->uri->segment(3);
         $segment = intval($segment);
@@ -31,13 +56,13 @@ Class Home extends MY_Controller
         $input['limit'] = array($config['per_page'], $segment);
         $list = $this->product_model->get_list($input);
         $this->data['list'] = $list;
-//        pre($list);
+        //        pre($list);
 
         $message = $this->session->flashdata('message');
         $this->data['message'] = $message;
         $this->data['temp'] = 'site/home/index';
         $this->load->view('site/layout', $this->data);
-    }
+        }
 
     function information() {
         
@@ -59,8 +84,31 @@ Class Home extends MY_Controller
         $config['base_url']   = 'http://localhost:8088/Project/home/product/'.$id."/"; //link hien thi ra danh sach san pham
         $config['per_page']   = 12;//so luong san pham hien thi tren 1 trang
         $config['uri_segment'] = 4;//phan doan hien thi ra so trang tren url
-        $config['next_link']   = 'Trang kế tiếp';
+
+        $config['full_tag_open'] = '<ul class="pagination">';
+        $config['full_tag_close'] = '</ul>';
+
+        $config['first_link'] = false;
+        $config['first_tag_open'] = '<li>';
+        $config['first_tag_close'] = '</li>';
+
         $config['prev_link']   = 'Trang trước';
+        $config['prev_tag_open'] = '<li class="prev page">';
+        $config['prev_tag_close'] = '</li>';
+
+        $config['next_link']   = 'Trang kế tiếp';
+        $config['next_tag_open'] = '<li class="next page">';
+        $config['next_tag_close'] = '</li>';
+
+        $config['last_link'] = false;
+        $config['last_tag_open'] = '<li>';
+        $config['last_tag_close'] = '</li>';
+
+        $config['cur_tag_open'] = '<li class="active"><a href="#">';
+        $config['cur_tag_close'] = '</a></li>';
+
+        $config['num_tag_open'] = '<li>';
+        $config['num_tag_close'] = '</li>';
 
         //khoi tao cac cau hinh phan trang
         $this->pagination->initialize($config);

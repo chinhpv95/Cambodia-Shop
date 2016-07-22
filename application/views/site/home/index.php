@@ -79,13 +79,11 @@
     <table width="100%" cellspacing="10" cellpadding="1" id="checkAll" class="sTable mTable myTable">
        <tr>
             <td colspan="6" align="center">
-                <ul class="pagination" style=".....">
                     <?php
-                        echo '<li>';
+
                         echo $this->pagination->create_links();
-                        echo '</li>';
+
                     ?>
-                </ul>
             </td>
         </tr>
     </table>
