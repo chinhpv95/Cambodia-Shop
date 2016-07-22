@@ -17,7 +17,7 @@
 
 
 <body>
-<div class="product-big-title-area" style="background: url('upload/content/crossword.png') repeat scroll 0 0 green;">
+<div class="product-big-title-area">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">

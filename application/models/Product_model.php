@@ -8,4 +8,8 @@
 class  Product_model extends MY_Model{
     var $table = 'products';
     var $key = 'productCode';
+    function querry($xxx){
+        $this->db->where("categoryID",$xxx);
+        
+    }
 }

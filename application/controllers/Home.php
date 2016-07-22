@@ -29,13 +29,12 @@ Class Home extends MY_Controller
         $config = array();
         $config['total_rows'] = $total_rows;//tong tat ca cac san pham tren website
         $config['base_url']   = 'http://localhost:8088/Project/home/index/'; //link hien thi ra danh sach san pham
-        $config['per_page']   = 12;//so luong san pham hien thi tren 1 trang
+        $config['per_page']   = 16;//so luong san pham hien thi tren 1 trang
         $config['uri_segment'] = 4;//phan doan hien thi ra so trang tren url
         $config['next_link']   = 'Trang kế tiếp';
         $config['prev_link']   = 'Trang trước';
         //khoi tao cac cau hinh phan trang
         $this->pagination->initialize($config);
-
         $segment = $this->uri->segment(3);
         $segment = intval($segment);
 
@@ -57,10 +56,26 @@ Class Home extends MY_Controller
         $this->load->view('site/layout', $this->data);
         
     }
-    function product() {
-        $this->data['temp'] = 'site/product/index';
-       $this->load->view('site/layout', $this->data);
-        
-        
+
+    function product($id)
+    {
+
+        $total_rows = $this->product_model->get_total();
+        $this->data['total_rows'] = $total_rows;
+
+
+        $input = array();
+
+        $input['where'] = array();
+        $input['where']['categoryId'] = $id;
+
+        $list = $this->product_model->get_list($input);
+        $this->data['list'] = $list;
+
+        $message = $this->session->flashdata('message');
+        $this->data['message'] = $message;
+        $this->data['temp'] = 'site/home/categoryshow';
+        $this->load->view('site/layout', $this->data);
     }
+
 }

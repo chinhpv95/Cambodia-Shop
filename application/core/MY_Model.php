@@ -172,7 +172,7 @@ class MY_Model extends CI_Model {
 	 */
 	function get_sum($field, $where = array())
 	{
-		$this->db->select_sum($field);//tinh rong
+		$this->db->select_sum($field);//tinh tong
 		$this->db->where($where);//dieu kien
 		$this->db->from($this->table);
 		

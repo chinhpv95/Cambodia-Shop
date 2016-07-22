@@ -731,7 +731,7 @@ width: 10px;
 }
 
 .product-big-title-area {
-  background: url('upload/content/crossword.png') repeat scroll 0 0 green;
+  background: url('public/site/content/crossword.png') repeat scroll 0 0;
 }
 
 .product-bit-title h2 {

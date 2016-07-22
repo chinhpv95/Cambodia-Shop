@@ -52,7 +52,7 @@
                             <div class="dropdown-content">
                                 <ul>
                                     <?php foreach ($category_list as $row):?>
-                                        <li><a href="<?php echo base_url('home/product'); ?>"><?php echo $row->categoryName?></a></li>
+                                        <li><a href="<?php echo base_url('home/product/'.$row->categoryID); ?>"><?php echo $row->categoryName?></a></li>
                                     <?php endforeach;?>
                             </div>
                         </div>
