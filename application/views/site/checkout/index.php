@@ -15,16 +15,6 @@
 <link rel="stylesheet" href="public/site/css/responsive.css">
 
 
-<style type="text/css">
-    @font-face {
-        font-family: myFirstFont;
-        src: url('public/site/fonts/custom.ttf');
-    }
-
-    div {
-        font-family: myFirstFont;
-    }
-</style>
 
 <body>
 

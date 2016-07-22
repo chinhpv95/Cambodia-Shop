@@ -153,7 +153,12 @@ class MY_Model extends CI_Model {
 		
 		return FALSE;
 	}
-	
+
+	/**
+	 * Lấy số hàng của 1 câu truy vấn
+	 */
+
+
 	/**
 	 * Lay tong so
 	 */

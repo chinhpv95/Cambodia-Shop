@@ -1,15 +1,4 @@
 
-<style type="text/css">
-    @font-face {
-        font-family: myFirstFont;
-        src: url('public/fonts/custom.ttf');
-    }
-
-    div {
-        font-family: myFirstFont;
-    }
-</style>
-
 
 <?php
 Class Home extends MY_Controller
@@ -59,13 +48,27 @@ Class Home extends MY_Controller
 
     function product($id)
     {
+        $total_rows =  $this->product_model -> get_info_rule("catogeryId" == $id, 'productCode');
+        //$total_rows = $this->product_model->get_total();
+        //echo  $total_rows;
+        $total_rows =30;
+        //$this->data['total_rows'] = $total_rows;
+        $this->load->library('pagination');
+        $config = array();
+        $config['total_rows'] = $total_rows;//tong tat ca cac san pham tren website
+        $config['base_url']   = 'http://localhost:8088/Project/home/product/'.$id."/"; //link hien thi ra danh sach san pham
+        $config['per_page']   = 12;//so luong san pham hien thi tren 1 trang
+        $config['uri_segment'] = 4;//phan doan hien thi ra so trang tren url
+        $config['next_link']   = 'Trang kế tiếp';
+        $config['prev_link']   = 'Trang trước';
 
-        $total_rows = $this->product_model->get_total();
-        $this->data['total_rows'] = $total_rows;
-
+        //khoi tao cac cau hinh phan trang
+        $this->pagination->initialize($config);
+        $segment = $this->uri->segment(4);
+        $segment = intval($segment);
 
         $input = array();
-
+        $input['limit'] = array($config['per_page'], $segment);
         $input['where'] = array();
         $input['where']['categoryId'] = $id;
 

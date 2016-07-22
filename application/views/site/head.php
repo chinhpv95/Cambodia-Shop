@@ -1,15 +1,6 @@
 <meta charset="utf-8">
 <title>ជំរាបសួរ</title>
-<style type="text/css">
-    @font-face {
-        font-family: myFirstFont;
-        src: <?php echo public_url('/site/fonts/custom.ttf')?>;
-    }
 
-    div {
-        font-family: myFirstFont;
-    }
-</style>
 <!-- Google Fonts -->
 <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,200,300,700,600' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300' rel='stylesheet' type='text/css'>
