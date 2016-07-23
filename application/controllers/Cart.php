@@ -1,16 +1,4 @@
 
-
-<style type="text/css">
-    @font-face {
-        font-family: myFirstFont;
-        src: url('public/fonts/custom.ttf');
-    }
-
-    div {
-        font-family: myFirstFont;
-    }
-</style>
-
 <?php
 /**
  * Created by PhpStorm.

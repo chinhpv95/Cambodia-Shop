@@ -982,32 +982,29 @@ td.product-quantity div.quantity {
 td.actions div.coupon {
     float: left;
 }
-.cart-collaterals {
-    overflow: hidden;
-}
+
 .cross-sells {
     float: left;
     margin-right: 3%;
     width: 57%;
 }
 .cart_totals {
-    float: right;
     margin-bottom: 50px;
-    width: 40%;
+    width: 70%;
 }
 .cart-collaterals h2 {
-    color: #5a88ca;
+    color: green;
     font-size: 25px;
     margin-bottom: 25px;
     text-transform: uppercase;
 }
+
 div.cart-collaterals ul.products {
     list-style: outside none none;
     margin: 0 0 0 -30px;
     padding: 0;
 }
 div.cart-collaterals ul.products li.product {
-    float: left;
     margin-left: 30px;
     position: relative;
     width: 198px;
@@ -1063,12 +1060,11 @@ div.cart-collaterals ul.products li.product .price ins {
     padding: 15px;
 }
 .col2-set {
-    margin-left: 170px;
+    margin-left: 100px;
     overflow: hidden;
 }
 .col-1, .col-2 {
-    margin-left: 30px;
-    width: 540px;
+    width: 340px;
     align-content: center;
 }
 #customer_details label {
@@ -1170,6 +1166,10 @@ div.cart-collaterals ul.products li.product:hover .add_to_cart_button{background
 
 .pagination > li > a, .pagination > li > span {
   color: green;
+}
+
+.pagination>li {
+  background: green;
 }
 
 .btn-primary{

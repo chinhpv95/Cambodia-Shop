@@ -53,7 +53,8 @@
 
     <br><br>
     <div class="row">
-        <?php foreach ($list as $row):?>
+        <div class="col-md-12">
+            <?php foreach ($list as $row):?>
             <div class="col-md-3">
                 <div class="thumbnail">
                     <div class="single-product">
@@ -76,7 +77,9 @@
                     </div>
                 </div>
             </div>
-        <?php endforeach;?>
+            <?php endforeach;?>    
+        </div>
+        
     </div> <!-- End main content area -->
 
     <table width="100%" cellspacing="10" cellpadding="1" id="checkAll" class="sTable mTable myTable">

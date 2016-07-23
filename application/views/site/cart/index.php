@@ -1,10 +1,8 @@
 
-
-
 <body>
 
 <div class="product-big-title-area" style="
-            background: url(public/site/content/crossword.png) none repeat scroll 0 0 green;">
+            background: none repeat scroll 0 0 green;">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -20,7 +18,7 @@
 <div class="single-product-area">
     <div class="zigzag-bottom"></div>
     <div class="container">
-        <div class="col-md-12">
+        <div class="col-md-6">
             <div class="product-content-right">
                 <div class="woocommerce">
                     <form method="post" action="#">
@@ -76,36 +74,10 @@
                         </table>
                     </form>
 
-                    <div class="cart-collaterals">
-
-
-                        <div class="cross-sells">
-                            <h2>Sản phẩm liên quan</h2>
-                            <ul class="products">
-                                <li class="product">
-                                    <a href="single-product.html">
-                                        <img width="325" height="325" alt="T_4_front" class="attachment-shop_catalog wp-post-image" src="img/product-2.jpg">
-                                        <h3>Thông itn</h3>
-                                        <span class="price"><span class="amount">200000đ</span></span>
-                                    </a>
-
-                                    <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="22" rel="nofollow" href="single-product.html">Thông tin</a>
-                                </li>
-
-                                <li class="product">
-                                    <a href="single-product.html">
-                                        <img width="325" height="325" alt="T_4_front" class="attachment-shop_catalog wp-post-image" src="img/product-4.jpg">
-                                        <h3>Thông tin</h3>
-                                        <span class="price"><span class="amount">200000đ</span></span>
-                                    </a>
-
-                                    <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="22" rel="nofollow" href="single-product.html">Thông tin</a>
-                                </li>
-                            </ul>
-                        </div>
-
-
-                        <div class="cart_totals ">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="cart-collaterals">
+                            <div class="cart_totals ">
                             <h2>Thông tin đơn hàng</h2>
 
                             <table cellspacing="0">
@@ -126,10 +98,68 @@
                                 </tr>
                                 </tbody>
                             </table>
+                            </div>
+                        </div>    
                         </div>
+                        
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="col-md-6">
+            <div class="woocommerce">
+                <form enctype="multipart/form-data" action="#" class="checkout" method="post" name="checkout">
+                     <div id="customer_details" class="col2-set">
+                        <div class="col-1">
+                            <div class="woocommerce-billing-fields">
+                                <center><h2 style="color:green;">Thông tin khách hàng</h2></center>
+
+                                <p id="billing_first_name_field" class="form-row form-row-first validate-required">
+                                    <label class="" for="billing_name">Họ tên <abbr title="required" class="required">*</abbr>
+                                   </label>
+                                    <input type="text" value="" placeholder="" id="billing_first_name" name="billing_name" class="input-text ">
+                                </p>
+
+                                <div class="clear"></div>
+
+                                    <p id="billing_company_field" class="form-row form-row-wide">
+                                        <label class="" for="billing_phone">Số điện thoại <abbr title="required" class="required">*</abbr>
+                                        </label>
+                                        <input type="text" value="" placeholder="" id="billing_company" name="billing_phone" class="input-text ">
+                                    </p>
+
+                                    <p id="billing_address_1_field" class="form-row form-row-wide address-field validate-required">
+                                        <label class="" for="billing_address_1">Địa chỉ <abbr title="required" class="required">*</abbr>
+                                        </label>
+                                        <input type="text" value="" id="billing_address" name="billing_address" class="input-text ">
+                                    </p>
+
+                                    <div class="clear"></div>
+
+                                    <p id="billing_email_field" class="form-row form-row-first validate-required validate-email">
+                                        <label class="" for="billing_email">Email<abbr title="required"></abbr>
+                                        </label>
+                                        <input type="text" value="" placeholder="" id="billing_email" name="billing_email" class="input-text ">
+                                    </p>
+
+                                    <p id="billing_phone_field" class="form-row form-row-last validate-required validate-phone">
+                                        <label class="" for="billing_id">Số CMTND <abbr title="required"></abbr>
+                                        </label>
+                                        <input type="text" value="" placeholder="" id="billing_phone" name="billing_id" class="input-text ">
+                                    </p>
+                                    <div class="clear"></div>
+                                           
+                                </div>
+                            </div>
+                        </div>            
+                    </form>
+                    <div>
+                        <center>
+                            <input type="submit" value="Đặt hàng" id="place_order" name="woocommerce_checkout_place_order" data-toggle="modal" data-target="#myModal">
+                        </center>
+                    </div>
+                </div>                       
+            </div> 
         </div>
     </div>
 </div>
