@@ -48,7 +48,6 @@
                         </div>
                     </li>
                     <li><a href="<?php echo base_url('cart/index/')?>">Giỏ hàng</a></li>
-                    <li><a href="<?php echo base_url('checkout/index/')?>">Thanh toán</a></li>
                     <li><a href="#">Liên hệ</a></li>
                 </ul>
             </div>
