@@ -26,7 +26,7 @@
 
                 <br>
                 <div class="product-carousel-price">
-                    <ins><?php echo $row->price?>đ</ins>
+                    <ins><?php echo number_format($row->price) ?> VNĐ</ins>
                 </div>
             </div>
         </div>
