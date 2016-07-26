@@ -1,32 +1,6 @@
 
-<!-- Google Fonts -->
-<link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,200,300,700,600' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Raleway:400,100' rel='stylesheet' type='text/css'>
-    
-<!-- Bootstrap -->
-<link rel="stylesheet" href="public/site/css/bootstrap.min.css">
-    
-<!-- Font Awesome -->
-<link rel="stylesheet" href="public/site/css/font-awesome.min.css">
-    
-<!-- Custom CSS -->
-<link rel="stylesheet" href="public/stie/css/owl.carousel.css">
-<link rel="stylesheet" href="public/site/css/style.css">
-<link rel="stylesheet" href="public/site/css/responsive.css">
-
 <?php foreach ($infor as $row): ?>
-<div class="product-big-title-area" style="background: url('upload/content/crossword.png') repeat scroll 0 0 green;">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="product-bit-title text-center">
-                        <h2> <?php echo $row->productName; ?> </h2>
-                    </div>
-                </div>
-            </div>
-        </div>
-</div>
+
 <?php endforeach; ?>
 
 <?php foreach ($infor as $row):?>
@@ -38,8 +12,8 @@
                     <div class="product-content-right">
                         
                         <div class="row">
-                        	<div class="col-md-2"></div>
-                            <div class="col-md-4 col-sm-6">
+                            <div class="col-md-1"></div>
+                            <div class="col-md-5 col-sm-6">
                                 <div class="product-images">
                                     <div class="product-main-img">
                                         <img class="img-thumbnail" src="<?php echo base_url('upload/product/'.$row->image_link) ?>" alt="">
@@ -48,6 +22,7 @@
                                 </div>
                             </div>
                             
+
                             <div class="col-md-5 col-sm-6">
                                 <div class="product-inner">
                                     <h2 class="product-name"><?php echo $row->productName; ?> </h2>
@@ -63,11 +38,11 @@
                                     </form>   
                                     
                                    
-                                    
+                                    <br><br><br><br>
                                     <div role="tabpanel">
                                         <ul class="product-tab" role="tablist">
-                                            <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Giới thiệu</a></li>
-                                            <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Đánh giá</a></li>
+                                            <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab" style="text-transform: uppercase; font-size: 14px;">Giới thiệu</a></li>
+                                            <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab" style="text-transform: uppercase; font-size: 14px;">Đánh giá</a></li>
                                         </ul>
                                         <div class="tab-content">
                                             <div role="tabpanel" class="tab-pane fade in active" id="home">
@@ -105,24 +80,3 @@
         </div>
     </div>
 <?php endforeach;?>
-
-
-<!-- Latest jQuery form server -->
-<script src="https://code.jquery.com/jquery.min.js"></script>
-    
-<!-- Bootstrap JS form CDN -->
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-    
-<!-- jQuery sticky menu -->
-<script src="public/site/js/owl.carousel.min.js"></script>
-<script src="public/site/js/jquery.sticky.js"></script>
-    
-<!-- jQuery easing -->
-<script src="public/site/js/jquery.easing.1.3.min.js"></script>
-    
-<!-- Main Script -->
-<script src="public/site/js/main.js"></script>
-    
-<!-- Slider -->
-<script type="text/javascript" src="public/site/js/bxslider.min.js"></script>
-<script type="text/javascript" src="public/site/js/script.slider.js"></script>

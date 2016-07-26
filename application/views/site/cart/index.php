@@ -24,15 +24,15 @@
                             <?php foreach ($carts as $row):?>
                             <tr class="cart_item">
                                 <td class="product-remove">
-                                    <a title="Xóa sản phẩm này" class="remove" href="<?php echo base_url('cart/delete/'.$row['rowid']);  ?>">×</a>
+                                    <a title="Xóa khỏi giỏ hàng" class="remove" href="<?php echo base_url('cart/delete/'.$row['rowid']);  ?>"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
                                 </td>
 
                                 <td class="product-thumbnail">
-                                    <a href="single-product.html"><img width="145" height="145" alt="poster_1_up" class="shop_thumbnail" src="<?php echo base_url('upload/product/'.$row['image_link']) ?>"></a>
+                                    <a href=""><img width="145" height="145" alt="poster_1_up" class="shop_thumbnail" src="<?php echo base_url('upload/product/'.$row['image_link']) ?>"></a>
                                 </td>
 
                                 <td class="product-name">
-                                    <a href="single-product.html"><?php echo $row['name'] ?></a>
+                                    <a href=""><?php echo $row['name'] ?></a>
                                 </td>
 
                                 <td class="product-price">

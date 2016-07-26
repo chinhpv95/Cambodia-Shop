@@ -75,18 +75,20 @@ Class Home extends MY_Controller
         $input['where']['productCode'] = $id;
         $infor = $this->product_model->get_list($input);
         $this->data['infor'] = $infor;
-
+ 
         $carts = $this->cart->contents();
         $total_items = $this->cart->total_items();
         $this->data['carts'] = $carts;
         $this->data['total_items']  =$total_items;
-
+ 
         $message = $this->session->flashdata('message');
         $this->data['message'] = $message;
         $this->data['temp'] = 'site/view-product';
         $this->load->view('site/layout', $this->data);
-
-    }
+         
+ 
+      }
+      
     
     
 
