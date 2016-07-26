@@ -1,7 +1,7 @@
 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>Hocphp.info</title>
+    <title>Hello Admin</title>
 
     <meta name="robots" content="noindex, nofollow" />
 

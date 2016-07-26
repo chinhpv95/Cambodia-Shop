@@ -1,9 +1,9 @@
 <!-- head -->
 <?php $this->load->view('admin/order/head', $this->data)?>
-
+<form class="form" id="form" action="" method="post" enctype="multipart/form-data">
 <div class="line"></div>
 
-<div id="main_product" class="wrapper">
+<div id="main_product" class="wrapper" >
     <div class="widget">
 
         <div  class="title" style=" font-size: 20px; font-weight: bold; padding: 15px 0px 0px 10px;">Thông tin đơn hàng</div>
@@ -49,8 +49,8 @@
                     </td>
 
                     <td class="textC" ><?php echo $list[0]['address']?></td>
-                    <td class="textC" ><?php echo $list[0]['orderDate']?></td>
-                    <td class="textC" ><?php echo $list[0]['requiredDate']?></td>
+                    <td class="textC" ><?php echo $list[0]['createDate']?></td>
+                    <td class="textC" ><?php echo $list[0]['updateDate']?></td>
                     <td class="textC" ><?php echo "Tiền"?></td>
 
                 </tr>
@@ -58,7 +58,18 @@
                 </tbody>
             </table>
         </div>
-
+        <div class="title">
+            <h6 style="font-size: 15px;">
+                Thay đổi trạng thái giao dịch :
+            </h6>
+            <select name="status"   _autocheck="true" id="param_cat" class="left" style="margin: 5px;" >
+                <option value="" style="color: #00CC00"><?php echo $list[0]['status']?></option>
+                <option value="Shipped">Shipped</option>
+                <option value="In Process">In Process</option>
+                <option value="Cancelled">Cancelled</option>
+            </select>
+            <input type="submit" value="Cập nhập" class="redB" style="padding: 7px 10px 6px 15px;margin: 5px 60px;">
+        </div>
         <div class="title">
 <!--            <span class="titleIcon"><input type="checkbox" name="titleCheck" id="titleCheck"></span>-->
             <h6 style="font-size: 15px;">
@@ -66,6 +77,7 @@
             </h6>
 <!--            <div class="num f12">Số lượng: <b>--><?php //echo $total_rows?><!--</b></div>-->
         </div>
+
 
 
         <table cellpadding="0" cellspacing="0" width="100%" class="sTable mTable myTable" id="checkAll">
@@ -119,9 +131,14 @@
             <?php endforeach;?>
             </tbody>
         </table>
+
+
+
     </div>
-    <div style="margin: 10px;text-align: right;color: #a61717">Tổng tiền : <?php echo $list[0]['SUM(orderdetails.quantityOrdered*orderdetails.priceEach)']?></div>
+
+    <div style="margin: 10px;text-align: right;color: #a61717">Tổng tiền : <?php echo number_format($list[0]['SUM(orderdetails.quantityOrdered*orderdetails.priceEach)'])?> VNĐ</div>
 
 </div>
+</form>
 
 

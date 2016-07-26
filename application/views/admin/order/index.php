@@ -39,9 +39,9 @@
                     <?php echo $row['customerName']?>
                 </td>
 
-                <td class="textR red format_number" ><?php echo $row['SUM(orderdetails.quantityOrdered*orderdetails.priceEach)']?></td>
+                <td class="textC red " ><?php echo number_format($row['SUM(orderdetails.quantityOrdered*orderdetails.priceEach)'])?> VNĐ</td>
 
-                <td>
+                <td class="textC ">
                     dathang
                 </td>
 
@@ -52,7 +52,7 @@
                         </span>
                 </td>
 
-                <td class="textC"><?php echo $row['orderDate']?></td>
+                <td class="textC"><?php echo $row['createDate']?></td>
 
                 <td class="textC">
                     <a title="Xem chi tiết" class="tipS" target="" href="<?php echo admin_url('order/detail/'.$row['orderNumber'])?>">

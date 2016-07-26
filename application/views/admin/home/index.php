@@ -27,18 +27,18 @@
 
                     <tr>
                         <td class="fontB blue f13">Tổng doanh số</td>
-                        <td class="textR webStatsLink red format_number" style="width:120px;" ><?php echo $tongso[0]['SUM(orderdetails.quantityOrdered*orderdetails.priceEach)']?></td>
+                        <td class="textR webStatsLink red " style="width:120px;" ><?php echo number_format($tongso[0]['SUM(orderdetails.quantityOrdered*orderdetails.priceEach)'])?> VNĐ</td>
                     </tr>
 
                     <tr>
                         <td class="fontB blue f13">Doanh số hôm nay</td>
-                        <td class="textR webStatsLink red" style="width:120px;">0 đ</td>
+                        <td class="textR webStatsLink red" style="width:120px;">0 VNĐ</td>
                     </tr>
 
                     <tr>
                         <td class="fontB blue f13">Doanh số theo tháng</td>
                         <td class="textR webStatsLink red" style="width:120px;">
-                            0 đ
+                            0 VNĐ
                         </td>
                     </tr>
 
@@ -154,9 +154,9 @@
                             <?php echo $row['customerName']?>
                         </td>
 
-                        <td class="textR red format_number"><?php echo $row['SUM(orderdetails.quantityOrdered*orderdetails.priceEach)']?></td>
+                        <td class="textR red "><?php echo number_format($row['SUM(orderdetails.quantityOrdered*orderdetails.priceEach)']) ?> VNĐ </td>
 
-                        <td>
+                        <td class="textC ">
                             dathang
                         </td>
 
@@ -167,7 +167,7 @@
                         </span>
                         </td>
 
-                        <td class="textC"><?php echo $row['orderDate']?></td>
+                        <td class="textC"><?php echo $row['createDate']?></td>
 
                         <td class="textC">
                             <a title="Xem chi tiết" class="tipS" target="" href="<?php echo admin_url('order/detail/'.$row['orderNumber'])?>">

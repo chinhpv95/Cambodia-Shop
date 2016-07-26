@@ -53,7 +53,7 @@ class Order extends MY_Controller{
     function detail(){
         $id = $this->uri->rsegment(3);
 
-        $query=$this->db->query("SELECT customers.customerName,customers.phone,customers.address,customers.email,orders.orderDate,orders.requiredDate,customers.identityCard,
+        $query=$this->db->query("SELECT customers.customerName,customers.phone,customers.address,customers.email,orders.createDate,orders.updateDate,customers.identityCard,orders.status,
                                 SUM(orderdetails.quantityOrdered*orderdetails.priceEach) 
                                 FROM orders,customers,orderdetails
                                 WHERE customers.customerNumber = orders.customerNumber
@@ -70,8 +70,18 @@ class Order extends MY_Controller{
         $product=$query1->result_array();
         $this->data['product'] = $product;
         //pre($this->data);
+        if($this->input->post())
+        {
+            $status  = $this->input->post('status');
+            $data = array(
+                'status'       => $status
+             );
+            $this->order_model->update($id, $data);
+            redirect(admin_url('order'));
+        }
         $this->data['temp'] = 'admin/order/detail';
         $this->load->view('admin/main', $this->data);
+
     }
 
 

@@ -54,11 +54,6 @@
                             <label class="formLeft">Ảnh kèm theo:</label>
                             <div class="formRight">
                                 <div class="left"><input type="file" id="image_list" name="image_list[]" multiple=""></div>
-<!--                                --><?php //if (is_array($image_list)):?>
-<!--                                --><?php //foreach ($image_list as $image ):?>
-<!--                                    <img src="--><?php //echo base_url('/upload/product/'.$image )?><!--" style="padding: 0px 30px; height: 50px; width: 100px; margin: -9px;">-->
-<!--                                --><?php //endforeach;?>
-<!--                                --><?php //endif;?>
                                 <div name="image_list_error" class="clear error"></div>
                             </div>
                             <div class="clear"></div>

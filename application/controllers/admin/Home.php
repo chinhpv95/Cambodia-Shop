@@ -123,11 +123,4 @@ class Home extends MY_Controller{
         $this->order_model->delete($id);
 
     }
-
-    function information() {
-        $this->load->view('site/view-product');
-    }
-    function product() {
-        $this->load->view('site/product/index');
-    }
 }

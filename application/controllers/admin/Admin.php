@@ -36,21 +36,27 @@ class Admin extends MY_Controller{
         }else return true;
     }
     function add(){
+        //pre(radom(32,true));
         $this->load->library('form_validation');
         $this->load->helper('form');
         if ($this->input->post()) {
             $this->form_validation->set_rules('name', 'Tên', 'required');
+            $this->form_validation->set_rules('email', 'Tên', 'required');
             $this->form_validation->set_rules('username', 'Tài khoản đăng nhập', 'required|min_length[4]|callback_check_username');
             $this->form_validation->set_rules('password', 'Mật khẩu', 'required|min_length[8]');
             $this->form_validation->set_rules('re_password', 'Nhập lại mật khẩu', 'required|matches[password]');
             if ($this->form_validation->run()){
                 $name = $this->input->post('name');
+                $email = $this->input->post('email');
                 $username = $this->input->post('username');
                 $password = $this->input->post('password');
+                $newpass = radom(32,true);
                 $data = array(
-                    'name' => $name,
-                    'username' => $username,
-                    'password' => sha1($password),
+                    'name'       => $name,
+                    'username'   => $username,
+                    'email'      => $email,
+                    'password'   => sha1($password),
+                    'newpass'    =>$newpass
                 );
                
                 if ($this->admin_model->create($data)){
@@ -85,7 +91,8 @@ class Admin extends MY_Controller{
         }
         if ($this->input->post()) {
             $this->form_validation->set_rules('name', 'Tên', 'required');
-            $this->form_validation->set_rules('username', 'Tài khoản đăng nhập', 'required|min_length[5]|callback_check_username');
+            $this->form_validation->set_rules('email', 'Tên', 'required');
+            $this->form_validation->set_rules('username', 'Tài khoản đăng nhập', 'required|min_length[5]');
             $password = $this->input->post('password');
             if ($password){
                 $this->form_validation->set_rules('password', 'Mật khẩu', 'required|min_length[8]');
@@ -93,11 +100,13 @@ class Admin extends MY_Controller{
             }
             if ($this->form_validation->run()){
                 $name = $this->input->post('name');
+                $email = $this->input->post('email');
                 $username = $this->input->post('username');
 
                 $data = array(
                     'name' => $name,
                     'username' => $username,
+                    'email' => $email
 
                 );
                 if ($password){

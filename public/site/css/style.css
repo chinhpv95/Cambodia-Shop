@@ -106,6 +106,7 @@ body {
     margin-top: 40px;
     padding: 10px;
     position: relative;
+    background: white;
 }
 
 .shopping-item a {
@@ -143,7 +144,7 @@ body {
     background: none repeat scroll 0 0 green;
     border-color: green;
 }
-.shopping-item: a {
+.shopping-item:a {
     color: #fff;text-decoration: none
 }
 .shopping-item:hover .cart-amunt {
@@ -835,12 +836,9 @@ input[type="submit"]:hover, button[type=submit]:hover {background-color: #222}
 .product-gallery img {
     height: auto;
     margin-left: 15px;
-    width: 76px;
+    width: auto;
 }
-.product-name {
-    font-size: 25px;
-    margin-bottom: 20px;
-}
+
 .product-inner-price {
     margin-bottom: 25px;
 }
@@ -960,13 +958,20 @@ table.shop_table th {
     font-size: 15px;
     text-transform: uppercase;
 }
+
+td.product-thumbnail {
+    height: 200px;
+}
+
 td.product-thumbnail img {
     height: auto;
-    width: 70px;
+    width: 150px;
 }
+
 td.product-name {
-    font-size: 18px;
+    font-size: 15px;
 }
+
 div.quantity input.plus, div.quantity input.minus {
     background: none repeat scroll 0 0 green;
     border: medium none;
@@ -1060,12 +1065,15 @@ div.cart-collaterals ul.products li.product .price ins {
     padding: 15px;
 }
 .col2-set {
-    margin-left: 100px;
     overflow: hidden;
 }
 .col-1, .col-2 {
-    width: 340px;
+    width: auto;
     align-content: center;
+    border: 1px solid #e7e5e5;
+    padding: 15px;
+    z-index: 999;
+    width:100%;
 }
 #customer_details label {
     display: block;
@@ -1238,4 +1246,9 @@ div.cart-collaterals ul.products li.product:hover .add_to_cart_button{background
     margin: 8px auto 0;
     height: 36px;
     line-height: 18px;
+}
+
+button[type=submit] a {
+    color: white;
+    text-decoration: none;
 }

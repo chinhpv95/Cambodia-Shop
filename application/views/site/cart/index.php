@@ -1,90 +1,94 @@
 
 <body>
 
-<div class="product-big-title-area" style="
-            background: none repeat scroll 0 0 green;">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="product-bit-title text-center">
-                    <h2>Giỏ hàng</h2>
-                </div>
-            </div>
-        </div>
-    </div>
-</div> <!-- End Page title area -->
-
-
 <div class="single-product-area">
     <div class="zigzag-bottom"></div>
     <div class="container">
-        <div class="col-md-6">
+        <div class="col-md-9">
             <div class="product-content-right">
                 <div class="woocommerce">
-                    <form method="post" action="#">
-                        <table cellspacing="0" class="shop_table cart">
+                    <form method="post" action="<?php echo base_url('cart/update/')?>">
+                        <table cellspacing="0" class="table table-hover">
                             <thead>
                             <tr>
                                 <th class="product-remove">&nbsp;</th>
                                 <th class="product-thumbnail">&nbsp;</th>
-                                <th class="product-name">Sản phẩm</th>
+                                <th class="product-name" style="width: 25%">Sản phẩm</th>
                                 <th class="product-price">Đơn giá</th>
                                 <th class="product-quantity">Số lượng</th>
-                                <th class="product-subtotal">Tổng cộng</th>
+                                <th class="product-subtotal">Thành tiền</th>
                             </tr>
                             </thead>
                             <tbody>
+                            <?php $total_price = 0?>
+                            <?php foreach ($carts as $row):?>
                             <tr class="cart_item">
                                 <td class="product-remove">
-                                    <a title="Remove this item" class="remove" href="#">×</a>
+                                    <a title="Xóa sản phẩm này" class="remove" href="<?php echo base_url('cart/delete/'.$row['rowid']);  ?>">×</a>
                                 </td>
 
                                 <td class="product-thumbnail">
-                                    <a href="single-product.html"><img width="145" height="145" alt="poster_1_up" class="shop_thumbnail" src="img/product-thumb-2.jpg"></a>
+                                    <a href="single-product.html"><img width="145" height="145" alt="poster_1_up" class="shop_thumbnail" src="<?php echo base_url('upload/product/'.$row['image_link']) ?>"></a>
                                 </td>
 
                                 <td class="product-name">
-                                    <a href="single-product.html">Thông tin</a>
+                                    <a href="single-product.html"><?php echo $row['name'] ?></a>
                                 </td>
 
                                 <td class="product-price">
-                                    <span class="amount">150000đ</span>
+                                    <span class="amount"><?php echo number_format($row['price']) ?>đ</span>
                                 </td>
 
                                 <td class="product-quantity">
                                     <div class="quantity buttons_added">
-                                        <input type="button" class="minus" value="-">
-                                        <input type="number" size="4" class="input-text qty text" title="Qty" value="1" min="0" step="1">
-                                        <input type="button" class="plus" value="+">
+                                        <input type="number" size="5" name="qty_<?php echo $row['id']?>" class="input-text qty text" title="qty" value="<?php echo $row['qty']?>" min="0" step="1">
                                     </div>
                                 </td>
 
                                 <td class="product-subtotal">
-                                    <span class="amount">150000đ</span>
+                                    <span class="amount"><?php echo number_format($row['subtotal']) ?></span>đ
                                 </td>
                             </tr>
+                                <?php $total_price = $total_price + $row['subtotal'] ?>
+                            <?php endforeach;?>
+                            <?php 
+                                if ($total_items == 0) echo "Không có sản phẩm nào trong giỏ"; 
+                                else {
+                                    echo "Có ";
+                                    echo $total_items;
+                                    echo " sản phẩm trong giỏ";
+                                } 
+                            ?>
+                            <br><br>
                             <tr>
                                 <td class="actions" colspan="6">
-                                    <input type="submit" value="Tiếp tục mua hàng" name="proceed" class="checkout-button button alt wc-forward">
-                                    <input type="submit" value="Cập nhật" name="update_cart" class="button">
-                                    <input type="submit" value="Thanh toán" name="proceed" class="checkout-button button alt wc-forward">
+                                    <button type="submit" class="checkout-button button alt wc-forward">
+                                        <a href="<?php echo base_url('home/index');  ?>">Tiếp Tục Mua Hàng</a>
+                                    </button>
+<!--                                    <input type="submit" value="Cập nhật" name="update_cart" class="button"  href="--><?php //echo base_url('cart/add/')?><!--">-->
+<!--                                    <input type="submit" value="Thanh toán" name="proceed" class="checkout-button button alt wc-forward">-->
+                                    <button type="submit" class="checkout-button button alt wc-forward">
+                                        <a>Cập nhật</a>
+                                    </button>
+                                    
                                 </td>
                             </tr>
                             </tbody>
                         </table>
                     </form>
 
+                    <br><br>
                     <div class="row">
-                        <div class="col-md-12">
+                        <div class="col-md-12" align="center">
                             <div class="cart-collaterals">
                             <div class="cart_totals ">
                             <h2>Thông tin đơn hàng</h2>
 
-                            <table cellspacing="0">
+                            <table cellspacing="0" class="table table-hover table-stripped">
                                 <tbody>
                                 <tr class="cart-subtotal">
                                     <th>Đơn giá</th>
-                                    <td><span class="amount"></span></td>
+                                    <td><span class="amount"></span><?php echo number_format($total_price)?> VNĐ</td>
                                 </tr>
 
                                 <tr class="shipping">
@@ -94,7 +98,7 @@
 
                                 <tr class="order-total">
                                     <th>Tổng cộng</th>
-                                    <td><strong><span class="amount"></span></strong> </td>
+                                    <td><strong><span class="amount"></span></strong> <?php echo number_format($total_price)?> VNĐ </td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -106,18 +110,18 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-3">
             <div class="woocommerce">
-                <form enctype="multipart/form-data" action="#" class="checkout" method="post" name="checkout">
+                <form enctype="multipart/form-data"  class="checkout" method="post" name="checkout" action="<?php echo base_url('cart/oder/')?>">
                      <div id="customer_details" class="col2-set">
                         <div class="col-1">
                             <div class="woocommerce-billing-fields">
-                                <center><h2 style="color:green;">Thông tin khách hàng</h2></center>
+                                <center><h3 style="color:green;">Đặt hàng</h3></center>
 
                                 <p id="billing_first_name_field" class="form-row form-row-first validate-required">
                                     <label class="" for="billing_name">Họ tên <abbr title="required" class="required">*</abbr>
                                    </label>
-                                    <input type="text" value="" placeholder="" id="billing_first_name" name="billing_name" class="input-text ">
+                                    <input type="text" value="" placeholder="" id="billing_first_name" name="name" class="input-text ">
                                 </p>
 
                                 <div class="clear"></div>
@@ -125,13 +129,13 @@
                                     <p id="billing_company_field" class="form-row form-row-wide">
                                         <label class="" for="billing_phone">Số điện thoại <abbr title="required" class="required">*</abbr>
                                         </label>
-                                        <input type="text" value="" placeholder="" id="billing_company" name="billing_phone" class="input-text ">
+                                        <input type="text" value="" placeholder="" id="billing_company" name="phone" class="input-text ">
                                     </p>
 
                                     <p id="billing_address_1_field" class="form-row form-row-wide address-field validate-required">
                                         <label class="" for="billing_address_1">Địa chỉ <abbr title="required" class="required">*</abbr>
                                         </label>
-                                        <input type="text" value="" id="billing_address" name="billing_address" class="input-text ">
+                                        <input type="text" value="" id="billing_address" name="address" class="input-text ">
                                     </p>
 
                                     <div class="clear"></div>
@@ -139,25 +143,27 @@
                                     <p id="billing_email_field" class="form-row form-row-first validate-required validate-email">
                                         <label class="" for="billing_email">Email<abbr title="required"></abbr>
                                         </label>
-                                        <input type="text" value="" placeholder="" id="billing_email" name="billing_email" class="input-text ">
+                                        <input type="text" value="" placeholder="" id="billing_email" name="email" class="input-text ">
                                     </p>
 
                                     <p id="billing_phone_field" class="form-row form-row-last validate-required validate-phone">
                                         <label class="" for="billing_id">Số CMTND <abbr title="required"></abbr>
                                         </label>
-                                        <input type="text" value="" placeholder="" id="billing_phone" name="billing_id" class="input-text ">
+                                        <input type="text" value="" placeholder="" id="billing_phone" name="identityCard" class="input-text ">
                                     </p>
                                     <div class="clear"></div>
                                            
                                 </div>
                             </div>
-                        </div>            
-                    </form>
+                        </div>
                     <div>
+                        <br>
                         <center>
-                            <input type="submit" value="Đặt hàng" id="place_order" name="woocommerce_checkout_place_order" data-toggle="modal" data-target="#myModal">
+                            <input type="submit" value="Đặt hàng" id="place_order" name="woocommerce_checkout_place_order" data-toggle="modal" data-target="#myModal" onclick="success()">
                         </center>
                     </div>
+                    </form>
+
                 </div>                       
             </div> 
         </div>

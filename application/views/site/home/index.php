@@ -1,48 +1,5 @@
 
 <body>
-<div class="slider-area">
-    <!-- Slider -->
-    <div class="block-slider block-slider4">
-        <ul class="" id="bxslider-home4">
-            <li>
-                <img src="<?php echo public_url('site/')?>/content/h4-slide.png" alt="Khăm Krama">
-                <div class="caption-group">
-                    <h2 class="caption title">
-                        Khăn <span class="primary"> <strong>Krama</strong></span>
-                    </h2>
-                    <h4 class="caption subtitle">Ngại gì thời tiết</h4>
-                    <a class="caption button-radius" href="#"><span class="icon"></span>Mua ngay</a>
-                </div>
-            </li>
-            <li><img src="<?php echo public_url('site/')?>/content/h3-slide.png" alt="Slide">
-                <div class="caption-group">
-                    <h2 class="caption title">
-                        Bí mật đế chế <span class="primary"><strong>Angkor</strong></span>
-                    </h2>
-                    <a class="caption button-radius" href="#"><span class="icon"></span>Mua ngay</a>
-                </div>
-            </li>
-            <li><img src="<?php echo public_url('site/')?>/content/h2-slide.png" alt="Slide">
-                <div class="caption-group">
-                    <h2 class="caption title">
-                        Lụa <span class="primary"> <strong>Angkor</strong></span>
-                    </h2>
-                    <a class="caption button-radius" href="#"><span class="icon"></span>Mua ngay</a>
-                </div>
-            </li>
-            <li><img src="<?php echo public_url('site/')?>/content/h1-slide.png" alt="Slide">
-                <div class="caption-group">
-                    <h2 class="caption title">
-                        Bức tranh <span class="primary">làng quê <strong>Campuchia</strong></span>
-                    </h2>
-                    <a class="caption button-radius" href="#"><span class="icon"></span>Mua ngay</a>
-                </div>
-            </li>
-        </ul>
-    </div>
-    <!-- ./Slider -->
-</div> <!-- End slider area -->
-
 
 <!-- Popular product -->
 <div class="container">
@@ -55,7 +12,7 @@
             <div class="thumbnail">
             <div class="single-product">
                 <div class="product-hover">
-                    <a href="#" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</a>
+                    <a href="<?php echo base_url('cart/add/'.$row->productCode); ?>" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</a>
                     <a href="<?php echo base_url('home/information'); ?>" class="view-details-link"><i class="fa fa-info"></i> Thông tin</a>
                 </div>
                 <div class="product-f-image">
@@ -64,7 +21,7 @@
             </div>
                 <br>
                 <div class="product-title">
-                    <h4><?php echo $row->productName ;  ?></h4>
+                    <h4 ><?php echo $row->productName ;  ?></h4>
                 </div>
 
                 <br>
@@ -80,9 +37,7 @@
        <tr>
             <td colspan="6" align="center">
                     <?php
-
                         echo $this->pagination->create_links();
-
                     ?>
             </td>
         </tr>
