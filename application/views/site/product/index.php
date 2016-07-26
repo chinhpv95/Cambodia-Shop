@@ -17,7 +17,7 @@
                     <div class="single-product">
                         <div class="product-hover">
                             <a href="<?php echo base_url('cart/add/'.$row->productCode); ?>" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</a>
-                            <a href="<?php echo base_url('home/information'); ?>" class="view-details-link"><i class="fa fa-info"></i> Thông tin</a>
+                            <a href="<?php echo base_url('home/information/'.$row->productCode); ?>" class="view-details-link"><i class="fa fa-info"></i> Thông tin</a>
                         </div>
                         <div class="product-f-image">
                             <img src="<?php echo base_url('upload/product/'.$row->image_link) ?>" alt="">

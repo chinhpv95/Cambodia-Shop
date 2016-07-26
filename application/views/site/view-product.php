@@ -15,19 +15,21 @@
 <link rel="stylesheet" href="public/site/css/style.css">
 <link rel="stylesheet" href="public/site/css/responsive.css">
 
+<?php foreach ($infor as $row): ?>
 <div class="product-big-title-area" style="background: url('upload/content/crossword.png') repeat scroll 0 0 green;">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
                     <div class="product-bit-title text-center">
-                        <h2>Sản phẩm</h2>
+                        <h2> <?php echo $row->productName; ?> </h2>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    
-    
+</div>
+<?php endforeach; ?>
+
+<?php foreach ($infor as $row):?>
     <div class="single-product-area">
         <div class="zigzag-bottom"></div>
         <div class="container">
@@ -40,21 +42,17 @@
                             <div class="col-md-4 col-sm-6">
                                 <div class="product-images">
                                     <div class="product-main-img">
-                                        <img class="img-thumbnail" src="upload/product/product-2.jpg" alt="">
+                                        <img class="img-thumbnail" src="<?php echo base_url('upload/product/'.$row->image_link) ?>" alt="">
                                     </div>
-                                    <div class="product-gallery">
-                                        <img class="img-thumbnail" src="upload/product/product-1.jpg" alt="">
-                                        <img class="img-thumbnail" src="upload/product/product-2.jpg" alt="">
-                                        <img class="img-thumbnail" src="upload/product/product-2.jpg" alt="">
-                                    </div>
+
                                 </div>
                             </div>
                             
                             <div class="col-md-5 col-sm-6">
                                 <div class="product-inner">
-                                    <h2 class="product-name">Tên sản phẩm</h2>
+                                    <h2 class="product-name"><?php echo $row->productName; ?> </h2>
                                     <div class="product-inner-price">
-                                        <ins>1 tỷ tỷ</ins>
+                                        <ins><?php echo number_format($row->price) ?> VNĐ</ins>
                                     </div>    
                                     
                                     <form action="" class="cart">
@@ -74,9 +72,9 @@
                                         <div class="tab-content">
                                             <div role="tabpanel" class="tab-pane fade in active" id="home">
                                                 <h2>Giới thiệu sản phẩm</h2>  
-                                                <p>Một con vịt xòe ra hai cái cánh</p>
+                                                <p><?php echo $row->description; ?></p>
 
-                                                <p>Nó kêu rằng quác quác quác quạc quạc quạc</p>
+
                                             </div>
                                             <div role="tabpanel" class="tab-pane fade" id="profile">
                                                 <h2>Đánh giá</h2>
@@ -98,7 +96,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                    
                                 </div>
                             </div>
                         </div>
@@ -107,6 +104,7 @@
             </div>
         </div>
     </div>
+<?php endforeach;?>
 
 
 <!-- Latest jQuery form server -->
