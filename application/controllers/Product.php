@@ -64,7 +64,7 @@
 
         $message = $this->session->flashdata('message');
         $this->data['message'] = $message;
-        $this->data['temp'] = 'site/home/index';
+        $this->data['temp'] = 'site/product/index';
         $this->load->view('site/layout', $this->data);
     }
     
