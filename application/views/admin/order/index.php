@@ -24,9 +24,24 @@
                 <td>Hình thức</td>
                 <td style="width:100px;">Giao dịch</td>
                 <td style="width:75px;">Ngày tạo</td>
+                <td style="width:75px;">Ngày cập nhập</td>
                 <td style="width:55px;">Hành động</td>
+
             </tr>
+           
             </thead>
+
+            <tfoot class="auto_check_pages">
+            <tr style="">
+                <td></td>
+                <td></td>
+                <td colspan="6">
+                    <div class="pagination" style="margin: 10px 0px">
+                        <?php echo $this->pagination->create_links()?>
+                    </div>
+                </td>
+            </tr>
+            </tfoot>
 
 
             <tbody class="list_item">
@@ -53,7 +68,7 @@
                 </td>
 
                 <td class="textC"><?php echo $row['createDate']?></td>
-
+                <td class="textC"><?php echo $row['updateDate']?></td>
                 <td class="textC">
                     <a title="Xem chi tiết" class="tipS" target="" href="<?php echo admin_url('order/detail/'.$row['orderNumber'])?>">
                         <img src="<?php echo public_url('admin/images')?>/icons/color/view.png">

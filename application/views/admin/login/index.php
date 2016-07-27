@@ -51,9 +51,9 @@
                     <div style="color:red;font-weight:bold;text-align:center;margin: -10px 0px 10px"><?php echo form_error('login');?></div>
                     <input type="hidden" value="1" name="submit">
                     <input type="submit" class="dredB logMeIn" value="Đăng nhập" >
-                    <div >
+                    <!--<div >
                             <a href="http://localhost/Project/forgot" ">Quên mật khẩu</a>
-                    </div>
+                    </div>-->
                     <div class="clear"></div>
                 </div>
             </fieldset>

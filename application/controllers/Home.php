@@ -26,19 +26,19 @@ Class Home extends MY_Controller
         $config['full_tag_open'] = '<ul class="pagination">';
         $config['full_tag_close'] = '</ul>';
 
-        $config['first_link'] = 'Trang đầu tiên';
+        $config['first_link'] = 'Đầu';
         $config['first_tag_open'] = '<li>';
         $config['first_tag_close'] = '</li>';
 
-        $config['prev_link']   = 'Trang trước';
+        $config['prev_link']   = '<';
         $config['prev_tag_open'] = '<li class="prev page">';
         $config['prev_tag_close'] = '</li>';
 
-        $config['next_link']   = 'Trang kế tiếp';
+        $config['next_link']   = '>';
         $config['next_tag_open'] = '<li class="next page">';
         $config['next_tag_close'] = '</li>';
 
-        $config['last_link'] = 'Trang cuối';
+        $config['last_link'] = 'Cuối';
         $config['last_tag_open'] = '<li>';
         $config['last_tag_close'] = '</li>';
 

@@ -45,17 +45,17 @@
                     </td>
 
 
-                    <td><span title="<?php echo $row->name?>" class="tipS">
+                    <td class="textC"><span title="<?php echo $row->name?>" class="tipS">
 							<?php echo $row->name?>
                     </span>
                     </td>
 
 
-                    <td><span title="<?php echo $row->username?>" class="tipS">
+                    <td class="textC"><span title="<?php echo $row->username?>" class="tipS">
 							<?php echo $row->username?>
                     </span>
                     </td>
-                    <td><span title="<?php echo $row->email?>" class="tipS">
+                    <td class="textC"><span title="<?php echo $row->email?>" class="tipS">
 							<?php echo $row->email?>
                     </span>
                     </td>

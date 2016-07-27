@@ -11,21 +11,18 @@
                         <table cellspacing="0" class="table table-hover">
                             <thead>
                             <tr>
-                                <th class="product-remove">&nbsp;</th>
                                 <th class="product-thumbnail">&nbsp;</th>
                                 <th class="product-name" style="width: 25%">Sản phẩm</th>
                                 <th class="product-price">Đơn giá</th>
                                 <th class="product-quantity">Số lượng</th>
                                 <th class="product-subtotal">Thành tiền</th>
+                                <th class="product-remove" style="width:1%">&nbsp;</th>
                             </tr>
                             </thead>
                             <tbody>
                             <?php $total_price = 0?>
                             <?php foreach ($carts as $row):?>
                             <tr class="cart_item">
-                                <td class="product-remove">
-                                    <a title="Xóa khỏi giỏ hàng" class="remove" href="<?php echo base_url('cart/delete/'.$row['rowid']);  ?>"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
-                                </td>
 
                                 <td class="product-thumbnail">
                                     <a href=""><img width="145" height="145" alt="poster_1_up" class="shop_thumbnail" src="<?php echo base_url('upload/product/'.$row['image_link']) ?>"></a>
@@ -48,6 +45,10 @@
                                 <td class="product-subtotal">
                                     <span class="amount"><?php echo number_format($row['subtotal']) ?></span>đ
                                 </td>
+
+                                <td class="product-remove">
+                                    <a title="Xóa khỏi giỏ hàng" class="remove" href="<?php echo base_url('cart/delete/'.$row['rowid']);  ?>"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
+                                </td>
                             </tr>
                                 <?php $total_price = $total_price + $row['subtotal'] ?>
                             <?php endforeach;?>
@@ -61,7 +62,7 @@
                             ?>
                             <br><br>
                             <tr>
-                                <td colspan="5">
+                                <td colspan="4">
                                     <div style="color: green; text-transform: uppercase; font-size: 20px">Tổng cộng</div>
                                 </td>
                                 <td>
@@ -97,7 +98,7 @@
         </div>
         <div class="col-md-3">
             <div class="woocommerce">
-                <form enctype="multipart/form-data"  class="checkout" method="post" name="checkout" action="<?php echo base_url('cart/oder/')?>">
+                <form enctype="multipart/form-data"  class="checkout" method="post" name="checkout" action="<?php echo base_url('cart/index/')?>">
                      <div id="customer_details" class="col2-set">
                         <div class="col-1">
                             <div class="woocommerce-billing-fields">
@@ -144,7 +145,7 @@
                     <div>
                         <br>
                         <center>
-                            <input type="submit" value="Đặt hàng" id="place_order" name="woocommerce_checkout_place_order" data-toggle="modal" data-target="#myModal" onclick="success()">
+                            <input type="submit" value="Đặt hàng" id="place_order" name="woocommerce_checkout_place_order" data-toggle="modal" data-target="#myModal">
                         </center>
                     </div>
                     </form>
@@ -156,4 +157,27 @@
 </div>
 </div>
 
+<!-- Modal -->
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      	<!-- Modal content-->
+    	<div class="modal-content">
+        	<div class="modal-header">
+        		<button type="button" class="close" data-dismiss="modal">&times;</button>
+          		<h4 class="modal-title">Thông báo</h4>
+        	</div>
+        	<div class="modal-body">
+          		<p>Bạn đã đặt hàng thành công</p>
+        	</div>
+        	<div class="modal-footer">
+          		<button type="button" class="btn btn-default" data-dismiss="modal">Xác nhận</button>
+        	</div>
+    	</div>
+      
+    </div>
+</div>
+
 </body>
+
+

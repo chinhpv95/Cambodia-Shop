@@ -63,7 +63,7 @@
                 Thay đổi trạng thái giao dịch :
             </h6>
             <select name="status"   _autocheck="true" id="param_cat" class="left" style="margin: 5px;" >
-                <option value="" style="color: #00CC00"><?php echo $list[0]['status']?></option>
+                <option value="<?php echo $list[0]['status']?>" style="color: #00CC00"><?php echo $list[0]['status']?></option>
                 <option value="Shipped">Shipped</option>
                 <option value="In Process">In Process</option>
                 <option value="Cancelled">Cancelled</option>

@@ -47,17 +47,12 @@
 <!-- Popular product -->
 <div class="container">
     <br><br>
-    <h3 style="text-transform: uppercase; color: green; text-align: center">Sản phẩm nổi bật </h3>
+    <h3 style="text-transform: uppercase; color: green; text-align: center; font-size: 30px">danh mục sản phẩm </h3>
     <br><br>
-    <div class="row">
-        <div class="col-md-6">
-            <div class="flag navbar-left">
-                Tên loại sản phẩm
-            </div> 
-        </div>
-        <div class="col-md-4"></div>
+    <div class="row" style="border-bottom: 1px solid #999">
+        <div class="col-md-1" style="margin-top:30px; font-size: 17px">Sắp xếp</div>
         <div class="col-md-2">
-            <select class="selectpicker form-control">
+            <select class="selectpicker form-control" style="margin-top: 25px;">
                 <option disabled selected value> -- Sắp xếp theo -- </option>
                 <optgroup label="Tên">
                     <option>Từ A-Z</option>
@@ -69,7 +64,17 @@
                 </optgroup>
             </select>
         </div>
-        
+        <div class="col-md-9">
+            <table width="100%" cellspacing="10" cellpadding="1" id="checkAll" class="sTable mTable myTable">
+                <tr>
+                    <td colspan="6" align="center">
+                        <?php
+                            echo $this->pagination->create_links();
+                        ?>
+                    </td>
+                </tr>
+            </table>
+        </div>
     </div>
     <br><br>
 
@@ -100,7 +105,7 @@
         <?php endforeach;?>
     </div> <!-- End main content area -->
 
-    <table width="100%" cellspacing="10" cellpadding="1" id="checkAll" class="sTable mTable myTable">
+    <table width="100%" cellspacing="10" cellpadding="1" id="checkAll" class="sTable mTable myTable" style="border-top: 1px solid #999; margin-top: 35px;">
        <tr>
             <td colspan="6" align="center">
                     <?php

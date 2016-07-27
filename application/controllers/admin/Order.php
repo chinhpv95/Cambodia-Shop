@@ -20,7 +20,7 @@ class Order extends MY_Controller{
         $this->load->library('pagination');
         $config = array();
         $config['total_rows'] = $total_rows;//tong tat ca cac san pham tren website
-        $config['base_url']   = admin_url('product/index'); //link hien thi ra danh sach san pham
+        $config['base_url']   = admin_url('order/index/'); //link hien thi ra danh sach san pham
         $config['per_page']   = 10;//so luong san pham hien thi tren 1 trang
         $config['uri_segment'] = 4;//phan doan hien thi ra so trang tren url
         $config['next_link']   = 'Trang kế tiếp';
@@ -41,7 +41,10 @@ class Order extends MY_Controller{
         $query=$this->db->query("SELECT *,SUM(orderdetails.quantityOrdered*orderdetails.priceEach) FROM orders,customers,orderdetails  
                                 WHERE customers.customerNumber = orders.customerNumber
                                 AND orderdetails.orderNumber = orders.orderNumber 
-                                GROUP BY orders.orderNumber");
+                                GROUP BY orders.orderNumber
+                                LIMIT $segment , 10
+                                ");
+
         $list=$query->result_array();
         $this->data['list'] = $list;
         //pre($this->data);
@@ -72,8 +75,11 @@ class Order extends MY_Controller{
         //pre($this->data);
         if($this->input->post())
         {
+            $this->load->helper('date');
+            date_default_timezone_set('Asia/Bangkok');
             $status  = $this->input->post('status');
             $data = array(
+                'updateDate' => date('Y-m-d H:i:s'),
                 'status'       => $status
              );
             $this->order_model->update($id, $data);

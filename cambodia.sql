@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 18, 2016 at 05:23 AM
+-- Generation Time: Jul 27, 2016 at 12:28 PM
 -- Server version: 10.1.10-MariaDB
 -- PHP Version: 5.6.19
 
@@ -27,17 +27,19 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `admin` (
-  `id` varchar(25) NOT NULL,
-  `password` varchar(25) NOT NULL,
-  `name` varchar(50) NOT NULL
+  `id` int(25) NOT NULL,
+  `password` varchar(32) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `admin`
 --
 
-INSERT INTO `admin` (`id`, `password`, `name`) VALUES
-('admin', 'admin123', 'Nhóm 3 - IS06');
+INSERT INTO `admin` (`id`, `password`, `name`, `username`, `email`) VALUES
+(1, '7c222fb2927d828af22f592134e89324', 'Trần Huy Tiệp', 'admin', '');
 
 -- --------------------------------------------------------
 
@@ -103,19 +105,34 @@ CREATE TABLE `customers` (
   `phone` varchar(20) NOT NULL,
   `address` varchar(100) DEFAULT NULL,
   `email` varchar(50) DEFAULT NULL,
-  `identityCard` int(20) DEFAULT NULL
+  `identityCard` int(20) DEFAULT NULL,
+  `id` varchar(25) NOT NULL,
+  `password` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `customers`
 --
 
-INSERT INTO `customers` (`customerNumber`, `customerName`, `phone`, `address`, `email`, `identityCard`) VALUES
-(1, 'Nguyễn Viết Cương', '0987651888', 'Mù Căng Chải - Yên Bái', 'cuongnv@gmail.com', 71627238),
-(2, 'Đoàn Quang Long', '092777466', 'Mường Nhé, Điện Biên', 'longdq@gmail.com', 155345525),
-(3, 'Noun Sothea', '0988888888', 'Đại Từ, Thái Nguyên', 'sothea@gmail.com', 99882753),
-(4, 'Trần Huy Tiệp', '0976555162', 'Anh Sơn, Nghệ An', 'tiepth@gmail.com', 22555126),
-(5, 'Phạm Văn Chính', '0955122485', 'Tam Nông, Phú Thọ', 'chinhpv@gmail.com', 99888352);
+INSERT INTO `customers` (`customerNumber`, `customerName`, `phone`, `address`, `email`, `identityCard`, `id`, `password`) VALUES
+(1, 'Nguyễn Viết Cương', '0987651888', 'Mù Căng Chải - Yên Bái', 'cuongnv@gmail.com', 71627238, 'cuongnv', '123456'),
+(2, 'Đoàn Quang Long', '092777466', 'Mường Nhé, Điện Biên', 'longdq@gmail.com', 155345525, 'longdq', '123456'),
+(3, 'Noun Sothea', '0988888888', 'Đại Từ, Thái Nguyên', 'sothea@gmail.com', 99882753, 'sothean', '123456'),
+(4, 'Trần Huy Tiệp', '0976555162', 'Anh Sơn, Nghệ An', 'tiepth@gmail.com', 22555126, 'tiepth', '123456'),
+(5, 'Phạm Văn Chính', '0955122485', 'Tam Nông, Phú Thọ', 'chinhpv@gmail.com', 99888352, 'chinhpv', '123456'),
+(6, 'Trần Huy Tiệp', '0969696969', 'Hà Nội', 'tranhuytiep95@gmail.com', 2147483647, '', ''),
+(7, 'Lê Văn Lương', '0964777282', 'Thường Tín, Hà Nội', 'luonglv@gmail.com', 29294432, '', ''),
+(8, 'Lê Công Vinh', '0988666232', 'Mỹ Tho, Tiền Giang', 'vinhlv@gmail.com', 99882245, '', ''),
+(9, 'Messi', '0922444111', 'Thiên Đàng', 'messi@gmail.com', 99998812, '', ''),
+(10, 'Cao Minh Lâm', '0944566233', 'Phú Ninh, Quảng Nam', 'anvb@gmai.com', 661271212, '', ''),
+(11, 'Bai Thu Nguyen', '977666162', 'Đông Triều, Quảng Ninh', 'chinh@gmail.com', 2147483647, '', ''),
+(12, 'Hoàng Phúc Anh', '966192810', 'Trung Quốc', 'chinhpv@gmail.com', 2147483647, '', ''),
+(13, 'Hoàng Thanh Tâm', '0977777777', 'Tịnh Biên, An Giang', 'tamht@gmail.com', 2147483647, '', ''),
+(14, 'Ri Đỗ', '0988777777', 'Vĩnh Bảo, Hải Phòng', 'rodi@gmail.com', 821723453, '', ''),
+(15, 'Hoàng Minh Lượng', '0988721726', 'Hà Nội', '1@gmail.com', 2147483647, '', ''),
+(16, 'Bai Thu Nguyen', '977666162', 'Ha Noi', 'chinh199304@gmail.com', 434, '', ''),
+(17, 'Van Chinh Pham', '966192810', 'Hoai Duc', 'chinhpv95@gmail.com', 21, '', ''),
+(18, 'Nguyễn Văn Linh', '966192810', 'Hoai Duc', 'chinhpv95@gmail.com', 23, '', '');
 
 -- --------------------------------------------------------
 
@@ -142,26 +159,61 @@ CREATE TABLE `orderdetails` (
   `orderNumber` int(11) NOT NULL,
   `productCode` varchar(15) NOT NULL,
   `quantityOrdered` int(11) NOT NULL,
-  `priceEach` double NOT NULL
+  `priceEach` double NOT NULL,
+  `productName` varchar(70) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `orderdetails`
 --
 
-INSERT INTO `orderdetails` (`orderNumber`, `productCode`, `quantityOrdered`, `priceEach`) VALUES
-(1, 'C001', 5, 60000),
-(1, 'B001', 1, 150000),
-(1, 'S018', 2, 140000),
-(2, 'C007', 5, 60000),
-(3, 'B005', 1, 220000),
-(3, 'C005', 3, 100000),
-(3, 'S024', 2, 150000),
-(4, 'P005', 1, 550000),
-(4, 'F009', 1, 46000),
-(4, 'B007', 1, 690000),
-(4, 'S013', 2, 150000),
-(5, 'S001', 5, 40000);
+INSERT INTO `orderdetails` (`orderNumber`, `productCode`, `quantityOrdered`, `priceEach`, `productName`) VALUES
+(1, 'C001', 5, 60000, ''),
+(1, 'B001', 1, 150000, ''),
+(1, 'S018', 2, 140000, ''),
+(2, 'C007', 5, 60000, ''),
+(3, 'B005', 1, 220000, ''),
+(3, 'C005', 3, 100000, ''),
+(3, 'S024', 2, 150000, ''),
+(4, 'P005', 1, 550000, ''),
+(4, 'F009', 1, 46000, ''),
+(4, 'B007', 1, 690000, ''),
+(4, 'S013', 2, 150000, ''),
+(5, 'S001', 5, 40000, ''),
+(6, 'S026', 5, 160000, ''),
+(6, 'S025', 2, 220000, ''),
+(6, 'S024', 2, 200000, ''),
+(7, 'S004', 3, 60000, ''),
+(7, 'S025', 4, 220000, ''),
+(8, 'S004', 8, 60000, ''),
+(8, 'S025', 4, 220000, ''),
+(9, 'S025', 4, 220000, ''),
+(9, 'P001', 4, 500000, ''),
+(10, 'P001', 1, 500000, ''),
+(10, 'S021', 1, 150000, ''),
+(10, 'S019', 6, 10000, ''),
+(10, 'F008', 1, 65000, ''),
+(11, 'P001', 1, 500000, ''),
+(11, 'S021', 1, 150000, ''),
+(11, 'S019', 6, 10000, ''),
+(11, 'F008', 1, 65000, ''),
+(12, 'P001', 1, 500000, ''),
+(12, 'S021', 1, 150000, ''),
+(12, 'S019', 6, 10000, ''),
+(12, 'F008', 1, 65000, ''),
+(13, 'S022', 3, 1500000, ''),
+(13, 'P001', 1, 500000, ''),
+(14, 'P001', 1, 500000, ''),
+(14, 'S001', 4, 40000, ''),
+(14, 'S021', 1, 150000, ''),
+(15, 'S013', 1, 150000, ''),
+(15, 'S024', 1, 200000, ''),
+(16, 'S026', 1, 160000, ''),
+(17, 'S025', 1, 220000, ''),
+(18, 'S021', 4, 150000, ''),
+(19, 'S016', 1, 140000, ''),
+(20, 'S026', 1, 160000, ''),
+(21, 'C004', 12, 10000, '');
 
 -- --------------------------------------------------------
 
@@ -171,9 +223,8 @@ INSERT INTO `orderdetails` (`orderNumber`, `productCode`, `quantityOrdered`, `pr
 
 CREATE TABLE `orders` (
   `orderNumber` int(11) NOT NULL,
-  `orderDate` date NOT NULL,
-  `requiredDate` date NOT NULL,
-  `shippedDate` date DEFAULT NULL,
+  `createDate` datetime NOT NULL,
+  `updateDate` datetime DEFAULT NULL,
   `status` varchar(15) NOT NULL,
   `comments` text NOT NULL,
   `customerNumber` int(11) NOT NULL
@@ -183,12 +234,28 @@ CREATE TABLE `orders` (
 -- Dumping data for table `orders`
 --
 
-INSERT INTO `orders` (`orderNumber`, `orderDate`, `requiredDate`, `shippedDate`, `status`, `comments`, `customerNumber`) VALUES
-(1, '2016-07-20', '2016-07-21', '2016-07-22', 'Shipped', '', 1),
-(2, '2016-07-20', '2016-07-21', '2016-07-23', 'Shipped', '', 4),
-(3, '2016-07-21', '2016-07-23', NULL, 'In Process', '', 3),
-(4, '2016-07-21', '2016-07-23', NULL, 'Cancelled', '', 5),
-(5, '2016-07-22', '2016-07-23', '2016-07-26', 'Shipped', '', 2);
+INSERT INTO `orders` (`orderNumber`, `createDate`, `updateDate`, `status`, `comments`, `customerNumber`) VALUES
+(1, '2016-07-20 00:00:00', '2016-07-27 15:44:17', 'Shipped', '', 1),
+(2, '2016-07-20 00:00:00', '2016-07-23 00:00:00', 'Shipped', '', 4),
+(3, '2016-07-21 00:00:00', NULL, 'In Process', '', 3),
+(4, '2016-07-21 00:00:00', NULL, 'Cancelled', '', 5),
+(5, '2016-07-22 00:00:00', '2016-07-26 00:00:00', 'Shipped', '', 2),
+(6, '2016-07-25 00:00:00', NULL, 'In Process', '', 6),
+(7, '2016-07-25 00:00:00', NULL, 'Cancelled', '', 7),
+(8, '2016-07-25 00:00:00', NULL, 'In Process', '', 8),
+(9, '2016-07-25 00:00:00', NULL, 'In Process', '', 9),
+(10, '2016-07-25 00:00:00', NULL, 'In Process', '', 10),
+(11, '2016-07-25 00:00:00', NULL, 'In Process', '', 11),
+(12, '2016-07-25 00:00:00', NULL, 'In Process', '', 12),
+(13, '2016-07-26 00:00:00', NULL, 'Shipped', '', 13),
+(14, '2016-07-26 00:00:00', NULL, 'Cancelled', '', 14),
+(15, '2016-07-26 00:00:00', NULL, 'Shipped', '', 15),
+(16, '2016-07-27 14:54:00', '2016-07-27 14:54:28', 'Shipped', '', 15),
+(17, '2016-07-27 14:55:57', NULL, 'In Process', '', 11),
+(18, '2016-07-27 15:16:15', '2016-07-27 15:43:28', 'Cancelled', '', 12),
+(19, '2016-07-27 15:27:59', NULL, 'In Process', '', 12),
+(20, '2016-07-27 15:30:08', NULL, 'In Process', '', 11),
+(21, '2016-07-27 15:31:25', NULL, 'In Process', '', 11);
 
 -- --------------------------------------------------------
 
@@ -280,7 +347,7 @@ INSERT INTO `products` (`productCode`, `productName`, `categoryId`, `description
 ('S016', 'Resin Fridge Magnet: Cambodia Bayon Temple', 5, 'Kích thước: 7cm x 6cm x 1.5cm', 55, 140000, 'S016.jpg'),
 ('S017', 'Resin Fridge Magnet: Cambodia Angkor Wat', 5, 'Kích thước: 7cm x 6cm x 1.5cm', 23, 140000, 'S017.jpg'),
 ('S018', 'Resin Fridge Magnet: Cambodia Apsara', 5, 'Kích thước: 7cm x 6cm x 1.5cm', 41, 140000, 'S018.jpg'),
-('S019', 'Cambodia hand-made bracelet', 5, '', 21, 10000, 'S019.jpg'),
+('S019', 'Cambodia hand-made bracelet', 5, 'Kích thước: 7cm x 6cm x 1.5cm', 21, 10000, 'S019.jpg'),
 ('S020', 'Silver vase for decoration', 5, 'Ờ Campuchia, từ thế kỷ XI, đồ vật bằng bạc đã được sử dụng rộng rãi trong nhiều nghi lễ tôn giáo. Nó không quá đắt, nhưng có khả năng tạo ra những đồ vật tinh xảo qua bàn tay của những nghệ nhân Khmer', 25, 100000, 'S020.jpg'),
 ('S021', 'Silver glasses', 5, 'Ờ Campuchia, từ thế kỷ XI, đồ vật bằng bạc đã được sử dụng rộng rãi trong nhiều nghi lễ tôn giáo. Nó không quá đắt, nhưng có khả năng tạo ra những đồ vật tinh xảo qua bàn tay của những nghệ nhân Khmer', 52, 150000, 'S021.jpg'),
 ('S022', 'Silver kettle', 5, 'Ờ Campuchia, từ thế kỷ XI, đồ vật bằng bạc đã được sử dụng rộng rãi trong nhiều nghi lễ tôn giáo. Nó không quá đắt, nhưng có khả năng tạo ra những đồ vật tinh xảo qua bàn tay của những nghệ nhân Khmer', 54, 1500000, 'S022.jpg'),
@@ -319,93 +386,36 @@ INSERT INTO `rate` (`rateID`, `rateValue`) VALUES
 
 CREATE TABLE `ratedetails` (
   `productCode` varchar(15) NOT NULL,
-  `rateID` int(11) NOT NULL
+  `rateID` int(11) NOT NULL,
+  `customerNumber` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `ratedetails`
 --
 
-INSERT INTO `ratedetails` (`productCode`, `rateID`) VALUES
-('B001', 4),
-('B002', 4),
-('B007', 5),
-('B007', 4),
-('C003', 5),
-('S013', 3),
-('S001', 4),
-('S013', 3),
-('S001', 4),
-('S002', 5),
-('S013', 3),
-('S001', 4),
-('S001', 4),
-('S001', 4),
-('S001', 4),
-('S001', 4),
-('S001', 4),
-('S001', 4),
-('S001', 4),
-('S001', 4),
-('S001', 4),
-('S001', 4),
-('S001', 4),
-('S001', 4),
-('S001', 4),
-('S001', 4),
-('S001', 4),
-('S001', 4),
-('S001', 4),
-('S001', 4),
-('S001', 4),
-('S001', 4),
-('S001', 4),
-('S001', 4),
-('S001', 4),
-('S001', 4),
-('S001', 4),
-('S001', 4),
-('S001', 4),
-('S001', 4),
-('S001', 4),
-('S001', 4),
-('S001', 4),
-('S001', 4),
-('S001', 4),
-('S001', 4),
-('S001', 4),
-('S001', 4),
-('S001', 4),
-('S001', 4),
-('S001', 4),
-('S001', 4),
-('S001', 4),
-('S001', 4),
-('S001', 4),
-('S001', 4),
-('S001', 4),
-('S001', 4),
-('S001', 4),
-('S001', 3),
-('S001', 3),
-('S001', 3),
-('S001', 3),
-('S001', 3),
-('S001', 3),
-('S001', 3),
-('S001', 5),
-('S001', 5),
-('S001', 5),
-('S001', 5),
-('S001', 5),
-('S001', 5),
-('S001', 5),
-('S001', 5),
-('S001', 5),
-('S001', 5),
-('S001', 5),
-('S001', 5),
-('S001', 5);
+INSERT INTO `ratedetails` (`productCode`, `rateID`, `customerNumber`) VALUES
+('B001', 3, 5),
+('B001', 4, 2),
+('B001', 5, 1),
+('B002', 5, 2),
+('B002', 4, 3),
+('B003', 5, 1),
+('B003', 4, 2),
+('B003', 5, 3),
+('B004', 3, 2),
+('B004', 4, 5),
+('B005', 3, 4),
+('B006', 5, 2),
+('B006', 4, 3),
+('B006', 4, 5),
+('B007', 1, 2),
+('C001', 5, 1),
+('C002', 4, 4),
+('C003', 4, 2),
+('C003', 3, 3),
+('C003', 2, 1),
+('F001', 4, 1);
 
 -- --------------------------------------------------------
 
@@ -520,27 +530,33 @@ ALTER TABLE `rate`
 --
 ALTER TABLE `ratedetails`
   ADD KEY `rateID` (`rateID`),
-  ADD KEY `productCode` (`productCode`);
+  ADD KEY `productCode` (`productCode`),
+  ADD KEY `customerNumber` (`customerNumber`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
+-- AUTO_INCREMENT for table `admin`
+--
+ALTER TABLE `admin`
+  MODIFY `id` int(25) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `categoryID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `categoryID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `customers`
 --
 ALTER TABLE `customers`
-  MODIFY `customerNumber` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `customerNumber` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `orderNumber` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `orderNumber` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 --
 -- AUTO_INCREMENT for table `rate`
 --
@@ -573,7 +589,8 @@ ALTER TABLE `products`
 --
 ALTER TABLE `ratedetails`
   ADD CONSTRAINT `ratedetails_ibfk_1` FOREIGN KEY (`rateID`) REFERENCES `rate` (`rateID`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `ratedetails_ibfk_2` FOREIGN KEY (`productCode`) REFERENCES `products` (`productCode`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `ratedetails_ibfk_2` FOREIGN KEY (`productCode`) REFERENCES `products` (`productCode`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `ratedetails_ibfk_3` FOREIGN KEY (`customerNumber`) REFERENCES `customers` (`customerNumber`) ON UPDATE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

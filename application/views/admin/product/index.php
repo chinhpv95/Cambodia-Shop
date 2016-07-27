@@ -34,7 +34,8 @@
                                         <option value="">Danh mục</option>
                                         <!-- kiem tra danh muc co danh muc con hay khong -->
                                         <?php foreach ($catelorys as $row):?>
-                                                <option value="<?php echo $row->categoryID?>" <?php echo ($this->input->get('category') == $row->categoryID) ? 'selected' : ''?>><?php echo $row->categoryName?></option>
+                                                <option value="<?php echo $row->categoryID?>" <?php echo ($this->input->get('category') == $row->categoryID) ? 'selected' : ''?>><?php echo $row->categoryName?>
+                                                </option>
                                         <?php endforeach;?>
                                     </select>
                                 </td>
@@ -47,7 +48,8 @@
                             </tr>
                             </tbody></table>
                     </form>
-                </td></tr></thead>
+                </td></tr>
+            </thead>
 
             <thead>
             <tr>
