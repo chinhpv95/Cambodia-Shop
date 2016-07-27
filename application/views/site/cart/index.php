@@ -61,6 +61,20 @@
                             ?>
                             <br><br>
                             <tr>
+                                <td colspan="5">
+                                    <div style="color: green; text-transform: uppercase; font-size: 20px">Tổng cộng</div>
+                                </td>
+                                <td>
+                                    <span class="amount"></span><?php echo number_format($total_price)?> đ 
+                                </td>
+                            </tr>
+                            <tr>
+                               <td style="border: none;"></td> 
+                            </tr>
+                            <tr>
+                               <td style="border: none;"></td> 
+                            </tr>
+                            <tr>
                                 <td class="actions" colspan="6">
                                     <button type="submit" class="checkout-button button alt wc-forward">
                                         <a href="<?php echo base_url('home/index');  ?>">Tiếp Tục Mua Hàng</a>
@@ -78,35 +92,6 @@
                     </form>
 
                     <br><br>
-                    <div class="row">
-                        <div class="col-md-12" align="center">
-                            <div class="cart-collaterals">
-                            <div class="cart_totals ">
-                            <h2>Thông tin đơn hàng</h2>
-
-                            <table cellspacing="0" class="table table-hover table-stripped">
-                                <tbody>
-                                <tr class="cart-subtotal">
-                                    <th>Đơn giá</th>
-                                    <td><span class="amount"></span><?php echo number_format($total_price)?> VNĐ</td>
-                                </tr>
-
-                                <tr class="shipping">
-                                    <th>Phí vận chuyển</th>
-                                    <td>Miễn phí</td>
-                                </tr>
-
-                                <tr class="order-total">
-                                    <th>Tổng cộng</th>
-                                    <td><strong><span class="amount"></span></strong> <?php echo number_format($total_price)?> VNĐ </td>
-                                </tr>
-                                </tbody>
-                            </table>
-                            </div>
-                        </div>    
-                        </div>
-                        
-                    </div>
                 </div>
             </div>
         </div>

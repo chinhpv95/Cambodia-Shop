@@ -27,8 +27,7 @@ h6 {
     margin: 0 0 15px;
 }
 body { 
-  font-family:Arial, 
-  Helvetica, 
+  font-family: 'Roboto Condensed', sans-serif; 
   sans-serif; 
   background: #f6f6f6;
 }
@@ -960,12 +959,12 @@ table.shop_table th {
 }
 
 td.product-thumbnail {
-    height: 200px;
+    height: 100px;
 }
 
 td.product-thumbnail img {
     height: auto;
-    width: 150px;
+    width: 70px;
 }
 
 td.product-name {
@@ -1262,7 +1261,7 @@ button[type=submit] a {
     cursor: pointer;
     display: none;
     position: fixed;
-    right: 50px;
+    right: -35px;
 }
 
 
@@ -1272,11 +1271,40 @@ button[type=submit] a {
 }
 
 
-#myImg {
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.3s;
+.flag {
+  width: 200px;
+  height: 50px;
+  margin: 0 auto;
+  padding-top: 15px;
+  position: relative; 
+  background: green;
+  color: white;
+  font-size: 15px;
+  letter-spacing: 0.2em;
+  text-align: center;
+  text-transform: uppercase;
 }
 
-#myImg:hover {opacity: 0.7;}
+.flag:before {
+  content: ' ';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-left: 25px solid white;
+  border-top: 25px solid transparent;
+  border-bottom: 25px solid transparent;
+}
 
+
+.flag:after {
+  content: ' ';
+  position: absolute;
+  bottom: 0
+  /*;
+  width: 0;
+  border-right: 25px solid white;
+  border-top: 25px solid white;
+  border-left: 25px solid transparent;
+}

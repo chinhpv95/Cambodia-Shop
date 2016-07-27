@@ -7,7 +7,6 @@
             
             <center><h1>Danh sách sản phẩm</h1></center;
 
-
     <br><br>
     <div class="row">
         <div class="col-md-12">
@@ -30,7 +29,7 @@
 
                     <br>
                     <div class="product-carousel-price">
-                        <ins><?php echo number_format($row->price)?> VNĐ</ins>
+                        <ins><?php echo echo number_format($row->price)?>đ</ins>
                     </div>
                 </div>
             </div>
