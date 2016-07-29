@@ -36,7 +36,7 @@ Class Cart extends MY_Controller
         $this->form_validation->set_rules('phone', 'Số điện thoại', 'required');
         $this->form_validation->set_rules('address', 'Địa chỉ', 'required');
         $this->form_validation->set_rules('email', 'Email', 'required');
-        $this->form_validation->set_rules('identityCard', 'Số CMND', 'required');
+       // $this->form_validation->set_rules('identityCard', 'Số CMND', 'required');
         if($this-> form_validation ->run()){
             $customers = array(
                 'customerName'           => $name,
@@ -54,7 +54,9 @@ Class Cart extends MY_Controller
             }
                 $query=$this->db->query("SELECT customerNumber
                                 FROM customers
-                                WHERE customers.phone = '$phone'
+                                WHERE customers.phone = '$phone' AND customers.customerName =
+                                 '$name'
+                                ORDER BY customerNumber DESC 
                                ");
                 $id=$query->result_array();
                 $customerNumber = $id[0]['customerNumber'];
@@ -88,10 +90,11 @@ Class Cart extends MY_Controller
                         );
                         $this->load->model('orderdetails_model');
                         if (  $this->orderdetails_model->create($data)){
+
                             sleep(2);
                             $this->cart->destroy();
                         }else   ;
-                        redirect(base_url('home'));
+
                     }
             }
 
@@ -112,26 +115,53 @@ Class Cart extends MY_Controller
     {
         //lay ra san pham muon them vao gio hang
         $this->load->model('product_model');
-        $id = $this->uri->rsegment(3);
-        $product = $this->product_model->get_info($id);
-        //pre($product);
-        if(!$product)
-        {
-            redirect();
+        $id = $this->uri->rsegment(4);
+        if ($id != null){
+            $catagory_ID = $this->uri->rsegment(3);
+            $product = $this->product_model->get_info($id);
+            //pre($product);
+            if(!$product)
+            {
+                redirect();
+            }
+            //tong so san pham
+            $qty = 1;
+            $price = $product->price;
+
+            $data = array();
+            $data['id'] = $product->productCode;
+            $data['qty'] = $qty;
+            $data['name'] = $product->productName;
+            $data['image_link']  = $product->image_link;
+            $data['price'] = $price;
+            $this->cart->insert($data);
+            //chuyen sang trang danh sach san pham trong gio hang
+
+            redirect(base_url('product/index/'.$catagory_ID));
+        }else{
+            $id = $this->uri->rsegment(3);
+            $product = $this->product_model->get_info($id);
+            //pre($product);
+            if(!$product)
+            {
+                redirect();
+            }
+            //tong so san pham
+            $qty = 1;
+            $price = $product->price;
+
+            $data = array();
+            $data['id'] = $product->productCode;
+            $data['qty'] = $qty;
+            $data['name'] = $product->productName;
+            $data['image_link']  = $product->image_link;
+            $data['price'] = $price;
+            $this->cart->insert($data);
+            //chuyen sang trang danh sach san pham trong gio hang
+
+            redirect(base_url());
+
         }
-        //tong so san pham
-        $qty = 1;
-        $price = $product->price;
-        
-        $data = array();
-        $data['id'] = $product->productCode;
-        $data['qty'] = $qty;
-        $data['name'] = $product->productName;
-        $data['image_link']  = $product->image_link;
-        $data['price'] = $price;
-        $this->cart->insert($data);
-        //chuyen sang trang danh sach san pham trong gio hang
-        redirect(base_url());
     }
 
     function update()
@@ -152,7 +182,7 @@ Class Cart extends MY_Controller
         redirect(base_url('cart'));
 
         //chuyen sang trang danh sach san pham trong gio hang
-        // redirect(base_url('cart'));
+       // redirect(base_url('cart'));
     }
 
     /*
@@ -183,7 +213,7 @@ Class Cart extends MY_Controller
         $phone = $this->input ->post('phone');
         $where = array('phone'=>$phone);
         if ($this->customers_model->check_exists($where)){
-            $this->form_validation->set_message(__FUNCTION__,'Khách hàng đã tồn tại');
+            $this->form_validation->set_message(__FUNCTION__,'Khách hang đã tồn tại');
             return false;
         }else return true;
     }
@@ -265,4 +295,3 @@ Class Cart extends MY_Controller
 //    }
     
 }
-

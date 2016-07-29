@@ -6,38 +6,19 @@
     <div class="block-slider block-slider4">
         <ul class="" id="bxslider-home4">
             <li>
-                <img src="<?php echo public_url('site/')?>/content/h4-slide.png" alt="Khăm Krama">
-                <div class="caption-group">
-                    <h2 class="caption title">
-                        Khăn <span class="primary"> <strong>Krama</strong></span>
-                    </h2>
-                    <h4 class="caption subtitle">Ngại gì thời tiết</h4>
-                    <a class="caption button-radius" href="#"><span class="icon"></span>Mua ngay</a>
-                </div>
+                <img src="<?php echo public_url('site/')?>/content/h4-slide.png" alt="">
             </li>
-            <li><img src="<?php echo public_url('site/')?>/content/h3-slide.png" alt="Slide">
-                <div class="caption-group">
-                    <h2 class="caption title">
-                        Bí mật đế chế <span class="primary"><strong>Angkor</strong></span>
-                    </h2>
-                    <a class="caption button-radius" href="#"><span class="icon"></span>Mua ngay</a>
-                </div>
+            <li>
+                <img src="<?php echo public_url('site/')?>/content/h3-slide.png" alt="">
             </li>
-            <li><img src="<?php echo public_url('site/')?>/content/h2-slide.png" alt="Slide">
-                <div class="caption-group">
-                    <h2 class="caption title">
-                        Lụa <span class="primary"> <strong>Angkor</strong></span>
-                    </h2>
-                    <a class="caption button-radius" href="#"><span class="icon"></span>Mua ngay</a>
-                </div>
+            <li>
+                <img src="<?php echo public_url('site/')?>/content/h2-slide.png" alt="">
             </li>
-            <li><img src="<?php echo public_url('site/')?>/content/h1-slide.png" alt="Slide">
-                <div class="caption-group">
-                    <h2 class="caption title">
-                        Bức tranh <span class="primary">làng quê <strong>Campuchia</strong></span>
-                    </h2>
-                    <a class="caption button-radius" href="#"><span class="icon"></span>Mua ngay</a>
-                </div>
+            <li>
+                <img src="<?php echo public_url('site/')?>/content/h1-slide.png" alt="">
+            </li>
+            <li>
+                <img src="<?php echo public_url('site/')?>/content/h5-slide.png" alt="">
             </li>
         </ul>
     </div>
@@ -47,12 +28,12 @@
 <!-- Popular product -->
 <div class="container">
     <br><br>
-    <h3 style="text-transform: uppercase; color: green; text-align: center; font-size: 30px">danh mục sản phẩm </h3>
+    <h3 style="text-transform: uppercase; color: white; text-align: center; font-size: 35px"><b>danh mục sản phẩm</b> </h3>
     <br><br>
-    <div class="row" style="border-bottom: 1px solid #999">
-        <div class="col-md-1" style="margin-top:30px; font-size: 17px">Sắp xếp</div>
+    <div class="row" style="border-bottom: 1px solid #ca6330">
+        <div class="col-md-1 sort">Sắp xếp</div>
         <div class="col-md-2">
-            <select class="selectpicker form-control" style="margin-top: 25px;">
+            <select class="selectpicker form-control">
                 <option disabled selected value> -- Sắp xếp theo -- </option>
                 <optgroup label="Tên">
                     <option>Từ A-Z</option>
@@ -85,7 +66,7 @@
             <div class="single-product">
                 <div class="product-hover">
                     <a href="<?php echo base_url('cart/add/'.$row->productCode); ?>" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</a>
-                   <a href="<?php echo base_url('home/information/'.$row->productCode); ?>" class="view-details-link"><i class="fa fa-info"></i> Thông tin</a>
+                    <a href="<?php echo base_url('home/information/'.$row->productCode); ?>" class="view-details-link"><i class="fa fa-info"></i> Thông tin</a>
                 </div>
                 <div class="product-f-image">
                     <img src="<?php echo base_url('upload/product/'.$row->image_link) ?>" alt="">
@@ -93,26 +74,17 @@
             </div>
                 <br>
                 <div class="product-title">
-                    <h4 ><?php echo $row->productName ;  ?></h4>
+                    <center><h4><b><?php echo $row->productName ;  ?></b></h4></center>
                 </div>
 
                 <br>
                 <div class="product-carousel-price">
-                    <ins><?php echo number_format($row->price)?>đ</ins>
+                    <center><ins><?php echo number_format($row->price)?>đ</ins></center>
                 </div>
             </div>
         </div>
         <?php endforeach;?>
     </div> <!-- End main content area -->
-
-    <table width="100%" cellspacing="10" cellpadding="1" id="checkAll" class="sTable mTable myTable" style="border-top: 1px solid #999; margin-top: 35px;">
-       <tr>
-            <td colspan="6" align="center">
-                    <?php
-                        echo $this->pagination->create_links();
-                    ?>
-            </td>
-        </tr>
-    </table>
+</div>
 
 </body>

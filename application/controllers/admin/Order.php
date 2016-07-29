@@ -42,6 +42,7 @@ class Order extends MY_Controller{
                                 WHERE customers.customerNumber = orders.customerNumber
                                 AND orderdetails.orderNumber = orders.orderNumber 
                                 GROUP BY orders.orderNumber
+                                ORDER BY orders.orderNumber DESC 
                                 LIMIT $segment , 10
                                 ");
 
@@ -69,6 +70,7 @@ class Order extends MY_Controller{
                                 FROM orders,products,orderdetails  
                                 WHERE products.productCode = orderdetails.productCode
                                 AND orderdetails.orderNumber = orders.orderNumber AND orders.orderNumber = '$id'
+                                
                                 ");
         $product=$query1->result_array();
         $this->data['product'] = $product;

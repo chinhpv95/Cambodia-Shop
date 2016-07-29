@@ -7,7 +7,9 @@
         //load ra file model
         $this->load->model('product_model');
         $this->load->library('cart');
+        
     }
+
     function index($id)
     {
         $input = array();
@@ -28,11 +30,11 @@
         $config['first_tag_open'] = '<li>';
         $config['first_tag_close'] = '</li>';
 
-        $config['prev_link']   = 'Trang trước';
+        $config['prev_link']   = '<';
         $config['prev_tag_open'] = '<li class="prev page">';
         $config['prev_tag_close'] = '</li>';
 
-        $config['next_link']   = 'Trang kế tiếp';
+        $config['next_link']   = '>';
         $config['next_tag_open'] = '<li class="next page">';
         $config['next_tag_close'] = '</li>';
 
@@ -64,9 +66,8 @@
 
         $message = $this->session->flashdata('message');
         $this->data['message'] = $message;
-        $this->data['temp'] = 'site/home/index';
+        $this->data['temp'] = 'site/product/index';
         $this->load->view('site/layout', $this->data);
     }
-    
 }
 ?>

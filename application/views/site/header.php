@@ -3,7 +3,7 @@
 <body>
 <div class="site-branding-area">
 <div class="container">
-    <div class="row">
+    <div class="row"">
         <div class="col-sm-3">
             <div class="logo">
                 <h1><a href="<?php echo base_url('home/index/')?>"><img src="<?php echo public_url('site/')?>/content/logo.png"></a></h1>
@@ -31,7 +31,6 @@
         <div class="row">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -42,7 +41,7 @@
                     <li><a href="<?php echo base_url('home/index/')?>">Trang chủ</a></li>
                     <li>
                         <div class="dropdown">
-                            <a href="<?php echo base_url('home/index/')?>">Sản phẩm</a>
+                            <a>Sản phẩm</a>
                             <div class="dropdown-content">
                                 <ul>
                                     <?php foreach ($category_list as $row):?>

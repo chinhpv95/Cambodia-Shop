@@ -8,11 +8,11 @@
             <div class="product-content-right">
                 <div class="woocommerce">
                     <form method="post" action="<?php echo base_url('cart/update/')?>">
-                        <table cellspacing="0" class="table table-hover">
+                        <table cellspacing="0" class="table">
                             <thead>
                             <tr>
                                 <th class="product-thumbnail">&nbsp;</th>
-                                <th class="product-name" style="width: 25%">Sản phẩm</th>
+                                <th class="product-name" style="width: 35%">Sản phẩm</th>
                                 <th class="product-price">Đơn giá</th>
                                 <th class="product-quantity">Số lượng</th>
                                 <th class="product-subtotal">Thành tiền</th>
@@ -52,21 +52,24 @@
                             </tr>
                                 <?php $total_price = $total_price + $row['subtotal'] ?>
                             <?php endforeach;?>
-                            <?php 
-                                if ($total_items == 0) echo "Không có sản phẩm nào trong giỏ"; 
-                                else {
-                                    echo "Có ";
-                                    echo $total_items;
-                                    echo " sản phẩm trong giỏ";
-                                } 
-                            ?>
+                            <div style="color: white; font-size: 17px;">
+                                <?php 
+                                    if ($total_items == 0) echo "Không có sản phẩm nào trong giỏ"; 
+                                    else {
+                                        echo "Có ";
+                                        echo $total_items;
+                                        echo " sản phẩm trong giỏ";
+                                    } 
+                                ?>
+                            </div>
+                            
                             <br><br>
                             <tr>
                                 <td colspan="4">
-                                    <div style="color: green; text-transform: uppercase; font-size: 20px">Tổng cộng</div>
+                                    <div style="color: #ca6330; text-transform: uppercase; font-size: 25px;"> <b>Tổng cộng</b></div>
                                 </td>
-                                <td>
-                                    <span class="amount"></span><?php echo number_format($total_price)?> đ 
+                                <td colspan="2">
+                                    <span class="amount"><b><?php echo number_format($total_price)?> đ </b></span>
                                 </td>
                             </tr>
                             <tr>
@@ -102,12 +105,13 @@
                      <div id="customer_details" class="col2-set">
                         <div class="col-1">
                             <div class="woocommerce-billing-fields">
-                                <center><h3 style="color:green;">Đặt hàng</h3></center>
+                                <center><h3 style="color:#ca6330; font-size: 23px">Đặt hàng</h3></center>
 
                                 <p id="billing_first_name_field" class="form-row form-row-first validate-required">
                                     <label class="" for="billing_name">Họ tên <abbr title="required" class="required">*</abbr>
                                    </label>
                                     <input type="text" value="" placeholder="" id="billing_first_name" name="name" class="input-text ">
+                                    <div class="clear error" name="name_error"><?php echo form_error('name')?></div>
                                 </p>
 
                                 <div class="clear"></div>
@@ -116,12 +120,14 @@
                                         <label class="" for="billing_phone">Số điện thoại <abbr title="required" class="required">*</abbr>
                                         </label>
                                         <input type="text" value="" placeholder="" id="billing_company" name="phone" class="input-text ">
+                                        <div class="clear error" name="name_error"><?php echo form_error('phone')?></div>
                                     </p>
 
                                     <p id="billing_address_1_field" class="form-row form-row-wide address-field validate-required">
                                         <label class="" for="billing_address_1">Địa chỉ <abbr title="required" class="required">*</abbr>
                                         </label>
                                         <input type="text" value="" id="billing_address" name="address" class="input-text ">
+                                         <div class="clear error" name="name_error"><?php echo form_error('address')?></div>
                                     </p>
 
                                     <div class="clear"></div>

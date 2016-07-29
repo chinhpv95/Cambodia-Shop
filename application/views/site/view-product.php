@@ -25,24 +25,25 @@
 
                             <div class="col-md-5 col-sm-6">
                                 <div class="product-inner">
-                                    <h2 class="product-name"><?php echo $row->productName; ?> </h2>
+                                    <h2 class="product-name " style="color: white; text-transform: uppercase;"><?php echo $row->productName; ?> </h2>
                                     <div class="product-inner-price">
                                         <ins><?php echo number_format($row->price) ?> VNĐ</ins>
                                     </div>    
                                     
                                     <form action="" class="cart">
-                                        <div class="quantity">
-                                            <input type="number" size="4" class="input-text qty text" title="Qty" value="1" name="quantity" min="1" step="1">
-                                        </div>
-                                        <button class="add_to_cart_button" type="submit">Thêm vào giỏ</button>
+                                        <button type="submit">
+                                            <a href="<?php echo base_url('cart/add/'.$row->categoryId.'/'.$row->productCode); ?>" class="add-to-cart-link">
+                                            <i  style="height: 100px" class="fa fa-shopping-cart"></i> Thêm vào giỏ</a>
+
+                                       </button>
                                     </form>   
                                     
                                    
                                     <br><br><br><br>
                                     <div role="tabpanel">
                                         <ul class="product-tab" role="tablist">
-                                            <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab" style="text-transform: uppercase; font-size: 14px;">Giới thiệu</a></li>
-                                            <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab" style="text-transform: uppercase; font-size: 14px;">Đánh giá</a></li>
+                                            <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab" style="text-transform: uppercase; font-size: 17px;">Giới thiệu</a></li>
+                                            <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab" style="text-transform: uppercase; font-size: 17px;">Đánh giá</a></li>
                                         </ul>
                                         <div class="tab-content">
                                             <div role="tabpanel" class="tab-pane fade in active" id="home">
