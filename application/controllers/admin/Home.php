@@ -26,8 +26,8 @@ class Home extends MY_Controller{
         $config['base_url']   = admin_url('product/index'); //link hien thi ra danh sach san pham
         $config['per_page']   = 10;//so luong san pham hien thi tren 1 trang
         $config['uri_segment'] = 4;//phan doan hien thi ra so trang tren url
-        $config['next_link']   = 'Trang kế tiếp';
-        $config['prev_link']   = 'Trang trước';
+        $config['next_link']   = '>';
+        $config['prev_link']   = '<';
         //khoi tao cac cau hinh phan trang
         $this->pagination->initialize($config);
 

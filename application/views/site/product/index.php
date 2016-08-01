@@ -48,12 +48,12 @@
                                 <a href="<?php echo base_url('home/information/'.$row->productCode); ?>" class="view-details-link"><i class="fa fa-info"></i> Thông tin</a>
                             </div>
                             <div class="product-f-image">
-                                <img src="<?php echo base_url('upload/product/'.$row->image_link) ?>" alt="">
+                                <img src="<?php echo base_url('upload/product/'.$row->image_link) ?>" title="<?php echo $row->productName ;  ?>">
                             </div>
                         </div>
                         <br>
                         <div class="product-title">
-                            <center><h4><b><?php echo $row->productName ;  ?></b></h4></center>
+                            <center><h4><?php echo $row->productName ;  ?></h4></center>
                         </div>
 
                         <br>

@@ -90,10 +90,10 @@ Class Cart extends MY_Controller
                         );
                         $this->load->model('orderdetails_model');
                         if (  $this->orderdetails_model->create($data)){
-
-                            sleep(2);
+                            sleep(1);
                             $this->cart->destroy();
-                        }else   ;
+
+                        } else   ;
 
                     }
             }

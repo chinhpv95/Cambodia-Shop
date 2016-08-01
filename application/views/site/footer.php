@@ -11,10 +11,10 @@
                     <h2 style="font-size: 38px;">Artisans<span>Angkor</span></h2>
                     <p>Chuyên bán đồ có xuất xứ Campuchia. Nhanh chóng, uy tín, tin cậy.</p>
                     <div class="footer-social">
-                        <a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a>
-                        <a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
-                        <a href="#" target="_blank"><i class="fa fa-youtube"></i></a>
-                        <a href="#" target="_blank"><i class="fa fa-linkedin"></i></a>
+                        <a href="https://www.facebook.com/" target="_blank" title="Facebook"><i class="fa fa-facebook"></i></a>
+                        <a href="#" target="_blank"><i class="fa fa-twitter" title="Twitter"></i></a>
+                        <a href="#" target="_blank"><i class="fa fa-youtube" title="Youtube"></i></a>
+                        <a href="#" target="_blank"><i class="fa fa-linkedin" title="LinkedIn"></i></a>
                     </div>
                 </div>
             </div>

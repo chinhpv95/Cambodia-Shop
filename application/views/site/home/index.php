@@ -74,7 +74,7 @@
             </div>
                 <br>
                 <div class="product-title">
-                    <center><h4><b><?php echo $row->productName ;  ?></b></h4></center>
+                    <center><h4><?php echo $row->productName ;  ?></h4></center>
                 </div>
 
                 <br>
