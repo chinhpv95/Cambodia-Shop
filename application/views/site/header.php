@@ -9,17 +9,33 @@
                 <h1><a href="<?php echo base_url('home/index/')?>"><img src="<?php echo public_url('site/')?>/content/logo.png"></a></h1>
             </div>
         </div>
-        <div class="col-md-5">
+        <div class="col-md-4">
             
         </div>
-        <div class="col-sm-4">
+        <div class="col-sm-5">
+            <div class="shopping-item">
+                <a href="">
+                    <i class="fa fa-user" aria-hidden="true"></i> 
+                </a>
+            </div>
             <div class="shopping-item">
                 <?php $total_price = 0?>
                 <?php foreach ($carts as $row):?>
                     <?php $total_price = $total_price + $row['subtotal'] ?>
                 <?php endforeach;?>
-
-                <a href="<?php echo base_url('cart/index/')?>">Giỏ hàng - <span class="cart-amunt"><?php echo number_format($total_price)?> VNĐ</span> <i class="fa fa-shopping-cart"></i> <span class="product-count" style="font-size:15px;text-align: center;padding: 0px"><?php echo $total_items?></span></a>
+                <a href="<?php echo base_url('cart/index/')?>">
+                    <i class="fa fa-shopping-cart"></i> 
+                    <span class="product-count" style="font-size:15px;text-align: center;padding: 0px"><?php echo $total_items?></span>
+                </a>
+            </div>
+            <div class="shopping-item">
+                <form action="" class="search-form">
+                    <div class="form-group has-feedback">
+                        <label for="search" class="sr-only">Search</label>
+                        <input type="text" class="form-control" name="search" id="search" placeholder="search">
+                        <span class="glyphicon glyphicon-search form-control-feedback"></span>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
