@@ -1135,7 +1135,7 @@ table {
     color: white;
 }
 
-.woocommerce-billing-fields input[type="text"] {
+.woocommerce-billing-fields input[type="text"], input[type="password"], input[type="date"] {
     background: #0f0113;
     border: 1px solid #ca6330;
 }
