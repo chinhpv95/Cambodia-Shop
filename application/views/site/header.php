@@ -24,8 +24,8 @@
                 </a>
             </div>
             <div class="shopping-item">
+            <a> <i class="fa fa-user" aria-hidden="true"></i> </a>
                 <div class="dropdown">
-                    <a> <i class="fa fa-user" aria-hidden="true"></i> </a>
                     <div class="dropdown-content">
                         <ul>
                             <li><a href="">Đăng ký</a></li>
