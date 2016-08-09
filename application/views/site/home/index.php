@@ -33,7 +33,7 @@
     <div class="row" style="border-bottom: 1px solid #ca6330">
         <div class="col-md-1 sort">Sắp xếp</div>
         <div class="col-md-2">
-            <select class="selectpicker form-control" name="sort_product" id="sort_product">
+            <!--<select class="selectpicker form-control" name="sort_product" id="sort_product">
                 <option disabled selected value> -- Sắp xếp theo -- </option>
                 <optgroup label="Tên">
                     <option value="1">Từ A-Z</option>
@@ -43,8 +43,21 @@
                     <option value="3">Từ cao xuống thấp</option>
                     <option value="4">Từ thấp lên cao</option>
                 </optgroup>
-            </select>
+            </select>-->
+            <div class="dropdown" id="sort-dropdown">
+                <button id="sort-button" class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Sắp xếp theo
+                    <span class="caret" style="margin-left: 40px;"></span>
+                </button>
+                
+                <ul class="dropdown-menu" id="sort-menu">
+                    <li><a href="<?php echo base_url('home/sort/1'); ?>">Tên: A đến Z</a></li>
+                    <li><a href="<?php echo base_url('home/sort/2'); ?>">Tên: Z dến A</a></li>
+                    <li><a href="<?php echo base_url('home/sort/3'); ?>">Giá: Thấp đến cao</a></li>
+                    <li><a href="<?php echo base_url('home/sort/4'); ?>">Giá: Cao đến thấp</a></li>
+                </ul>
+            </div>
         </div>
+        
         <div class="col-md-9">
             <table width="100%" cellspacing="10" cellpadding="1" id="checkAll" class="sTable mTable myTable">
                 <tr>
@@ -89,10 +102,10 @@
 </div>
 
 </body>
-<script>
+<!--<script>
     $(document).ready(function(){
         $('#sort_product').on('change',function(){
             window.location.href =window.location.href+'?&sort='+$(this).val();
         });
     });
-</script>
+</script>-->

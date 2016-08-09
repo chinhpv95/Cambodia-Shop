@@ -1112,12 +1112,34 @@ button[type=submit] a {
     color: #ca6330;
 }
 
+/*css cho sort*/
 .sort {
     margin-top:30px; 
     font-size: 17px; 
     color: white; 
     text-transform: uppercase;
 }
+#sort-menu{
+    margin-top: 0px;
+    background: #0f0113;
+}
+#sort-menu>li>a{
+    color: #fff;
+}
+#sort-menu>li>a:hover{
+    background: #0d3cf2;
+}
+#sort-dropdown{
+    padding-bottom: 0px;
+    top: 5px;
+}
+#sort-button{
+    width:160px;
+    background: #0f0113;
+    border: 1px solid #CA6330;
+    color: #fff;
+}
+
 
 .selectpicker {
     width: auto;
