@@ -55,6 +55,7 @@ body {
     padding: 12px;
     position: relative;
     background: #0f0113;
+    height: 50px;
 }
 
 .shopping-item a {
