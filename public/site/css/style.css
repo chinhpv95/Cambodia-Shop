@@ -37,14 +37,22 @@ body {
     margin: 30px 0;
     font-weight: 400;
 }
+
+.fa-shopping-cart {
+    margin-right: 12px;
+}
+
+.fa-user{
+    margin-right: 12px;
+}
+
 .shopping-item {
     border: 1px solid #0f0113;
     float: right;
-    font-size: 18px;
-    text-transform: uppercase;
+    font-size: 22px;
     margin-top: 70px;
     margin-right: 13px;
-    padding: 10px;
+    padding: 12px;
     position: relative;
     background: #0f0113;
 }
@@ -56,6 +64,7 @@ body {
 .shopping-item a:hover {
     color: white;
 }
+
 
 .cart-amunt {
     color: #CA6330;
@@ -1176,9 +1185,10 @@ table {
   height: 32px;
   background-color: #fff;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
-  border-radius: 25px;
+  border-radius: 15px;
   border: 1px solid #ccc;
 }
+
 .search-form .form-group input.form-control {
   padding-right: 20px;
   border: 0 none;
@@ -1186,36 +1196,42 @@ table {
   box-shadow: none;
   display:block;
 }
+
 .search-form .form-group input.form-control::-webkit-input-placeholder {
   display: none;
 }
+
 .search-form .form-group input.form-control:-moz-placeholder {
   /* Firefox 18- */
   display: none;
 }
+
 .search-form .form-group input.form-control::-moz-placeholder {
   /* Firefox 19+ */
   display: none;
 }
+
 .search-form .form-group input.form-control:-ms-input-placeholder {
   display: none;
 }
+
 .search-form .form-group:hover,
 .search-form .form-group.hover {
   width: 100%;
   border-radius: 4px 25px 25px 4px;
 }
+
 .search-form .form-group span.form-control-feedback {
   position: absolute;
   top: -1px;
   right: -2px;
   z-index: 2;
   display: block;
-  width: 34px;
-  height: 34px;
+  width: 30px;
+  height: 30px;
   line-height: 34px;
   text-align: center;
-  color: #3596e0;
+  color: #ca6330;
   left: initial;
   font-size: 14px;
 }

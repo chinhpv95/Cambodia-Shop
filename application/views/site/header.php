@@ -14,11 +14,6 @@
         </div>
         <div class="col-sm-5">
             <div class="shopping-item">
-                <a href="">
-                    <i class="fa fa-user" aria-hidden="true"></i> 
-                </a>
-            </div>
-            <div class="shopping-item">
                 <?php $total_price = 0?>
                 <?php foreach ($carts as $row):?>
                     <?php $total_price = $total_price + $row['subtotal'] ?>
@@ -29,14 +24,26 @@
                 </a>
             </div>
             <div class="shopping-item">
+                <div class="dropdown">
+                    <a> <i class="fa fa-user" aria-hidden="true"></i> </a>
+                    <div class="dropdown-content">
+                        <ul>
+                            <li><a href="">Đăng ký</a></li>
+                            <li><a href="">Đăng nhập</a></li>
+                        </ul>    
+                    </div>
+                </div>
+            </div>
+            
+            <!--<div class="shopping-item">
                 <form action="" class="search-form">
                     <div class="form-group has-feedback">
                         <label for="search" class="sr-only">Search</label>
-                        <input type="text" class="form-control" name="search" id="search" placeholder="search">
+                        <input type="text" class="form-control" name="search" id="search" placeholder="Tìm kiếm">
                         <span class="glyphicon glyphicon-search form-control-feedback"></span>
                     </div>
                 </form>
-            </div>
+            </div>-->
         </div>
     </div>
 </div>
