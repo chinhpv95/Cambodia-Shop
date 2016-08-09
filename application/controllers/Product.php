@@ -12,6 +12,7 @@
 
     function index($id)
     {
+        $sort = $this->input->get('sort')?$this->input->get('sort'):'5';
         $input = array();
         $input['where']['categoryId'] = $id;
         $total_rows =  $this->product_model -> get_total($input);
@@ -55,6 +56,18 @@
         $input['limit'] = array($config['per_page'], $segment);
         $input['where'] = array();
         $input['where']['categoryId'] = $id;
+
+        if($sort==1){
+            $input['order'] = array('productName',  'ASC' );
+        }elseif($sort==2){
+            $input['order'] = array('productName',  'DESC' );
+        }
+        elseif($sort==3){
+            $input['order'] = array('price',  'DESC' );
+        }
+        elseif($sort==4){
+            $input['order'] = array('price',  'ASC' );
+        }
 
         $list = $this->product_model->get_list($input);
         $this->data['list'] = $list;

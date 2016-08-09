@@ -11,15 +11,15 @@
     <div class="row" style="border-bottom: 1px solid #ca6330; padding-bottom: 10px;">
         <div class="col-md-1 sort">Sắp xếp</div>
         <div class="col-md-2">
-            <select class="selectpicker form-control">>
+            <select class="selectpicker form-control" name="sort_product" id="sort_product">
                 <option disabled selected value> -- Sắp xếp theo -- </option>
                 <optgroup label="Tên">
-                    <option>Từ A-Z</option>
-                    <option>Từ Z-A</option>
+                    <option value="1">Từ A-Z</option>
+                    <option value="2">Từ Z-A</option>
                     </optgroup>
                 <optgroup label="Giá">
-                    <option>Từ cao xuống thấp</option>
-                    <option>Từ thấp lên cao</option>
+                    <option value="3">Từ cao xuống thấp</option>
+                    <option value="4">Từ thấp lên cao</option>
                 </optgroup>
             </select>
         </div>
@@ -68,3 +68,10 @@
     </div> <!-- End main content area -->
 
 </body>
+<script>
+    $(document).ready(function(){
+        $('#sort_product').on('change',function(){
+            window.location.href =window.location.href+'?&sort='+$(this).val();
+        });
+    });
+</script>

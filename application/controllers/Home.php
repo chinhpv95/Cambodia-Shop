@@ -12,6 +12,7 @@ Class Home extends MY_Controller
     }
     function index()
     {
+        $sort = $this->input->get('sort')?$this->input->get('sort'):'5';
         $total_rows = $this->product_model->get_total();
         $this->data['total_rows'] = $total_rows;
     //load ra thu vien phan trang
@@ -55,6 +56,19 @@ Class Home extends MY_Controller
 
         $input = array();
         $input['limit'] = array($config['per_page'], $segment);
+
+        if($sort==1){
+            $input['order'] = array('productName',  'ASC' );
+        }elseif($sort==2){
+            $input['order'] = array('productName',  'DESC' );
+        }
+        elseif($sort==3){
+            $input['order'] = array('price',  'DESC' );
+        }
+        elseif($sort==4){
+            $input['order'] = array('price',  'ASC' );
+        }
+
         $list = $this->product_model->get_list($input);
         $this->data['list'] = $list;
         //        pre($list);
@@ -68,7 +82,7 @@ Class Home extends MY_Controller
         //pre($config['per_page']);
         $this->data['temp'] = 'site/home/index';
         $this->load->view('site/layout', $this->data);
-        }
+    }
 
 
 
