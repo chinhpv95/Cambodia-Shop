@@ -1,11 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: dell-pc
- * Date: 8/11/2016
- * Time: 9:33 AM
- */
-    class  Signin extends CI_Controller{
+
+    class  Forget_password extends CI_Controller{
         function __construct()
         {
             parent::__construct();
@@ -21,7 +16,7 @@
             $this->data['carts'] = $carts;
             $this->data['total_items']  =$total_items;
 
-            $this->data['temp'] = 'site/user/login';
+            $this->data['temp'] = 'site/user/forget-password';
             $this->load->view('site/layout', $this->data);
         }
     }

@@ -21,7 +21,7 @@
             $this->data['carts'] = $carts;
             $this->data['total_items']  =$total_items;
 
-            $this->data['temp'] = 'site/register';
+            $this->data['temp'] = 'site/user/register';
             $this->load->view('site/layout', $this->data);
         }
     }

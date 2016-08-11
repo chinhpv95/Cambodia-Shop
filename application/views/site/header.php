@@ -24,17 +24,17 @@
                 </a>
             </div>
             <div class="shopping-item">
-            <a> <i class="fa fa-user" aria-hidden="true"></i> </a>
-                <div class="dropdown">
+                <div class="dropdown" style="padding-top: 0px; color: white;">
+                    <i class="fa fa-user" aria-hidden="true"></i>
                     <div class="dropdown-content">
-                        <ul>
-                            <li><a href="<?php echo base_url('signup/index/')?>">Đăng ký</a></li>
-                            <li><a href="<?php echo base_url('signin/index/')?>">Đăng nhập</a></li>
+                        <ul style="list-style: none; text-transform: uppercase; font-size: 18px;">
+                            <li class="info"><a href="<?php echo base_url('signup/index/')?>">Đăng ký</a></li>
+                            <li class="info"><a href="<?php echo base_url('signin/index/')?>">Đăng nhập</a></li>
                         </ul>    
                     </div>
                 </div>
             </div>
-            <!--abc-->
+            <!--abc--> 
             <!--<div class="shopping-item">
                 <form action="" class="search-form">
                     <div class="form-group has-feedback">
