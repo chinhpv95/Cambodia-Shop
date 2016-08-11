@@ -5,7 +5,7 @@
  * Date: 8/11/2016
  * Time: 9:32 AM
  */
-    class Signup extends CI_Controller{
+    class Signup extends MY_Controller{
         function __construct()
         {
             ///
@@ -21,6 +21,9 @@
             $this->data['carts'] = $carts;
             $this->data['total_items']  =$total_items;
 
+            $message = $this->session->flashdata('message');
+            $this->data['message'] = $message;
+            
             $this->data['temp'] = 'site/user/register';
             $this->load->view('site/layout', $this->data);
         }

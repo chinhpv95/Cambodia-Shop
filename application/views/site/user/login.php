@@ -21,7 +21,7 @@
                             <p class="submit">
                                 <input type="hidden" class="hidden" name="back" value="my-account.php" /> <input type="submit" id="SubmitLogin" name="SubmitLogin" class="button" value="Đăng nhập" />
                             </p>
-                            <p class="lost_password form-row form-row-last validate-required validate-phone"><a href="<?php echo base_url('forget-password/index/')?>">Quên mật khẩu?</a></p>
+                            <p class="lost_password form-row form-row-last validate-required validate-phone"><a href="<?php echo base_url('forget_password/index/')?>">Quên mật khẩu?</a></p>
                         </div>
                         </div>
                         </div>

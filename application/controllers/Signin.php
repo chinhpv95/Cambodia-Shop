@@ -5,24 +5,69 @@
  * Date: 8/11/2016
  * Time: 9:33 AM
  */
-    class  Signin extends CI_Controller{
+    class  Signin extends MY_Controller{
         function __construct()
         {
             parent::__construct();
             //load ra file model
             ///xxxxx
-            $this->load->model('product_model');
+           // $this->load->model('product_model');
             $this->load->library('cart');
+            $this->load->library("session");
 
         }
+
+        /**
+         *
+         */
         function index(){
+
+            $this->load->library('form_validation');
+            $this->load->helper('form');
+            if($this->input->post())
+            {
+                $username = $this->input->post('email');
+                $this->form_validation->set_rules('login' ,'login', 'callback_check_login');
+                if($this->form_validation->run())
+                {
+                    $query=$this->db->query("SELECT customerName FROM customers WHERE id = '$username'");
+                    $data=$query->result_array();
+                    $this->session->set_userdata('login', $data);
+                    redirect(base_url('home/index'));
+                    $user=$this->session->userdata("login");
+                    echo $user;
+/*
+                    */?><!--
+                    <script>
+                        alert( <?php /*echo $user ;*/?>);
+                    </script>
+                    --><?php
+                }
+            }
+
             $carts = $this->cart->contents();
             $total_items = $this->cart->total_items();
             $this->data['carts'] = $carts;
             $this->data['total_items']  =$total_items;
 
+            $message = $this->session->flashdata('message');
+            $this->data['message'] = $message;
             $this->data['temp'] = 'site/user/login';
             $this->load->view('site/layout', $this->data);
+        }
+        function check_login()
+        {
+            $username = $this->input->post('email');
+            $password = $this->input->post('passwd');
+
+            $this->load->model('customers_model');
+            $where = array('id' => $username , 'password' => $password)/*substr(sha1($password),0,32))*/;
+            if($this->customers_model->check_exists($where))
+            {
+                return true;
+            }
+            $this->form_validation->set_message(__FUNCTION__, 'Không đăng nhập thành công');
+            return false;
         }
     }
 ?>
