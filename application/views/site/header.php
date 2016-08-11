@@ -28,13 +28,13 @@
                 <div class="dropdown">
                     <div class="dropdown-content">
                         <ul>
-                            <li><a href="">Đăng ký</a></li>
-                            <li><a href="">Đăng nhập</a></li>
+                            <li><a href="<?php echo base_url('signup/index/')?>">Đăng ký</a></li>
+                            <li><a href="<?php echo base_url('signin/index/')?>">Đăng nhập</a></li>
                         </ul>    
                     </div>
                 </div>
             </div>
-            
+            <!--abc-->
             <!--<div class="shopping-item">
                 <form action="" class="search-form">
                     <div class="form-group has-feedback">
