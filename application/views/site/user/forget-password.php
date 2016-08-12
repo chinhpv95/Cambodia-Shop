@@ -1,5 +1,6 @@
 <body>
 	<div class="container">
+		<br><br>
 		<div class="col-md-4"></div>
 		<div class="col-md-5">
 			<div class="woocommerce">
@@ -7,14 +8,14 @@
 					<div id="customer_details" class="col2-set">
 						<div class="col-1">
 							<div class="woocommerce-billing-fields">
-								<h1>Quên mật khẩu?</h1>
-								<p>Please enter the e-mail address used to register. We will send your new password to that address.</p>
+								<h3>Quên mật khẩu?</h3>
+								<p>Vui lòng nhập tên đăng nhập của bạn, một mật khẩu mới sẽ được gửi về email mà bạn đã đăng ký với chúng tôi</p>
 								<p id="restore_password" class="text">
-									<label for="email">E-mail:</label>
+									<label for="email">Tên đăng nhập</label>
 									<input class="text" type="text" id="email" name="email" value="" />
 								</p>
 								<p class="submit">
-									<input type="submit" class="button_large" value="Retrieve Password" />
+									<input type="submit" class="button_large" value="Xác nhận" />
 								</p>
 							</div>
 						</div>
