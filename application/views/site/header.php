@@ -4,15 +4,23 @@
 <div class="site-branding-area">
 <div class="container">
     <div class="row"">
-        <div class="col-sm-3">
+        <div class="col-md-3">
             <div class="logo">
                 <h1><a href="<?php echo base_url('home/index/')?>"><img src="<?php echo public_url('site/')?>/content/logo.png"></a></h1>
             </div>
         </div>
-        <div class="col-md-4">
-            
-        </div>
-        <div class="col-sm-5">
+        <div class="col-md-6"></div>
+        <div class="col-md-3">
+            <div style="color: #FFFFFF;"
+                <?php
+                if ($this->session->userdata("login") !=NULL ){
+                    $info = $this->session->userdata("login");
+                    ?>
+                    <li class="info" style="list-style: none;"><?php echo "Chào ".$info['customerName'];?></li>
+                    <?php
+                }
+                ?>
+            </div>
             <div class="shopping-item">
                 <?php $total_price = 0?>
                 <?php foreach ($carts as $row):?>
@@ -32,7 +40,7 @@
                             if ($this->session->userdata("login") !=NULL ){
                                 $info = $this->session->userdata("login");
                                 ?>
-                                <li class="info"><a href="#"><?php echo "Chào ".$info['customerName'];?></a></li>
+                                <li class="info"><a href="<?php echo base_url('customer_info/index/')?>">Trang cá nhân</a> </li>
                                 <li class="info"><a href="<?php echo base_url('signin/logout/')?>">Đăng xuất</a></li>
                             <?php }else{ ?>
                                 <li class="info"><a href="<?php echo base_url('signup/index/')?>">Đăng ký</a></li>
