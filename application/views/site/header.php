@@ -28,13 +28,21 @@
                     <i class="fa fa-user" aria-hidden="true"></i>
                     <div class="dropdown-content">
                         <ul style="list-style: none; text-transform: uppercase; font-size: 18px;">
-                            <li class="info"><a href="<?php echo base_url('signup/index/')?>">Đăng ký</a></li>
-                            <li class="info"><a href="<?php echo base_url('signin/index/')?>">Đăng nhập</a></li>
-                        </ul>    
+                            <?php
+                            if ($this->session->userdata("login") !=NULL ){
+                                $info = $this->session->userdata("login");
+                                ?>
+                                <li class="info"><a href="#"><?php echo "Chào ".$info['customerName'];?></a></li>
+                                <li class="info"><a href="<?php echo base_url('signin/logout/')?>">Đăng xuất</a></li>
+                            <?php }else{ ?>
+                                <li class="info"><a href="<?php echo base_url('signup/index/')?>">Đăng ký</a></li>
+                                <li class="info"><a href="<?php echo base_url('signin/index/')?>">Đăng nhập</a></li>
+                            <?php } ?>
+                        </ul>
                     </div>
                 </div>
             </div>
-            <!--abc--> 
+            <!--abc-->
             <!--<div class="shopping-item">
                 <form action="" class="search-form">
                     <div class="form-group has-feedback">

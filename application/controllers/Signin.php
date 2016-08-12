@@ -17,9 +17,7 @@
 
         }
 
-        /**
-         *
-         */
+        //hàm đăng nhập
         function index(){
 
             $this->load->library('form_validation');
@@ -32,16 +30,13 @@
                 {
                     $query=$this->db->query("SELECT customerName FROM customers WHERE id = '$username'");
                     $data=$query->result_array();
-                    $this->session->set_userdata('login', $data);
+                    $this->session->set_userdata('login', $data[0]);
                     redirect(base_url('home/index'));
-                    $user=$this->session->userdata("login");
-                    echo $user;
-/*
-                    */?><!--
-                    <script>
-                        alert( <?php /*echo $user ;*/?>);
-                    </script>
-                    --><?php
+                }
+                else{
+                    echo "Bạn đăng nhập không thành công";
+                    //$this->session->set_flashdata('flash_message', "Bạn đăng nhập không thành công");
+                    redirect(base_url('signin/index/'));
                 }
             }
 
@@ -68,6 +63,15 @@
             }
             $this->form_validation->set_message(__FUNCTION__, 'Không đăng nhập thành công');
             return false;
+        }
+
+
+        //hàm đăng xuất
+        function logout()
+        {
+
+            $this->session->sess_destroy();
+            redirect(base_url('home/index'));
         }
     }
 ?>
