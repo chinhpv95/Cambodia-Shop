@@ -39,11 +39,7 @@
                 				<input type="text" id="customer_fullname" name="customer_fullname" value="<?php echo set_value('customer_fullname')?>" class="account_input"/>
 								<div class="error" id="fullname_error"><?php echo form_error('customer_fullname')?></div>
             				</p>
-            				<!--<p class="form-row form-row-last validate-required">
-                				<label for="customer_address">Ngày sinh</label>
-                				<input type="date" placeholder="" id="datepicker" name="customer_dateofbirth" value="" class="account_input"/>
-                				
-            				</p>-->
+            				
             				<p class="form-row form-row-last validate-required">
                 				<label for="email">E-mail</label>
                 				<input type="text" id="email" name="email" value="<?php echo set_value('email')?>" class="account_input"/>

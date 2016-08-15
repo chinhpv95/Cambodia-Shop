@@ -8,12 +8,8 @@
     class Signup extends MY_Controller{
         function __construct()
         {
-            ///
             parent::__construct();
-            //load ra file model
             $this->load->model('customers_model');
-
-
         }
 
         function index(){
@@ -46,11 +42,18 @@
                     'address' => $this->input->post('customer_address')
                 );
                 //them thanh vien vao trong csdl
-                if($this->customers_model->create($data))
-                {
-                    $this->session->set_flashdata('message', 'Thêm mới dữ liệu thành công');
-                }else{
-                    $this->session->set_flashdata('message', 'Không thêm được');
+                if($this->check_user() == true) {
+                    if ($this->customers_model->create($data)) {
+                        $this->session->set_flashdata('message', 'Đăng ký thành công');
+                        redirect(base_url('home/index'));
+                    } else {
+                        $this->session->set_flashdata('message', 'Đăng ký thất bại');
+                    }
+                }
+                else{
+                    $this->session->set_flashdata('message', 'Tài khoản đã tồn tại');
+                    redirect(base_url('signup/index'));
+
                 }
             }
             $carts = $this->cart->contents();
@@ -70,7 +73,6 @@
             $user = $this->input->post('customer_username');
             $where = array();
             $where['id'] = $user;
-            //kiểm tra điều kiện email có tồn tại trong csdl hay không
             if($this->customers_model->check_exists($where))
             {
                 //trả về thông báo lỗi nếu đã tồn tại email này
