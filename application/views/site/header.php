@@ -9,47 +9,53 @@
                 <h1><a href="<?php echo base_url('home/index/')?>"><img src="<?php echo public_url('site/')?>/content/logo.png"></a></h1>
             </div>
         </div>
-        <div class="col-md-6"></div>
-        <div class="col-md-3">
-            <div style="color: #FFFFFF;"
-                <?php
-                if ($this->session->userdata("login") !=NULL ){
-                    $info = $this->session->userdata("login");
-                    ?>
-                    <li class="info" style="list-style: none;"><?php echo "Chào ".$info['customerName'];?></li>
-                    <?php
-                }
-                ?>
-            </div>
-            <div class="shopping-item">
-                <?php $total_price = 0?>
-                <?php foreach ($carts as $row):?>
-                    <?php $total_price = $total_price + $row['subtotal'] ?>
-                <?php endforeach;?>
-                <a href="<?php echo base_url('cart/index/')?>">
-                    <i class="fa fa-shopping-cart"></i> 
-                    <span class="product-count" style="font-size:15px;text-align: center;padding: 0px"><?php echo $total_items?></span>
-                </a>
-            </div>
-            <div class="shopping-item">
-                <div class="dropdown" style="padding-top: 0px; color: white;">
-                    <i class="fa fa-user" aria-hidden="true"></i>
-                    <div class="dropdown-content">
-                        <ul style="list-style: none; text-transform: uppercase; font-size: 18px;">
-                            <?php
-                            if ($this->session->userdata("login") !=NULL ){
-                                $info = $this->session->userdata("login");
-                                ?>
-                                <li class="info"><a href="<?php echo base_url('customer_info/index/')?>">Trang cá nhân</a> </li>
-                                <li class="info"><a href="<?php echo base_url('signin/logout/')?>">Đăng xuất</a></li>
-                            <?php }else{ ?>
-                                <li class="info"><a href="<?php echo base_url('signup/index/')?>">Đăng ký</a></li>
-                                <li class="info"><a href="<?php echo base_url('signin/index/')?>">Đăng nhập</a></li>
-                            <?php } ?>
-                        </ul>
+        <div class="col-md-4"></div>
+        <div class="col-md-5">
+            <div class="row">
+                <div class="shopping-item col-md-2" style="width: 80px;">
+                    <?php $total_price = 0?>
+                    <?php foreach ($carts as $row):?>
+                        <?php $total_price = $total_price + $row['subtotal'] ?>
+                    <?php endforeach;?>
+                    <a href="<?php echo base_url('cart/index/')?>">
+                        <i class="fa fa-shopping-cart"></i>
+                        <span class="product-count" style="font-size:15px;text-align: center;padding: 0px"><?php echo $total_items?></span>
+                    </a>
+                </div>
+                <div class="shopping-item col-md-2" style="width: 70px;">
+                    <div class="dropdown" style="padding-top: 0px; color: white;">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                        <div class="dropdown-content">
+                            <ul style="list-style: none; text-transform: uppercase; font-size: 18px;">
+                                <?php
+                                if ($this->session->userdata("login") !=NULL ){
+                                    $info = $this->session->userdata("login");
+                                    ?>
+                                    <li class="info"><a href="<?php echo base_url('customer_info/index/')?>">Trang cá nhân</a> </li>
+                                    <li class="info"><a href="<?php echo base_url('signin/logout/')?>">Đăng xuất</a></li>
+                                <?php }else{ ?>
+                                    <li class="info"><a href="<?php echo base_url('signup/index/')?>">Đăng ký</a></li>
+                                    <li class="info"><a href="<?php echo base_url('signin/index/')?>">Đăng nhập</a></li>
+                                <?php } ?>
+                            </ul>
+                        </div>
                     </div>
                 </div>
+                <div class="shopping-item col-md-3" style="color: #FFFFFF; background: transparent; border: none; top: -20px;">
+                    <?php
+                    if ($this->session->userdata("login") !=NULL ){
+                        $info = $this->session->userdata("login");
+                        ?>
+                        <div style="font-size: 15px; text-align: center; top: -15px;">
+                            <li class="info" style="list-style: none;"><?php echo "Chào ";?></li>
+                            <li class="info" style="list-style: none;"><?php echo  $info['customerName'];?></li>
+                        </div>
+                        <?php
+                    }
+                    ?>
+                </div>
             </div>
+
             <!--abc-->
             <!--<div class="shopping-item">
                 <form action="" class="search-form">
