@@ -31,6 +31,7 @@
                     $query=$this->db->query("SELECT customerName FROM customers WHERE id = '$username'");
                     $data=$query->result_array();
                     $this->session->set_userdata('login', $data[0]);
+                    $this->session->set_userdata('id', $username);
                     redirect(base_url('home/index'));
                 }
                 else{

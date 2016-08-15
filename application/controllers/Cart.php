@@ -26,18 +26,39 @@ Class Cart extends MY_Controller
         $this->load->library('form_validation');
         $this->load->helper('form');
 
-        $name = $this->input ->post('name');
-        $phone = $this->input ->post('phone');
-        $address = $this->input ->post('address');
-        $email = $this->input ->post('email');
-        $identityCard = $this->input ->post('identityCard');
+        if ($this->session->userdata("login") !=NULL ){
+            
+            $this->load->model('customers_model');
+            $id = $this->session->userdata("id");
+            $input = array();
+            $input['where']['id'] = $id;
+            $list = $this->customers_model->get_list($input);
+            foreach ($list as $row):
+                $name = $row->customerName;
+                $phone = $row->phone;
+                $address = $row->address;
+                $email = $row-> email;
+                $identityCard = $row->identityCard;
+            endforeach;
+        }
 
-        $this->form_validation->set_rules('name', 'Tên', 'required');
-        $this->form_validation->set_rules('phone', 'Số điện thoại', 'required');
-        $this->form_validation->set_rules('address', 'Địa chỉ', 'required');
-        $this->form_validation->set_rules('email', 'Email', 'required');
-       // $this->form_validation->set_rules('identityCard', 'Số CMND', 'required');
-        if($this-> form_validation ->run()){
+
+        if ($this->session->userdata("login") ==NULL ) {
+            $name = $this->input->post('name');
+            $phone = $this->input->post('phone');
+            $address = $this->input->post('address');
+            $email = $this->input->post('email');
+            $identityCard = $this->input->post('identityCard');
+
+            $this->form_validation->set_rules('name', 'Tên', 'required');
+            $this->form_validation->set_rules('phone', 'Số điện thoại', 'required');
+            $this->form_validation->set_rules('address', 'Địa chỉ', 'required');
+            $this->form_validation->set_rules('email', 'Email', 'required');
+            // $this->form_validation->set_rules('identityCard', 'Số CMND', 'required');
+            $this-> form_validation ->run();
+        }
+
+        if($this->input->post('woocommerce_checkout_place_order') != null){
             $customers = array(
                 'customerName'           => $name,
                 'phone'          =>$phone,
