@@ -14,44 +14,44 @@
               </div>
             </div>
             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 bhoechie-tab">
-                <!-- flight section -->
+                <!-- customer infor -->
                 <div class="bhoechie-tab-content active">
-                    <center>
-                      <h1 class="glyphicon glyphicon-plane" style="font-size:14em;color:#55518a"></h1>
-                      <h2 style="margin-top: 0;color:#55518a">Cooming Soon</h2>
-                      <h3 style="margin-top: 0;color:#55518a">Flight Reservation</h3>
-                    </center>
+                  <div id="customer_details" >
+                  <div class="woocommerce-billing-fields">
+                    <p >
+                      <label for="name">Tên đầy đủ : </label>
+                      <input type="text" id="name" name="name" value="" class="account_show" />
+                    </p>
+                    <p >
+                      <label for="password">Password : </label>
+                      <input type="text" id="password" name="password" value="" class="account_show" />
+                    </p>
+                    <p >
+                      <label for="address">Địa chỉ : </label>
+                      <input type="text" id="address" name="address" value="" class="account_show" />
+                    </p>
+                    <p >
+                      <label for="email">Email : </label>
+                      <input type="text" id="email" name="email" value="" class="account_show" />
+                    </p>
+                    <p >
+                      <label for="tel">Số điện thoại : </label>
+                      <input type="text" id="tel" name="tel" value="" class="account_show" />
+                    </p>
+                    <p >
+                      <label for="identityCard">Số chứng minh thư : </label>
+                      <input type="text" id="idententityCard" name="identityCard" value="" class="account_show" />
+                    </p>
+                    <p class="submit">
+                      <input type="hidden" class="hidden" name="back" value="" /> <input type="submit" id="SubmitChange" name="SubmitChange" class="button_large" value="Submit" />
+                      <input type="hidden" class="hidden" name="SubmitChange" value="Submit" />
+                    </p>
+                  </div>
+                  </div>
                 </div>
-                <!-- train section -->
+                <!-- shopping history -->
                 <div class="bhoechie-tab-content">
-                    <center>
-                      <h1 class="glyphicon glyphicon-road" style="font-size:12em;color:#55518a"></h1>
-                      <h2 style="margin-top: 0;color:#55518a">Cooming Soon</h2>
-                      <h3 style="margin-top: 0;color:#55518a">Train Reservation</h3>
-                    </center>
-                </div>
-    
-                <!-- hotel search -->
-                <div class="bhoechie-tab-content">
-                    <center>
-                      <h1 class="glyphicon glyphicon-home" style="font-size:12em;color:#55518a"></h1>
-                      <h2 style="margin-top: 0;color:#55518a">Cooming Soon</h2>
-                      <h3 style="margin-top: 0;color:#55518a">Hotel Directory</h3>
-                    </center>
-                </div>
-                <div class="bhoechie-tab-content">
-                    <center>
-                      <h1 class="glyphicon glyphicon-cutlery" style="font-size:12em;color:#55518a"></h1>
-                      <h2 style="margin-top: 0;color:#55518a">Cooming Soon</h2>
-                      <h3 style="margin-top: 0;color:#55518a">Restaurant Diirectory</h3>
-                    </center>
-                </div>
-                <div class="bhoechie-tab-content">
-                    <center>
-                      <h1 class="glyphicon glyphicon-credit-card" style="font-size:12em;color:#55518a"></h1>
-                      <h2 style="margin-top: 0;color:#55518a">Cooming Soon</h2>
-                      <h3 style="margin-top: 0;color:#55518a">Credit Card</h3>
-                    </center>
+                    
                 </div>
             </div>
         </div>
