@@ -26,9 +26,9 @@ h5,
 h6 {
     margin: 0 0 15px;
 }
-body { 
-  font-family: 'Roboto Condensed', sans-serif;
-  background: url(background.jpg) fixed;
+body {
+    font-family: 'Open Sans Condensed', sans-serif;
+    background: url(background.jpg) fixed;
 }
 
 
@@ -1343,4 +1343,9 @@ div.bhoechie-tab-content{
 
 div.bhoechie-tab div.bhoechie-tab-content:not(.active){
     display: none;
+}
+
+.checkout-info {
+    font-size: 18px;
+    font-weight: bold;
 }

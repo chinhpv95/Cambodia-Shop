@@ -31,10 +31,9 @@
                                     </div>    
                                     
                                     <form action="" class="cart">
-                                        <button type="submit">
+                                        <button type="submit" style="font-size: 17px;">
                                             <a href="<?php echo base_url('cart/add/'.$row->categoryId.'/'.$row->productCode); ?>" class="add-to-cart-link">
-                                            <i  style="height: 100px" class="fa fa-shopping-cart"></i> Thêm vào giỏ</a>
-
+                                            <i  style="height: 100px;" class="fa fa-shopping-cart"></i> Thêm vào giỏ</a>
                                        </button>
                                     </form>   
                                     

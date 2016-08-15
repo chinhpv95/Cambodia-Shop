@@ -2,11 +2,10 @@
 <body>
 
 <div class="single-product-area">
-    <div class="zigzag-bottom"></div>
     <div class="container">
         <div class="col-md-9">
             <div class="product-content-right">
-                <div class="woocommerce">
+                <div class="woocommerce" style="font-family: 'Open Sans Condensed', sans-serif;">
                     <form method="post" action="<?php echo base_url('cart/update/')?>">
                         <table cellspacing="0" class="table">
                             <thead>
@@ -103,7 +102,7 @@
         </div>
 
         <div class="col-md-3">
-            <div class="woocommerce">
+            <div class="woocommerce" style="font-family: 'Open Sans Condensed', sans-serif;">
                 <?php if ($this->session->userdata("login") ==NULL ){?>
 
                     <form enctype="multipart/form-data"  class="checkout" method="post" name="checkout" action="<?php echo base_url('cart/index/')?>">
@@ -115,12 +114,12 @@
 
                             <div class="woocommerce-billing-fields">
 
-                                <center><h3 style="color:#ca6330; font-size: 23px">Đặt hàng</h3></center>
+                                <center><h3 style="color:#ca6330; font-size: 25px">Đặt hàng</h3></center>
 
 
 
                                 <p id="billing_first_name_field" class="form-row form-row-first validate-required">
-                                    <label class="" for="billing_name">Họ tên (*)
+                                    <label class="checkout-info" for="billing_name">Họ tên (*)
                                     </label>
                                     <input type="text" value="" placeholder="" id="billing_first_name" name="name" class="input-text " required>
                                 <div class="clear error" name="name_error"><?php echo form_error('name')?></div>
@@ -132,7 +131,7 @@
 
                                     <p id="billing_company_field" class="form-row form-row-wide">
 
-                                        <label class="" for="billing_phone">Số điện thoại (*)</label>
+                                        <label class="checkout-info" for="billing_phone">Số điện thoại (*)</label>
 
 
                                         <input type="text" value="" placeholder="" id="billing_company" name="phone" class="input-text " required>
@@ -142,7 +141,7 @@
                                     </p>
 
                                     <p id="billing_address_1_field" class="form-row form-row-wide address-field validate-required">
-                                        <label class="" for="billing_address_1">Địa chỉ (*)
+                                        <label class="checkout-info" for="billing_address_1">Địa chỉ (*)
                                         </label>
                                         <input type="text" value="" id="billing_address" name="address" class="input-text " required>
                                          <div class="clear error" name="name_error"><?php echo form_error('address')?></div>
@@ -151,13 +150,13 @@
                                     <div class="clear"></div>
 
                                     <p id="billing_email_field" class="form-row form-row-first validate-required validate-email">
-                                        <label class="" for="billing_email">Email (*)
+                                        <label class="checkout-info" for="billing_email">Email (*)
                                         </label>
                                         <input type="text" value="" placeholder="" id="billing_email" name="email" class="input-text" >
                                     </p>
 
                                     <p id="billing_phone_field" class="form-row form-row-last validate-required validate-phone">
-                                        <label class="" for="billing_id">Số CMTND (*)
+                                        <label class="checkout-info" for="billing_id">Số CMTND (*)
                                         <input type="text" value="" placeholder="" id="billing_phone" name="identityCard" class="input-text ">
                                     </p>
                                     <div class="clear"></div>
@@ -166,7 +165,7 @@
                             </div>
                         </div>
 
-                    <div>
+                    <div style="color:#ca6330; font-size: 18px">
                         <br>
                         <center>
                             <input type="submit" value="Đặt hàng" id="place_order" name="woocommerce_checkout_place_order" data-toggle="modal" data-target="#myModal" onclick="process()">
@@ -187,29 +186,29 @@
                                 <div id="customer_details" class="col2-set">
                                     <div class="col-1">
                                         <div class="woocommerce-billing-fields">
-                                            <center><h3 style="color:#ca6330; font-size: 23px">Đặt hàng</h3></center>
+                                            <center><h3 style="color:#ca6330; font-size: 25px">Đặt hàng</h3></center>
                                             <p id="billing_first_name_field" class="form-row form-row-first validate-required">
-                                                <label class="" for="billing_name">Họ tên</label>
+                                                <label class="checkout-info" style="color: #CA6330;" for="billing_name">Họ tên</label>
                                                 <label><?php echo $row->customerName; ?></label>
                                             </p>
                                             <div class="clear"></div>
                                             <p id="billing_company_field" class="form-row form-row-wide">
-                                                <label class="" for="billing_phone">Số điện thoại</label>
+                                                <label class="checkout-info" style="color: #CA6330;" for="billing_phone">Số điện thoại</label>
                                                 <label><?php echo $row->phone; ?></label>
                                             </p>
                                             <p id="billing_address_1_field" class="form-row form-row-wide address-field validate-required">
-                                                <label class="" for="billing_address_1">Địa chỉ</label>
+                                                <label class="checkout-info" style="color: #CA6330;" for="billing_address_1">Địa chỉ</label>
                                                 <label><?php echo $row->address; ?></label>
                                             </p>
                                             <div class="clear"></div>
                                             <p id="billing_email_field" class="form-row form-row-first validate-required validate-email">
-                                                <label class="" for="billing_email">Email</label>
+                                                <label class="checkout-info" style="color: #CA6330;" for="billing_email">Email</label>
                                                 <label><?php echo $row->email; ?></label>
                                             </p>
                                         </div>
                                     </div>
                                 </div>
-                                <div>
+                                <div style="color:#ca6330; font-size: 18px">
                                     <br>
                                     <center>
                                         <input type="submit" value="Đặt hàng" id="place_order" name="woocommerce_checkout_place_order" data-toggle="modal" data-target="#myModal" onclick="process()">
