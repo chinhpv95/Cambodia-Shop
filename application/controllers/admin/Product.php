@@ -98,7 +98,7 @@ Class Product extends MY_Controller
         $category = $this->category_model->get_list();
         $this->data['catalogs'] = $category;
         //load thư viện validate dữ liệu
-        
+
         $this->load->library('form_validation');
         $this->load->helper('form');
 
@@ -131,7 +131,6 @@ Class Product extends MY_Controller
                 {
                     $image_link = $upload_data['file_name'];
                 }
-
                 //luu du lieu can them
                 $data = array(
                     'productName'       => $productName,

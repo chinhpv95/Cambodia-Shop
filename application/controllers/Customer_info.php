@@ -15,13 +15,14 @@
             //   $this->load->model('product_model');
             $this->load->library('cart');
             $this->load->model('customers_model');
+            $this->load->library("session");
 
         }
         function index(){
             $this->load->model('customers_model');
             $id = $this->session->userdata("id");
             $input = array();
-            $input['where']['id'] = $id;
+            $input['where']['username'] = $id;
             $list = $this->customers_model->get_list($input);
             $this->data['list'] = $list;
             
@@ -42,7 +43,7 @@
             //get list
             $id = $this->session->userdata("id");
             $input = array();
-            $input['where']['id'] = $id;
+            $input['where']['username'] = $id;
             $list = $this->customers_model->get_list($input);
             $this->data['list'] = $list;
 
@@ -54,6 +55,7 @@
             $this->form_validation->set_rules('identityCard', 'Mật khẩu', 'required|min_length[6]');
 
             if($this->form_validation->run()) {
+                $customerName = $this->input->post('name');
                 $data = array(
                     'customerName' => $this->input->post('name'),
                     'email' => $this->input->post('email'),
@@ -64,8 +66,16 @@
                     'identityCard'=> $this->input->post('identityCard')
                 );
 
-                $this->db->where('id',$id);
+                $this->db->where('username',$id);
                 $this->db->update('customers',$data);
+
+//                $info = $this->session->userdata("login");
+//                $info['customerName'] =
+
+                $data = $this->session->userdata('login');
+                $data['customerName'] = $customerName;
+                $this->session->set_userdata('login', $data);
+
                 $this->session->set_flashdata('message', 'Sửa thông tin thành công');
                 redirect(base_url('customer_info/'));
             }
@@ -88,23 +98,32 @@
             //get list
             $id = $this->session->userdata("id");
             $input = array();
-            $input['where']['id'] = $id;
+            $input['where']['username'] = $id;
             $list = $this->customers_model->get_list($input);
             $this->data['list'] = $list;
 
             $this->form_validation->set_rules('password_recent', 'Mật khẩu', 'required|min_length[6]');
             $this->form_validation->set_rules('password_new', 'Mật khẩu', 'required|min_length[6]');
             $this->form_validation->set_rules('password_confirm', 'Nhập lại mật khẩu', 'required|matches[password_new]');
-
+            $data_update = $list[0];
+//            pre($data_update);
             if($this->form_validation->run()) {
-                $data = array(
-                    'password' => $this->input->post('password_new')
-                );
-
+                $password = $this->input->post('password_new');
                 if($this->check_pass($id) == true){
-                    $this->db->where('id',$id);
-                    $this->db->where('password',$this->input->post('password_recent'));
-                    $this->db->update('customers',$data);
+
+//                    $this->db->where('username',$id);
+//                    $this->db->where('password',$this->input->post('password_recent'));
+//                   $data_update = array(
+//                       'customerName' =>$list[0]->customerName,
+//                       'phone' => $list[0]->phone,
+//                       'address' => $list[0]->address,
+//                       'email'  => $list[0] ->email,
+//                       'username' =>$list[0] ->username,
+//                       'password'=> $password,
+//
+//                   );
+                    $data_update->password = substr(sha1($password),0,32);
+                    $this->customers_model->update($list[0]->customerNumber,$data_update);
                     $this->session->set_flashdata('message', 'Mật khẩu đã được đổi');
                     redirect(base_url('customer_info'));
                 }
@@ -127,7 +146,7 @@
         function check_pass($user)
         {
             $password = $this->input->post('password_recent');
-            $where = array('id' => $user, 'password' => $password);
+            $where = array('username' => $user, 'password' => substr(sha1($password),0,32));
             if ($this->customers_model->check_exists($where) == null) {
 
                 //$this->form_validation->set_message(__FUNCTION__, 'Password hiện tại không đúng');

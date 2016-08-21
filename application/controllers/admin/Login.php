@@ -13,7 +13,7 @@ Class Login extends MY_controller{
             {
                 $query=$this->db->query("SELECT name FROM admin WHERE username = '$username'");
                 $data=$query->result_array();
-                $this->session->set_userdata('login', $data[0]);
+                $this->session->set_userdata('login_admin', $data[0]);
                 redirect(admin_url('home'));
 
             }

@@ -44,7 +44,7 @@
                     <div class="thumbnail">
                         <div class="single-product">
                             <div class="product-hover">
-                                <a href="<?php echo base_url('cart/add/'.$row->categoryId.'/'.$row->productCode); ?>" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</a>
+                                <a  onclick="add('<?php echo $row->productCode?>')" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</a>
                                 <a href="<?php echo base_url('home/information/'.$row->productCode); ?>" class="view-details-link"><i class="fa fa-info"></i> Thông tin</a>
                             </div>
                             <div class="product-f-image">

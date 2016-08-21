@@ -7,6 +7,7 @@
     <div class="widget">
 
         <div class="title">
+            
             <span class="titleIcon"><input type="checkbox" name="titleCheck" id="titleCheck"></span>
             <h6>
                 Danh sách sản phẩm

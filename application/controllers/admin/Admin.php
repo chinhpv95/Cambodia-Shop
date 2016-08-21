@@ -149,8 +149,9 @@ class Admin extends MY_Controller{
     }
     
     function logout(){
-        if($this->session->userdata('login')){
-            $this->session->sess_destroy();
+        if($this->session->userdata('login_admin')){
+//            $this->session->sess_destroy();
+            $this->session->unset_userdata('login_admin');
         }
         redirect(admin_url('login'));
     }

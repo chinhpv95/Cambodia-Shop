@@ -24,14 +24,16 @@
             $this->load->helper('form');
             if($this->input->post())
             {
-                $username = $this->input->post('email');
+                $this->form_validation->set_rules('name', 'Tên', 'required');
                 $this->form_validation->set_rules('login' ,'login', 'callback_check_login');
                 if($this->form_validation->run())
                 {
-                    $query=$this->db->query("SELECT customerName FROM customers WHERE id = '$username'");
+                    $username = $this->input->post('name');
+                    $query=$this->db->query("SELECT customerName FROM customers WHERE username = '$username'");
                     $data=$query->result_array();
                     $this->session->set_userdata('login', $data[0]);
                     $this->session->set_userdata('id', $username);
+//                    pre($data);
                     redirect(base_url('home/index'));
                 }
                 else{
@@ -53,11 +55,11 @@
         }
         function check_login()
         {
-            $username = $this->input->post('email');
+            $username = $this->input->post('name');
             $password = $this->input->post('passwd');
 
             $this->load->model('customers_model');
-            $where = array('id' => $username , 'password' => $password)/*substr(sha1($password),0,32))*/;
+            $where = array('username' => $username , 'password' => substr(sha1($password),0,32))/*substr(sha1($password),0,32))*/;
             if($this->customers_model->check_exists($where))
             {
                 return true;
@@ -71,7 +73,8 @@
         function logout()
         {
 
-            $this->session->sess_destroy();
+//            $this->session->sess_destroy();
+            $this->session->unset_userdata('login');
             redirect(base_url('home/index'));
         }
     }

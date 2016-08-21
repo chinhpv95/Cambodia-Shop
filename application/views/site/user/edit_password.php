@@ -16,27 +16,27 @@
             <!-- customer infor -->
             <div class="bhoechie-tab-content active">
                 <div id="customer_details" >
-                    <div class="woocommerce-billing-fields">
-                        <h3>Sửa mật khẩu</h3>
+                    <div class="edit-info">
+                        <h3>Sửa mật khẩu</h3><br>
                         <form method="post" action="">
                             <p>
-                                <label for="name">Mật khẩu hiện tại : </label>
-                                <input type="password" id="password_recent" name="password_recent" value="" class="" />
-                                <div class="error" id="passrecent_error"><?php echo form_error('password_recent')?></div>
+                                <label for="name">Mật khẩu hiện tại:</label>
+                                <input type="password" id="password_recent" name="password_recent" size="78" value="" class="" />
+                            <div class="error" id="passrecent_error"><?php echo form_error('password_recent')?></div>
                             </p>
 
                             <p>
-                                <label for="passwd">Mật khẩu mới</label>
+                                <label for="passwd">Mật khẩu mới:</label>
                                 <input type="password" name="password_new" id="password_new" size="78" class=""/>
-                                <div class="error" id="passnew_error"><?php echo form_error('password_new')?></div>
+                            <div class="error" id="passnew_error"><?php echo form_error('password_new')?></div>
                             </p>
 
                             <p class="form-row form-row-last validate-required">
-                                <label for="passwd_confirm">Nhập lại mật khẩu mới</label>
+                                <label for="passwd_confirm">Nhập lại mật khẩu mới:</label>
                                 <input type="password" class="text" name="password_confirm" size="78" id="password_confirm" class=""/>
-                                <div class="error" id="repass_error"><?php echo form_error('password_confirm')?></div>
+                            <div class="error" id="repass_error"><?php echo form_error('password_confirm')?></div>
                             </p>
-
+                            <br>
                             <p class="submit">
                                 <input type="hidden" class="hidden" name="back" value="" />
                                 <input type="submit" id="SubmitCreate" name="SubmitCreate" class="btn btn-danger" value="Xác nhận" />

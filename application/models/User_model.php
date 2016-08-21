@@ -6,5 +6,6 @@
  * Time: 10:45 AM
  */
 class User_model extends MY_Model{
-    var $table = user;
+    var $table = 'customers';
+    var $key = 'customerNumber';
 }

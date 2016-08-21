@@ -41,9 +41,9 @@ class Home extends MY_Controller{
         $list = $this->order_model->get_list($input);
         // $this->data['list'] = $list;
 
-        $query=$this->db->query("SELECT *,SUM(orderdetails.quantityOrdered*orderdetails.priceEach) FROM orders,customers,orderdetails  
-                                WHERE customers.customerNumber = orders.customerNumber
-                                AND orderdetails.orderNumber = orders.orderNumber 
+        $query=$this->db->query("SELECT *,SUM(orderdetails.quantityOrdered*orderdetails.priceEach)
+                                FROM orders,orderdetails  
+                                WHERE  orderdetails.orderNumber = orders.orderNumber 
                                 GROUP BY orders.orderNumber 
                                 ORDER BY orders.orderNumber DESC 
                                 LIMIT 10");

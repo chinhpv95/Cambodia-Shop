@@ -48,23 +48,23 @@
                             <label class="formLeft">Hình ảnh:<span class="req">*</span></label>
                             <div class="formRight">
                                 <div class="left">
-                                    <input type="file" name="image_link" id="image" size="25">
+                                    <input type="file" name="image" id="image" size="25">
                                 </div>
                                 <div class="clear error" name="image_error"></div>
                             </div>
                             <div class="clear"></div>
                         </div>
 
-                        <div class="formRow">
-                            <label class="formLeft">Ảnh kèm theo:</label>
-                            <div class="formRight">
-                                <div class="left">
-                                    <input type="file" multiple="" name="image_list[]" id="image_list" size="25" >
-                                </div>
-                                <div class="clear error" name="image_list_error"></div>
-                            </div>
-                            <div class="clear"></div>
-                        </div>
+<!--                        <div class="formRow">-->
+<!--                            <label class="formLeft">Ảnh kèm theo:</label>-->
+<!--                            <div class="formRight">-->
+<!--                                <div class="left">-->
+<!--                                    <input type="file" multiple="" name="image_list[]" id="image_list" size="25" >-->
+<!--                                </div>-->
+<!--                                <div class="clear error" name="image_list_error"></div>-->
+<!--                            </div>-->
+<!--                            <div class="clear"></div>-->
+<!--                        </div>-->
 
                         <!-- Price -->
                         <div class="formRow">

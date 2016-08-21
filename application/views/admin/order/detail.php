@@ -28,7 +28,7 @@
                     <td style="width:90px;">Địa chỉ giao hàng</td>
                     <td style="width:90px;">Thời gian đặt hàng</td>
                     <!--                <td style="width:100px;">Giao dịch</td>-->
-                    <td style="width:75px;">Thời gian giao hàng</td>
+<!--                    <td style="width:75px;">Thời gian giao hàng</td>-->
                     <td style="width:75px;">Thanh toán</td>
 
                 </tr>
@@ -50,8 +50,8 @@
 
                     <td class="textC" ><?php echo $list[0]['address']?></td>
                     <td class="textC" ><?php echo $list[0]['createDate']?></td>
-                    <td class="textC" ><?php echo $list[0]['updateDate']?></td>
-                    <td class="textC" ><?php echo "Tiền"?></td>
+<!--                    <td class="textC" >--><?php //echo $list[0]['updateDate']?><!--</td>-->
+                    <td class="textC" ><?php echo "Tiền mặt"?></td>
 
                 </tr>
                 </tr>
@@ -71,11 +71,9 @@
             <input type="submit" value="Cập nhập" class="redB" style="padding: 7px 10px 6px 15px;margin: 5px 60px;">
         </div>
         <div class="title">
-<!--            <span class="titleIcon"><input type="checkbox" name="titleCheck" id="titleCheck"></span>-->
             <h6 style="font-size: 15px;">
                 Đơn hàng
             </h6>
-<!--            <div class="num f12">Số lượng: <b>--><?php //echo $total_rows?><!--</b></div>-->
         </div>
 
 
@@ -85,12 +83,9 @@
 
             <thead>
             <tr>
-<!--                <td style="width:10px;"><img src="--><?php //echo public_url('admin/images')?><!--/icons/tableArrows.png"></td>-->
                 <td style="width:60px;">Mã sản phẩm</td>
                 <td style="width:75px;">Tên sản phẩm</td>
                 <td style="width:90px;">Đơn giá</td>
-<!--                <td>Hình thức</td>-->
-<!--                <td style="width:100px;">Giao dịch</td>-->
                 <td style="width:75px;">Số lượng</td>
                 <td style="width:75px;">Thành tiền</td>
 
@@ -105,27 +100,17 @@
             <?php foreach ($product as $row):?>
                 <tr>
 <!--                    <td><input type="checkbox" name="id[]" value="--><?php //echo $row['productCode']?><!--"></td>-->
-
                     <td class="textC"><?php echo $row['productCode']?></td>
-
                     <td >
                         <?php echo $row['productName']?>
                     </td>
-
-                    <td class="textC red format_number" ><?php echo $row['price']?></td>
-
-
-
-
+                    <td class="textC red format_number" ><?php echo $row['priceEach']?></td>
                     <td class="status textC">
 						<span class="pending">
 						<?php echo $row['quantityOrdered']?>
                         </span>
                     </td>
-
                     <td class="textC red format_number"><?php echo ($row['orderdetails.quantityOrdered*orderdetails.priceEach'])?></td>
-
-
                 </tr>
                 </tr>
             <?php endforeach;?>

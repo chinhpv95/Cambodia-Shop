@@ -4,7 +4,7 @@
 </head>
 <body>
 <div class="wraper">
-    
+
 
     <div class="header">
         <?php $this->load->view('site/header',$this->data)?>
@@ -15,12 +15,15 @@
 
         <div class="content">
             <?php if(isset($message)):?>
-                <h3 style="color:red"><?php echo $message?></h3>
+                <br>
+                <div class="id">
+                    <h3 style="color:red; text-align: center"><?php echo $message?></h3>
+                </div>
             <?php endif;?>
             <?php $this->load->view($temp , $this->data);?>
         </div>
 
-        
+
 
         <div class="right">
             <div id="goTop" style="float:right; margin-right:100px;" class="nav navbar-right">
@@ -37,14 +40,16 @@
 
 <script type="text/javascript">
     $(function(){
-    $(window).scroll(function () {
-        if ($(this).scrollTop() > 600) $('#goTop').fadeIn();
-        else $('#goTop').fadeOut();
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 600) $('#goTop').fadeIn();
+            else $('#goTop').fadeOut();
+        });
+        $('#goTop').click(function () {
+            $('body').animate({scrollTop: 100}, 'slow');
+        });
     });
-    $('#goTop').click(function () {
-        $('body').animate({scrollTop: 100}, 'slow');
-    });
-    });
+
+    $('div.id').delay(2000).slideUp();
 </script>
 
 </body>

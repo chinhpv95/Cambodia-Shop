@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
+-- version 4.3.11
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 27, 2016 at 12:28 PM
--- Server version: 10.1.10-MariaDB
--- PHP Version: 5.6.19
+-- Generation Time: Aug 15, 2016 at 12:06 PM
+-- Server version: 5.6.24
+-- PHP Version: 5.6.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -14,7 +14,7 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!40101 SET NAMES utf8 */;
 
 --
 -- Database: `cambodia`
@@ -26,27 +26,28 @@ SET time_zone = "+00:00";
 -- Table structure for table `admin`
 --
 
-CREATE TABLE `admin` (
+CREATE TABLE IF NOT EXISTS `admin` (
   `id` int(25) NOT NULL,
   `password` varchar(32) NOT NULL,
   `name` varchar(50) NOT NULL,
   `username` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `email` varchar(255) NOT NULL,
+  `newpass` varchar(255) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `admin`
 --
 
-INSERT INTO `admin` (`id`, `password`, `name`, `username`, `email`) VALUES
-(1, '7c222fb2927d828af22f592134e89324', 'Trần Huy Tiệp', 'admin', '');
+INSERT INTO `admin` (`id`, `password`, `name`, `username`, `email`, `newpass`) VALUES
+(1, '7c222fb2927d828af22f592134e89324', 'Trần Huy Tiệp', 'admin', 'tranhuytiep95@gmail.com', 'uWfG7y3tHj98aR3cGVoqTBsCDrODEVSD');
 
 -- --------------------------------------------------------
 
 --
 -- Stand-in structure for view `book`
 --
-CREATE TABLE `book` (
+CREATE TABLE IF NOT EXISTS `book` (
 `productCode` varchar(15)
 ,`productName` varchar(70)
 ,`categoryId` int(11)
@@ -62,10 +63,10 @@ CREATE TABLE `book` (
 -- Table structure for table `category`
 --
 
-CREATE TABLE `category` (
+CREATE TABLE IF NOT EXISTS `category` (
   `categoryID` int(11) NOT NULL,
   `categoryName` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `category`
@@ -83,7 +84,7 @@ INSERT INTO `category` (`categoryID`, `categoryName`) VALUES
 --
 -- Stand-in structure for view `clothes`
 --
-CREATE TABLE `clothes` (
+CREATE TABLE IF NOT EXISTS `clothes` (
 `productCode` varchar(15)
 ,`productName` varchar(70)
 ,`categoryId` int(11)
@@ -99,47 +100,32 @@ CREATE TABLE `clothes` (
 -- Table structure for table `customers`
 --
 
-CREATE TABLE `customers` (
+CREATE TABLE IF NOT EXISTS `customers` (
   `customerNumber` int(11) NOT NULL,
   `customerName` varchar(50) NOT NULL,
   `phone` varchar(20) NOT NULL,
   `address` varchar(100) DEFAULT NULL,
   `email` varchar(50) DEFAULT NULL,
   `identityCard` int(20) DEFAULT NULL,
-  `id` varchar(25) NOT NULL,
+  `username` varchar(255) NOT NULL,
   `password` varchar(25) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `customers`
 --
 
-INSERT INTO `customers` (`customerNumber`, `customerName`, `phone`, `address`, `email`, `identityCard`, `id`, `password`) VALUES
-(1, 'Nguyễn Viết Cương', '0987651888', 'Mù Căng Chải - Yên Bái', 'cuongnv@gmail.com', 71627238, 'cuongnv', '123456'),
-(2, 'Đoàn Quang Long', '092777466', 'Mường Nhé, Điện Biên', 'longdq@gmail.com', 155345525, 'longdq', '123456'),
-(3, 'Noun Sothea', '0988888888', 'Đại Từ, Thái Nguyên', 'sothea@gmail.com', 99882753, 'sothean', '123456'),
-(4, 'Trần Huy Tiệp', '0976555162', 'Anh Sơn, Nghệ An', 'tiepth@gmail.com', 22555126, 'tiepth', '123456'),
-(5, 'Phạm Văn Chính', '0955122485', 'Tam Nông, Phú Thọ', 'chinhpv@gmail.com', 99888352, 'chinhpv', '123456'),
-(6, 'Trần Huy Tiệp', '0969696969', 'Hà Nội', 'tranhuytiep95@gmail.com', 2147483647, '', ''),
-(7, 'Lê Văn Lương', '0964777282', 'Thường Tín, Hà Nội', 'luonglv@gmail.com', 29294432, '', ''),
-(8, 'Lê Công Vinh', '0988666232', 'Mỹ Tho, Tiền Giang', 'vinhlv@gmail.com', 99882245, '', ''),
-(9, 'Messi', '0922444111', 'Thiên Đàng', 'messi@gmail.com', 99998812, '', ''),
-(10, 'Cao Minh Lâm', '0944566233', 'Phú Ninh, Quảng Nam', 'anvb@gmai.com', 661271212, '', ''),
-(11, 'Bai Thu Nguyen', '977666162', 'Đông Triều, Quảng Ninh', 'chinh@gmail.com', 2147483647, '', ''),
-(12, 'Hoàng Phúc Anh', '966192810', 'Trung Quốc', 'chinhpv@gmail.com', 2147483647, '', ''),
-(13, 'Hoàng Thanh Tâm', '0977777777', 'Tịnh Biên, An Giang', 'tamht@gmail.com', 2147483647, '', ''),
-(14, 'Ri Đỗ', '0988777777', 'Vĩnh Bảo, Hải Phòng', 'rodi@gmail.com', 821723453, '', ''),
-(15, 'Hoàng Minh Lượng', '0988721726', 'Hà Nội', '1@gmail.com', 2147483647, '', ''),
-(16, 'Bai Thu Nguyen', '977666162', 'Ha Noi', 'chinh199304@gmail.com', 434, '', ''),
-(17, 'Van Chinh Pham', '966192810', 'Hoai Duc', 'chinhpv95@gmail.com', 21, '', ''),
-(18, 'Nguyễn Văn Linh', '966192810', 'Hoai Duc', 'chinhpv95@gmail.com', 23, '', '');
+INSERT INTO `customers` (`customerNumber`, `customerName`, `phone`, `address`, `email`, `identityCard`, `username`, `password`) VALUES
+(1, 'Trần Huy Tiệp', '01663335021', 'Đống Đa,Hà Nội', 'tranhuytiep95@gmail.com', 2147483647, '', ''),
+(2, 'Nguyễn Văn An', '0963512535', 'Đống Đa,Hà Nội', 'NVAn@gmail.com', 336552365, '', ''),
+(3, 'Trần Huy Tiệp', '0123336633', 'Hà Nội', NULL, NULL, '', '');
 
 -- --------------------------------------------------------
 
 --
 -- Stand-in structure for view `food`
 --
-CREATE TABLE `food` (
+CREATE TABLE IF NOT EXISTS `food` (
 `productCode` varchar(15)
 ,`productName` varchar(70)
 ,`categoryId` int(11)
@@ -155,7 +141,7 @@ CREATE TABLE `food` (
 -- Table structure for table `orderdetails`
 --
 
-CREATE TABLE `orderdetails` (
+CREATE TABLE IF NOT EXISTS `orderdetails` (
   `orderNumber` int(11) NOT NULL,
   `productCode` varchar(15) NOT NULL,
   `quantityOrdered` int(11) NOT NULL,
@@ -168,52 +154,41 @@ CREATE TABLE `orderdetails` (
 --
 
 INSERT INTO `orderdetails` (`orderNumber`, `productCode`, `quantityOrdered`, `priceEach`, `productName`) VALUES
-(1, 'C001', 5, 60000, ''),
-(1, 'B001', 1, 150000, ''),
-(1, 'S018', 2, 140000, ''),
-(2, 'C007', 5, 60000, ''),
-(3, 'B005', 1, 220000, ''),
-(3, 'C005', 3, 100000, ''),
-(3, 'S024', 2, 150000, ''),
-(4, 'P005', 1, 550000, ''),
-(4, 'F009', 1, 46000, ''),
-(4, 'B007', 1, 690000, ''),
-(4, 'S013', 2, 150000, ''),
-(5, 'S001', 5, 40000, ''),
-(6, 'S026', 5, 160000, ''),
-(6, 'S025', 2, 220000, ''),
-(6, 'S024', 2, 200000, ''),
-(7, 'S004', 3, 60000, ''),
-(7, 'S025', 4, 220000, ''),
-(8, 'S004', 8, 60000, ''),
-(8, 'S025', 4, 220000, ''),
-(9, 'S025', 4, 220000, ''),
-(9, 'P001', 4, 500000, ''),
-(10, 'P001', 1, 500000, ''),
-(10, 'S021', 1, 150000, ''),
-(10, 'S019', 6, 10000, ''),
-(10, 'F008', 1, 65000, ''),
-(11, 'P001', 1, 500000, ''),
-(11, 'S021', 1, 150000, ''),
-(11, 'S019', 6, 10000, ''),
-(11, 'F008', 1, 65000, ''),
-(12, 'P001', 1, 500000, ''),
-(12, 'S021', 1, 150000, ''),
-(12, 'S019', 6, 10000, ''),
-(12, 'F008', 1, 65000, ''),
-(13, 'S022', 3, 1500000, ''),
-(13, 'P001', 1, 500000, ''),
-(14, 'P001', 1, 500000, ''),
-(14, 'S001', 4, 40000, ''),
-(14, 'S021', 1, 150000, ''),
-(15, 'S013', 1, 150000, ''),
-(15, 'S024', 1, 200000, ''),
-(16, 'S026', 1, 160000, ''),
-(17, 'S025', 1, 220000, ''),
-(18, 'S021', 4, 150000, ''),
-(19, 'S016', 1, 140000, ''),
-(20, 'S026', 1, 160000, ''),
-(21, 'C004', 12, 10000, '');
+(1, 'S025', 2, 220000, 'Silver elephant '),
+(1, 'S024', 2, 200000, 'Silver frog '),
+(1, 'S023', 1, 150000, 'Silver glasses'),
+(3, 'S025', 1, 220000, 'Silver elephant '),
+(4, 'S024', 1, 200000, 'Silver frog '),
+(4, 'S023', 1, 150000, 'Silver glasses'),
+(12, 'S023', 1, 150000, ''),
+(13, 'S022', 1, 1500000, 'Silver kettle'),
+(14, 'S022', 1, 1500000, 'Silver kettle'),
+(14, 'S023', 1, 150000, 'Silver glasses'),
+(16, 'S026', 1, 160000, 'Silver bracelets '),
+(16, 'S025', 1, 220000, 'Silver elephant '),
+(17, 'S022', 1, 1500000, 'Silver kettle'),
+(18, 'S025', 1, 220000, 'Silver elephant '),
+(19, 'S025', 1, 220000, 'Silver elephant '),
+(19, 'S026', 1, 160000, 'Silver bracelets '),
+(20, 'S023', 1, 150000, 'Silver glasses'),
+(26, 'S023', 1, 150000, 'Silver glasses'),
+(28, 'S023', 1, 150000, 'Silver glasses'),
+(29, 'S026', 1, 160000, 'Silver bracelets '),
+(30, 'S022', 1, 1500000, 'Silver kettle'),
+(31, 'S026', 1, 160000, 'Silver bracelets '),
+(32, 'S022', 1, 1500000, 'Silver kettle'),
+(33, 'S022', 1, 1500000, 'Silver kettle'),
+(34, 'S024', 1, 200000, 'Silver frog '),
+(35, 'S026', 1, 160000, 'Silver bracelets '),
+(36, 'S025', 1, 220000, 'Silver elephant '),
+(37, 'S024', 1, 200000, 'Silver frog '),
+(38, 'S024', 1, 200000, 'Silver frog '),
+(39, 'S024', 1, 200000, 'Silver frog '),
+(39, 'S023', 1, 150000, 'Silver glasses'),
+(40, 'S025', 1, 220000, 'Silver elephant '),
+(41, 'P004', 1, 350000, 'Bức tranh cảnh làm ruộng của người Campuchia'),
+(42, 'S025', 2, 220000, 'Silver elephant '),
+(43, 'S025', 1, 220000, 'Silver elephant ');
 
 -- --------------------------------------------------------
 
@@ -221,48 +196,73 @@ INSERT INTO `orderdetails` (`orderNumber`, `productCode`, `quantityOrdered`, `pr
 -- Table structure for table `orders`
 --
 
-CREATE TABLE `orders` (
+CREATE TABLE IF NOT EXISTS `orders` (
   `orderNumber` int(11) NOT NULL,
   `createDate` datetime NOT NULL,
   `updateDate` datetime DEFAULT NULL,
   `status` varchar(15) NOT NULL,
   `comments` text NOT NULL,
-  `customerNumber` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `customerNumber` int(11) NOT NULL,
+  `customerName` varchar(50) NOT NULL,
+  `phone` varchar(20) NOT NULL,
+  `address` varchar(100) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=44 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `orders`
 --
 
-INSERT INTO `orders` (`orderNumber`, `createDate`, `updateDate`, `status`, `comments`, `customerNumber`) VALUES
-(1, '2016-07-20 00:00:00', '2016-07-27 15:44:17', 'Shipped', '', 1),
-(2, '2016-07-20 00:00:00', '2016-07-23 00:00:00', 'Shipped', '', 4),
-(3, '2016-07-21 00:00:00', NULL, 'In Process', '', 3),
-(4, '2016-07-21 00:00:00', NULL, 'Cancelled', '', 5),
-(5, '2016-07-22 00:00:00', '2016-07-26 00:00:00', 'Shipped', '', 2),
-(6, '2016-07-25 00:00:00', NULL, 'In Process', '', 6),
-(7, '2016-07-25 00:00:00', NULL, 'Cancelled', '', 7),
-(8, '2016-07-25 00:00:00', NULL, 'In Process', '', 8),
-(9, '2016-07-25 00:00:00', NULL, 'In Process', '', 9),
-(10, '2016-07-25 00:00:00', NULL, 'In Process', '', 10),
-(11, '2016-07-25 00:00:00', NULL, 'In Process', '', 11),
-(12, '2016-07-25 00:00:00', NULL, 'In Process', '', 12),
-(13, '2016-07-26 00:00:00', NULL, 'Shipped', '', 13),
-(14, '2016-07-26 00:00:00', NULL, 'Cancelled', '', 14),
-(15, '2016-07-26 00:00:00', NULL, 'Shipped', '', 15),
-(16, '2016-07-27 14:54:00', '2016-07-27 14:54:28', 'Shipped', '', 15),
-(17, '2016-07-27 14:55:57', NULL, 'In Process', '', 11),
-(18, '2016-07-27 15:16:15', '2016-07-27 15:43:28', 'Cancelled', '', 12),
-(19, '2016-07-27 15:27:59', NULL, 'In Process', '', 12),
-(20, '2016-07-27 15:30:08', NULL, 'In Process', '', 11),
-(21, '2016-07-27 15:31:25', NULL, 'In Process', '', 11);
+INSERT INTO `orders` (`orderNumber`, `createDate`, `updateDate`, `status`, `comments`, `customerNumber`, `customerName`, `phone`, `address`) VALUES
+(1, '2016-08-14 21:19:03', '2016-08-15 09:00:45', 'Shipped', '', 1, 'Trần Huy Tiệp', '01663335021', 'Ba Đình,Hà Nội'),
+(2, '2016-08-15 09:46:14', '2016-08-15 09:46:14', 'In Process', '', 2, 'Nguyễn Văn An', '0963512535', 'Đống Đa,Hà Nội'),
+(3, '2016-08-15 09:47:46', '2016-08-15 09:47:46', 'In Process', '', 2, 'Nguyễn Văn An', '0963512535', 'Đống Đa,Hà Nội'),
+(4, '2016-08-15 10:22:19', '2016-08-15 10:22:42', 'Shipped', '', 1, 'Trần Huy Tiệp', '01663335021', 'Đống Đa,Hà Nội'),
+(5, '2016-08-15 11:10:08', NULL, 'In Process', '', 1, '', '', ''),
+(6, '2016-08-15 11:10:11', NULL, 'In Process', '', 1, '', '', ''),
+(7, '2016-08-15 11:10:12', NULL, 'In Process', '', 1, '', '', ''),
+(8, '2016-08-15 11:10:13', NULL, 'In Process', '', 1, '', '', ''),
+(9, '2016-08-15 11:10:13', NULL, 'In Process', '', 1, '', '', ''),
+(10, '2016-08-15 11:10:13', NULL, 'In Process', '', 1, '', '', ''),
+(11, '2016-08-15 11:10:14', NULL, 'In Process', '', 1, '', '', ''),
+(12, '2016-08-15 11:12:50', NULL, 'In Process', '', 1, '', '', ''),
+(13, '2016-08-15 11:21:56', '2016-08-15 11:21:56', 'In Process', '', 1, 'Trần Huy Tiệp', '01663335021', 'Đống Đa,Hà Nội'),
+(14, '2016-08-15 11:23:23', '2016-08-15 11:23:23', 'In Process', '', 1, 'Trần Huy Tiệp', '01663335021', 'Đống Đa,Hà Nội'),
+(15, '2016-08-15 11:23:31', '2016-08-15 11:23:31', 'In Process', '', 1, 'Trần Huy Tiệp', '01663335021', 'Đống Đa,Hà Nội'),
+(16, '2016-08-15 11:23:48', '2016-08-15 11:23:48', 'In Process', '', 1, 'Trần Huy Tiệp', '01663335021', 'Ba Đình,Hà Nội'),
+(17, '2016-08-15 11:24:58', '2016-08-15 11:24:58', 'In Process', '', 1, 'Trần Huy Tiệp', '01663335021', 'Đống Đa,Hà Nội'),
+(18, '2016-08-15 12:51:38', '2016-08-15 12:51:38', 'In Process', '', 1, 'Trần Huy Tiệp', '01663335021', 'Đống Đa,Hà Nội'),
+(19, '2016-08-15 13:25:33', '2016-08-15 13:25:33', 'In Process', '', 1, 'Trần Huy Tiệp', '01663335021', 'Đống Đa,Hà Nội'),
+(20, '2016-08-15 13:25:56', '2016-08-15 13:25:56', 'In Process', '', 1, 'Trần Huy Tiệp', '01663335021', 'Đống Đa,Hà Nội'),
+(21, '2016-08-15 13:25:57', '2016-08-15 13:25:57', 'In Process', '', 1, 'Trần Huy Tiệp', '01663335021', 'Đống Đa,Hà Nội'),
+(22, '2016-08-15 13:25:57', '2016-08-15 13:25:57', 'In Process', '', 1, 'Trần Huy Tiệp', '01663335021', 'Đống Đa,Hà Nội'),
+(23, '2016-08-15 13:25:58', '2016-08-15 13:25:58', 'In Process', '', 1, 'Trần Huy Tiệp', '01663335021', 'Đống Đa,Hà Nội'),
+(24, '2016-08-15 13:25:58', '2016-08-15 13:25:58', 'In Process', '', 1, 'Trần Huy Tiệp', '01663335021', 'Đống Đa,Hà Nội'),
+(25, '2016-08-15 13:28:05', '2016-08-15 13:28:05', 'In Process', '', 3, 'Trần Huy Tiệp', '0123336633', 'Hà Nội'),
+(26, '2016-08-15 13:28:15', '2016-08-15 13:28:15', 'In Process', '', 3, 'Trần Huy Tiệp', '0123336633', 'Hà Nội'),
+(27, '2016-08-15 13:40:36', '2016-08-15 13:40:36', 'In Process', '', 1, 'Trần Huy Tiệp', '01663335021', 'Đống Đa,Hà Nội'),
+(28, '2016-08-15 13:40:38', '2016-08-15 13:40:38', 'In Process', '', 1, 'Trần Huy Tiệp', '01663335021', 'Đống Đa,Hà Nội'),
+(29, '2016-08-15 13:45:26', '2016-08-15 13:45:26', 'In Process', '', 1, 'Trần Huy Tiệp', '01663335021', 'Đống Đa,Hà Nội'),
+(30, '2016-08-15 13:46:36', '2016-08-15 13:46:36', 'In Process', '', 3, 'Trần Huy Tiệp', '0123336633', 'Đống Đa,Hà Nội'),
+(31, '2016-08-15 13:51:54', '2016-08-15 13:51:54', 'In Process', '', 1, 'Trần Huy Tiệp', '01663335021', 'Đống Đa,Hà Nội'),
+(32, '2016-08-15 13:55:02', '2016-08-15 13:55:02', 'In Process', '', 1, 'Trần Huy Tiệp', '01663335021', 'Đống Đa,Hà Nội'),
+(33, '2016-08-15 14:03:10', '2016-08-15 14:03:10', 'In Process', '', 1, 'Trần Huy Tiệp', '01663335021', 'Đống Đa,Hà Nội'),
+(34, '2016-08-15 14:03:38', '2016-08-15 14:03:38', 'In Process', '', 1, 'Trần Huy Tiệp', '01663335021', 'Đống Đa,Hà Nội'),
+(35, '2016-08-15 14:08:30', '2016-08-15 14:08:30', 'In Process', '', 1, 'Trần Huy Tiệp', '01663335021', 'Đống Đa,Hà Nội'),
+(36, '2016-08-15 14:11:10', '2016-08-15 14:11:10', 'In Process', '', 1, 'Trần Huy Tiệp', '01663335021', 'Đống Đa,Hà Nội'),
+(37, '2016-08-15 14:11:33', '2016-08-15 14:11:33', 'In Process', '', 1, 'Trần Huy Tiệp', '01663335021', 'Đống Đa,Hà Nội'),
+(38, '2016-08-15 14:28:25', '2016-08-15 14:28:25', 'In Process', '', 1, 'Trần Huy Tiệp', '01663335021', 'Ba Đình,Hà Nội'),
+(39, '2016-08-15 14:42:29', '2016-08-15 14:42:29', 'In Process', '', 1, 'Trần Huy Tiệp', '01663335021', 'Ba Đình,Hà Nội'),
+(40, '2016-08-15 15:21:01', '2016-08-15 15:21:01', 'In Process', '', 1, 'Trần Huy Tiệp', '01663335021', 'Đống Đa,Hà Nội'),
+(41, '2016-08-15 16:19:03', '2016-08-15 16:19:03', 'In Process', '', 1, 'Trần Huy Tiệp', '01663335021', 'Ba Đình,Hà Nội'),
+(42, '2016-08-15 16:49:04', '2016-08-15 16:49:04', 'In Process', '', 1, 'Trần Huy Tiệp', '01663335021', 'Đống Đa,Hà Nội'),
+(43, '2016-08-15 16:56:06', '2016-08-15 16:56:06', 'In Process', '', 1, 'Trần Huy Tiệp', '01663335021', 'Đống Đa,Hà Nội');
 
 -- --------------------------------------------------------
 
 --
 -- Stand-in structure for view `painting`
 --
-CREATE TABLE `painting` (
+CREATE TABLE IF NOT EXISTS `painting` (
 `productCode` varchar(15)
 ,`productName` varchar(70)
 ,`categoryId` int(11)
@@ -278,7 +278,7 @@ CREATE TABLE `painting` (
 -- Table structure for table `products`
 --
 
-CREATE TABLE `products` (
+CREATE TABLE IF NOT EXISTS `products` (
   `productCode` varchar(15) NOT NULL,
   `productName` varchar(70) NOT NULL,
   `categoryId` int(11) NOT NULL,
@@ -354,7 +354,7 @@ INSERT INTO `products` (`productCode`, `productName`, `categoryId`, `description
 ('S023', 'Silver glasses', 5, 'Ờ Campuchia, từ thế kỷ XI, đồ vật bằng bạc đã được sử dụng rộng rãi trong nhiều nghi lễ tôn giáo. Nó không quá đắt, nhưng có khả năng tạo ra những đồ vật tinh xảo qua bàn tay của những nghệ nhân Khmer', 41, 150000, 'S023.jpg'),
 ('S024', 'Silver frog ', 5, 'Ờ Campuchia, từ thế kỷ XI, đồ vật bằng bạc đã được sử dụng rộng rãi trong nhiều nghi lễ tôn giáo. Nó không quá đắt, nhưng có khả năng tạo ra những đồ vật tinh xảo qua bàn tay của những nghệ nhân Khmer', 12, 200000, 'S024.jpg'),
 ('S025', 'Silver elephant ', 5, 'Ờ Campuchia, từ thế kỷ XI, đồ vật bằng bạc đã được sử dụng rộng rãi trong nhiều nghi lễ tôn giáo. Nó không quá đắt, nhưng có khả năng tạo ra những đồ vật tinh xảo qua bàn tay của những nghệ nhân Khmer', 12, 220000, 'S025.jpg'),
-('S026', 'Silver bracelets ', 5, 'Ờ Campuchia, từ thế kỷ XI, đồ vật bằng bạc đã được sử dụng rộng rãi trong nhiều nghi lễ tôn giáo. Nó không quá đắt, nhưng có khả năng tạo ra những đồ vật tinh xảo qua bàn tay của những nghệ nhân Khmer', 44, 160000, 'S026.jpg');
+('S026', 'Silver bracelets ', 5, '<p>\r\n	Ờ Campuchia, từ thế kỷ XI, đồ vật bằng bạc đ&atilde; được sử dụng rộng r&atilde;i trong nhiều nghi lễ t&ocirc;n gi&aacute;o. N&oacute; kh&ocirc;ng qu&aacute; đắt, nhưng c&oacute; khả năng tạo ra những đồ vật tinh xảo qua b&agrave;n tay của những nghệ nh&acirc;n Khmer</p>\r\n', 44, 160000, 'S0261.jpg');
 
 -- --------------------------------------------------------
 
@@ -362,10 +362,10 @@ INSERT INTO `products` (`productCode`, `productName`, `categoryId`, `description
 -- Table structure for table `rate`
 --
 
-CREATE TABLE `rate` (
+CREATE TABLE IF NOT EXISTS `rate` (
   `rateID` int(11) NOT NULL,
   `rateValue` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `rate`
@@ -384,7 +384,7 @@ INSERT INTO `rate` (`rateID`, `rateValue`) VALUES
 -- Table structure for table `ratedetails`
 --
 
-CREATE TABLE `ratedetails` (
+CREATE TABLE IF NOT EXISTS `ratedetails` (
   `productCode` varchar(15) NOT NULL,
   `rateID` int(11) NOT NULL,
   `customerNumber` int(11) NOT NULL
@@ -422,7 +422,7 @@ INSERT INTO `ratedetails` (`productCode`, `rateID`, `customerNumber`) VALUES
 --
 -- Stand-in structure for view `souvenir`
 --
-CREATE TABLE `souvenir` (
+CREATE TABLE IF NOT EXISTS `souvenir` (
 `productCode` varchar(15)
 ,`productName` varchar(70)
 ,`categoryId` int(11)
@@ -435,11 +435,36 @@ CREATE TABLE `souvenir` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `user`
+--
+
+CREATE TABLE IF NOT EXISTS `user` (
+  `id` int(255) NOT NULL,
+  `username` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `phone` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `address` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `identityCard` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `password` varchar(32) COLLATE utf8_unicode_ci NOT NULL,
+  `newpassword` varchar(32) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`id`, `username`, `name`, `phone`, `address`, `email`, `identityCard`, `password`, `newpassword`) VALUES
+(1, 'huytiep', 'Trần Huy Tiệp', '01663335020', 'Ha Nội', 'tranhuytiep95@gmail.com', '223695', '', '');
+
+-- --------------------------------------------------------
+
+--
 -- Structure for view `book`
 --
 DROP TABLE IF EXISTS `book`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `book`  AS  select `products`.`productCode` AS `productCode`,`products`.`productName` AS `productName`,`products`.`categoryId` AS `categoryId`,`products`.`description` AS `description`,`products`.`quantity` AS `quantity`,`products`.`price` AS `price`,`products`.`image_link` AS `image_link` from `products` where (`products`.`categoryId` = 1) ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `book` AS select `products`.`productCode` AS `productCode`,`products`.`productName` AS `productName`,`products`.`categoryId` AS `categoryId`,`products`.`description` AS `description`,`products`.`quantity` AS `quantity`,`products`.`price` AS `price`,`products`.`image_link` AS `image_link` from `products` where (`products`.`categoryId` = 1);
 
 -- --------------------------------------------------------
 
@@ -448,7 +473,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `clothes`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `clothes`  AS  select `products`.`productCode` AS `productCode`,`products`.`productName` AS `productName`,`products`.`categoryId` AS `categoryId`,`products`.`description` AS `description`,`products`.`quantity` AS `quantity`,`products`.`price` AS `price`,`products`.`image_link` AS `image_link` from `products` where (`products`.`categoryId` = 2) ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `clothes` AS select `products`.`productCode` AS `productCode`,`products`.`productName` AS `productName`,`products`.`categoryId` AS `categoryId`,`products`.`description` AS `description`,`products`.`quantity` AS `quantity`,`products`.`price` AS `price`,`products`.`image_link` AS `image_link` from `products` where (`products`.`categoryId` = 2);
 
 -- --------------------------------------------------------
 
@@ -457,7 +482,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `food`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `food`  AS  select `products`.`productCode` AS `productCode`,`products`.`productName` AS `productName`,`products`.`categoryId` AS `categoryId`,`products`.`description` AS `description`,`products`.`quantity` AS `quantity`,`products`.`price` AS `price`,`products`.`image_link` AS `image_link` from `products` where (`products`.`categoryId` = 3) ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `food` AS select `products`.`productCode` AS `productCode`,`products`.`productName` AS `productName`,`products`.`categoryId` AS `categoryId`,`products`.`description` AS `description`,`products`.`quantity` AS `quantity`,`products`.`price` AS `price`,`products`.`image_link` AS `image_link` from `products` where (`products`.`categoryId` = 3);
 
 -- --------------------------------------------------------
 
@@ -466,7 +491,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `painting`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `painting`  AS  select `products`.`productCode` AS `productCode`,`products`.`productName` AS `productName`,`products`.`categoryId` AS `categoryId`,`products`.`description` AS `description`,`products`.`quantity` AS `quantity`,`products`.`price` AS `price`,`products`.`image_link` AS `image_link` from `products` where (`products`.`categoryId` = 4) ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `painting` AS select `products`.`productCode` AS `productCode`,`products`.`productName` AS `productName`,`products`.`categoryId` AS `categoryId`,`products`.`description` AS `description`,`products`.`quantity` AS `quantity`,`products`.`price` AS `price`,`products`.`image_link` AS `image_link` from `products` where (`products`.`categoryId` = 4);
 
 -- --------------------------------------------------------
 
@@ -475,7 +500,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `souvenir`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `souvenir`  AS  select `products`.`productCode` AS `productCode`,`products`.`productName` AS `productName`,`products`.`categoryId` AS `categoryId`,`products`.`description` AS `description`,`products`.`quantity` AS `quantity`,`products`.`price` AS `price`,`products`.`image_link` AS `image_link` from `products` where (`products`.`categoryId` = 5) ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `souvenir` AS select `products`.`productCode` AS `productCode`,`products`.`productName` AS `productName`,`products`.`categoryId` AS `categoryId`,`products`.`description` AS `description`,`products`.`quantity` AS `quantity`,`products`.`price` AS `price`,`products`.`image_link` AS `image_link` from `products` where (`products`.`categoryId` = 5);
 
 --
 -- Indexes for dumped tables
@@ -509,15 +534,13 @@ ALTER TABLE `orderdetails`
 -- Indexes for table `orders`
 --
 ALTER TABLE `orders`
-  ADD PRIMARY KEY (`orderNumber`),
-  ADD KEY `customerNumber` (`customerNumber`);
+  ADD PRIMARY KEY (`orderNumber`), ADD KEY `customerNumber` (`customerNumber`);
 
 --
 -- Indexes for table `products`
 --
 ALTER TABLE `products`
-  ADD PRIMARY KEY (`productCode`),
-  ADD KEY `categoryId` (`categoryId`);
+  ADD PRIMARY KEY (`productCode`), ADD KEY `categoryId` (`categoryId`);
 
 --
 -- Indexes for table `rate`
@@ -529,9 +552,13 @@ ALTER TABLE `rate`
 -- Indexes for table `ratedetails`
 --
 ALTER TABLE `ratedetails`
-  ADD KEY `rateID` (`rateID`),
-  ADD KEY `productCode` (`productCode`),
-  ADD KEY `customerNumber` (`customerNumber`);
+  ADD KEY `rateID` (`rateID`), ADD KEY `productCode` (`productCode`), ADD KEY `customerNumber` (`customerNumber`);
+
+--
+-- Indexes for table `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -541,27 +568,32 @@ ALTER TABLE `ratedetails`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id` int(25) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(25) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `categoryID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `categoryID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `customers`
 --
 ALTER TABLE `customers`
-  MODIFY `customerNumber` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `customerNumber` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `orderNumber` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `orderNumber` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=44;
 --
 -- AUTO_INCREMENT for table `rate`
 --
 ALTER TABLE `rate`
-  MODIFY `rateID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `rateID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
+--
+-- AUTO_INCREMENT for table `user`
+--
+ALTER TABLE `user`
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- Constraints for dumped tables
 --
@@ -570,27 +602,26 @@ ALTER TABLE `rate`
 -- Constraints for table `orderdetails`
 --
 ALTER TABLE `orderdetails`
-  ADD CONSTRAINT `orderdetails_ibfk_1` FOREIGN KEY (`orderNumber`) REFERENCES `orders` (`orderNumber`) ON UPDATE CASCADE;
+ADD CONSTRAINT `orderdetails_ibfk_1` FOREIGN KEY (`orderNumber`) REFERENCES `orders` (`orderNumber`) ON UPDATE CASCADE;
 
 --
 -- Constraints for table `orders`
 --
 ALTER TABLE `orders`
-  ADD CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`customerNumber`) REFERENCES `customers` (`customerNumber`) ON UPDATE CASCADE;
+ADD CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`customerNumber`) REFERENCES `customers` (`customerNumber`) ON UPDATE CASCADE;
 
 --
 -- Constraints for table `products`
 --
 ALTER TABLE `products`
-  ADD CONSTRAINT `products_ibfk_1` FOREIGN KEY (`categoryId`) REFERENCES `category` (`categoryID`) ON UPDATE CASCADE;
+ADD CONSTRAINT `products_ibfk_1` FOREIGN KEY (`categoryId`) REFERENCES `category` (`categoryID`) ON UPDATE CASCADE;
 
 --
 -- Constraints for table `ratedetails`
 --
 ALTER TABLE `ratedetails`
-  ADD CONSTRAINT `ratedetails_ibfk_1` FOREIGN KEY (`rateID`) REFERENCES `rate` (`rateID`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `ratedetails_ibfk_2` FOREIGN KEY (`productCode`) REFERENCES `products` (`productCode`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `ratedetails_ibfk_3` FOREIGN KEY (`customerNumber`) REFERENCES `customers` (`customerNumber`) ON UPDATE CASCADE;
+ADD CONSTRAINT `ratedetails_ibfk_1` FOREIGN KEY (`rateID`) REFERENCES `rate` (`rateID`) ON UPDATE CASCADE,
+ADD CONSTRAINT `ratedetails_ibfk_2` FOREIGN KEY (`productCode`) REFERENCES `products` (`productCode`) ON UPDATE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

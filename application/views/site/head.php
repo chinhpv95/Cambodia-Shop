@@ -2,8 +2,8 @@
 <title>ArtisansAngkor</title>
 
 <!-- Google Fonts -->
-<link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300&subset=latin,vietnamese' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&subset=latin,vietnamese' rel='stylesheet' type='text/css'>
+<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&subset=vietnamese" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&subset=vietnamese" rel="stylesheet">
 
 <!-- Bootstrap -->
 <link rel="stylesheet" href="<?php echo public_url('/site')?>/css/bootstrap.min.css">
@@ -34,4 +34,5 @@
 <!-- Slider -->
 <script type="text/javascript" src="<?php echo public_url('/site')?>/js/bxslider.min.js"></script>
 <script type="text/javascript" src="<?php echo public_url('/site')?>/js/script.slider.js"></script>
-<script type="text/javascript" src=<?php echo public_url('/site')?>/js/script.slider.js"></script>
+<script type="text/javascript" src="<?php echo public_url('/site')?>/js/script.slider.js"></script>
+<script type="text/javascript" src="<?php echo public_url()?>/js/custom_admin.js" type="text/javascript"></script>

@@ -9,5 +9,3 @@ class  Customers_model extends MY_Model{
     var $table = 'customers';
     var $key = 'customerNumber';
 }
-
-?>

@@ -8,7 +8,7 @@
             <span>Xin chào: <strong>admin!</strong></span>
             <span>
                 <?php
-                $info = $this->session->userdata('login');
+                $info = $this->session->userdata('login_admin');
                 echo($info['name']);
                 ?>
             </span>
@@ -42,7 +42,8 @@
                     </li>
                     <li>
                         <a href="<?php echo admin_url('order')?>">
-                            Đơn hàng sản phẩm							</a>
+                            Đơn hàng
+                        </a>
                     </li>
                 </ul>
 
@@ -87,7 +88,7 @@
                             Nhóm quản trị							</a>
                     </li>
                     <li>
-                        <a href="admin/user.html">
+                        <a href="<?php echo admin_url('user')?>">
                             Thành viên							</a>
                     </li>
                 </ul>

@@ -11,11 +11,11 @@
                             <h3>Đăng nhập</h3>
                             <p class="form-row form-row-last validate-required">
                                 <label for="email">Tên đăng nhập</label>
-                                <input type="text" id="email" name="email" size="50" value="" class="account_input" />
+                                <input type="text" id="email" name="name" size="50" value="" class="account_input" />
                             </p>
                             <p class="form-row form-row-last validate-required">
                                 <label for="passwd">Mật khẩu</label>
-                                <input type="password" id="passwd" name="passwd" size="78" value="" class="account_input" />
+                                <input type="password" id="passwd" name="passwd" size="93" value="" class="account_input" />
                             </p>
                             <br>
                             <p class="submit">
